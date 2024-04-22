@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
+
+    private GameObject player;
     // Start is called before the first frame update
     void Start()
     {
+
+        player = GameObject.FindGameObjectWithTag("Player");
         
     }
     
@@ -19,6 +23,13 @@ public class Obstacle : MonoBehaviour
         {
 
             Destroy(this.gameObject);
+
+        }
+        else if (collision.tag == "Player")
+
+        {
+
+            Destroy(collision.gameObject);
 
         }
         
