@@ -83,3 +83,4 @@ crashlytics-build.properties
 *.meta
 2D4FUn/Assets/Scenes/SampleScene.unity
 2D4FUn/Assets/Prefab/Obstacle.prefab
+2D4FUn/Assets/Prefab/Boost.prefab

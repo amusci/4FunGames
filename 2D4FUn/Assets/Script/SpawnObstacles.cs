@@ -6,6 +6,7 @@ public class SpawnObstacles : MonoBehaviour
 {
 
 public GameObject obstacle;
+public GameObject boost;
 public float maxX;
 public float minX;
 public float maxY;
@@ -39,8 +40,7 @@ public float spawnTime;
         float randomY = Random.Range(minY, maxY);
 
         Instantiate(obstacle, transform.position + new Vector3(randomX, randomY, 0), transform.rotation);
-
-
-
+        Instantiate(boost, transform.position + new Vector3(randomX, randomY, 0), transform.rotation);
+        
     }
 }
