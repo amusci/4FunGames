@@ -4,66 +4,29 @@ using UnityEngine;
 
 public class Boost : MonoBehaviour
 {
-
     private GameObject player;
-    public float temporarySpeedIncrease = 5f;
-    private float originalPlayerSpeed;
-    private bool speedIncreased = false;
+    private ScoreManager scoreManager; // Declare scoreManager variable
+
     // Start is called before the first frame update
     void Start()
     {
-
         player = GameObject.FindGameObjectWithTag("Player");
-        
+        scoreManager = FindObjectOfType<ScoreManager>(); // Find the ScoreManager script in the scene
     }
-    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
         if (collision.tag == "Border")
-
         {
-
-            Destroy(this.gameObject);
-
+            Destroy(gameObject);
         }
         else if (collision.tag == "Player")
-
         {
-            if (!speedIncreased) 
+            if (scoreManager != null)
             {
-
-                StartCoroutine(IncreasePlayerSpeedForDuration(3f));
-                speedIncreased = true;
-
+                scoreManager.IncreaseScore(1); // Increase the score by 1
             }
-
-            
-
+            Destroy(gameObject);
         }
-        
     }
-
-        IEnumerator IncreasePlayerSpeedForDuration(float duration)
-    {
-        // get player components
-        Player playerScript = player.GetComponent<Player>();
-
-        // Store the original player speed
-        originalPlayerSpeed = playerScript.playerSpeed;
-
-        // Increase the player speed
-        playerScript.playerSpeed = temporarySpeedIncrease;
-
-        // Wait for the specified duration
-        yield return new WaitForSeconds(duration);
-
-        // Restore the original player speed
-        playerScript.playerSpeed = originalPlayerSpeed;
-
-        // Reset speedIncreased flag
-        speedIncreased = false;
-    }
-
 }
