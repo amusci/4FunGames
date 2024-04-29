@@ -1,5 +1,3 @@
-
-using System.Diagnostics;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -32,15 +30,38 @@ public class PlayerMovement : MonoBehaviour
 
         rb.velocity = new Vector2(speed * move, rb.velocity.y);
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && !isJumping)
         {
 
             rb.AddForce(new Vector2(rb.velocity.x, jumpForce));
-            Debug.Log("jump")
+            Debug.Log("jump");
 
         }
 
 
+    }
+
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
+        {
+
+            isJumping = false;
+
+
+        }
+    }
+
+        void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
+        {
+
+            isJumping = true;
+
+
+        }
     }
 
 
