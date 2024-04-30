@@ -4,17 +4,18 @@ public class PauseMenu : MonoBehaviour
 {
 
     public GameObject pauseMenu;
+    private AudioManager audioManager;
 
-    // Start is called before the first frame update
     void Start()
     {
 
         Cursor.visible = false;
-
-        
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
-    // Update is called once per frame
+        
+    
+
     void Update()
     {
 
@@ -27,6 +28,8 @@ public class PauseMenu : MonoBehaviour
                 Time.timeScale = 0f;
                 pauseMenu.SetActive(true);
                 Cursor.visible = true;
+                audioManager.PauseBackgroundMusic();
+                
 
 
 
@@ -38,6 +41,8 @@ public class PauseMenu : MonoBehaviour
                 Time.timeScale = 1f;
                 pauseMenu.SetActive(false);
                 Cursor.visible = false;
+                audioManager.ResumeBackgroundMusic();
+                
 
             }
 
@@ -60,6 +65,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         pauseMenu.SetActive(false);
         Cursor.visible = false;
+        audioManager.ResumeBackgroundMusic();
 
     }
 }
