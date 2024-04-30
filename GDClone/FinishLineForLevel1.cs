@@ -3,16 +3,12 @@ using UnityEngine;
 
 public class FinishLineForLevel1 : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    AudioManager audioManager;
+    private void Awake()
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
     }
 
 
@@ -20,7 +16,7 @@ public class FinishLineForLevel1 : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-
+            audioManager.PlaySFX(audioManager.nextlevel);
             SceneManager.LoadScene("level2");
             
         }
