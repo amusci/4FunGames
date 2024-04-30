@@ -5,6 +5,7 @@ public class DeathScript : MonoBehaviour
 
     public GameObject start;
     public GameObject player;
+
     AudioManager audioManager;
     
     
@@ -19,8 +20,16 @@ public class DeathScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            DeathCounter deathCounter = FindObjectOfType<DeathCounter>();
             audioManager.PlaySFX(audioManager.death);
             player.transform.position = start.transform.position;
+            if (deathCounter != null)
+            {
+
+                deathCounter.IncrementDeathCounter();
+
+            }
+            
 
         }
     }
