@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -10,14 +7,18 @@ public class PlayerMovement : MonoBehaviour
     private float move;
 
     public bool isJumping;
+    private int jumpCount = 0;
+
     
 
     private Rigidbody2D rb;
+    private Animator animator = null;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>(); // get rigidbody component
+        animator = GetComponent<Animator>(); // get animator component
 
         
     }
@@ -27,15 +28,34 @@ public class PlayerMovement : MonoBehaviour
     {
 
 
-        rb.velocity = new Vector2(speed, rb.velocity.y);
+        rb.velocity = new Vector2(speed, rb.velocity.y); // set speed to right
 
         if (Input.GetButtonDown("Jump") && !isJumping)
         {
 
             rb.AddForce(new Vector2(rb.velocity.x, jumpForce));
+            //animator.SetBool("isJumping", true);
             Debug.Log("jump");
+            Debug.Log(jumpCount);
+            jumpCount++;
+                        switch (jumpCount)
+            {
+                case 1:
+                    animator.SetTrigger("Jump1");
+                    break;
+                case 2:
+                    animator.SetTrigger("Jump2");
+                    break;
+                case 3:
+                    animator.SetTrigger("Jump3");
+                    break;
+                case 4:
+                    animator.SetTrigger("Jump4");
+                    break;
+            }
 
         }
+        
 
 
     }
@@ -45,14 +65,21 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ground"))
         {
+            
+            isJumping = false; // set to false when player lans on ground
+            //animator.SetBool("isJumping", false);
+            if (jumpCount >= 4)
+            {
 
-            isJumping = false;
+                jumpCount = 0; 
+
+            }
 
 
         }
     }
 
-        void OnCollisionExit2D(Collision2D other)
+    void OnCollisionExit2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Ground"))
         {
@@ -62,7 +89,6 @@ public class PlayerMovement : MonoBehaviour
 
         }
     }
-
 
 
 }
