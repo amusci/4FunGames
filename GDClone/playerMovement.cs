@@ -34,12 +34,15 @@ public class PlayerMovement : MonoBehaviour
         {
 
             rb.AddForce(new Vector2(rb.velocity.x, jumpForce));
-            //animator.SetBool("isJumping", true);
             Debug.Log("jump");
             Debug.Log(jumpCount);
+            animator.SetBool("isDead",false);
             jumpCount++;
-                        switch (jumpCount)
+            switch (jumpCount)
             {
+                case 0:
+                    animator.SetTrigger("Idle");
+                    break;
                 case 1:
                     animator.SetTrigger("Jump1");
                     break;
@@ -71,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
             if (jumpCount >= 4)
             {
 
-                jumpCount = 0; 
+                ResetJumpCount();
 
             }
 
@@ -88,6 +91,16 @@ public class PlayerMovement : MonoBehaviour
 
 
         }
+    }
+
+    public void ResetJumpCount()
+    {
+        jumpCount = 0;
+        animator.SetBool("isDead", true);
+        animator.ResetTrigger("Jump1");
+        animator.ResetTrigger("Jump2");
+        animator.ResetTrigger("Jump3");
+        animator.ResetTrigger("Jump4");
     }
 
 
