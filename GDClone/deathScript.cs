@@ -29,7 +29,12 @@ public class DeathScript : MonoBehaviour
                 deathCounter.IncrementDeathCounter();
 
             }
-            
+        }
+        PlayerMovement playerMovement = other.gameObject.GetComponent<PlayerMovement>();
+        if (playerMovement != null)
+        {
+
+            playerMovement.ResetJumpCount();
 
         }
     }
