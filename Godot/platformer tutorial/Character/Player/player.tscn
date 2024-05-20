@@ -223,11 +223,14 @@ height = 44.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_446te")
+SPEED = null
+JUMP_VELOCITY = null
+DOUBLE_JUMP_VELOCITY = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-32, -40)
 sprite_frames = SubResource("SpriteFrames_oiksw")
-animation = &"idle"
+animation = &"jump_start"
 autoplay = "idle"
 centered = false
 
