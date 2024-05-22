@@ -1,0 +1,154 @@
+[gd_scene load_steps=22 format=3 uid="uid://coljgaveop2o8"]
+
+[ext_resource type="Script" path="res://enemies/snail.gd" id="1_0jju1"]
+[ext_resource type="Texture2D" uid="uid://djdhiuqhipxr5" path="res://art/Legacy-Fantasy - High Forest 2.3/Mob/Snail/walk-Sheet.png" id="1_1gla8"]
+[ext_resource type="Texture2D" uid="uid://c7xsx2kfjqbaq" path="res://art/Legacy-Fantasy - High Forest 2.3/Mob/Snail/Hide-Sheet.png" id="2_iuylt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjptq"]
+atlas = ExtResource("2_iuylt")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_711kt"]
+atlas = ExtResource("2_iuylt")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qq1ui"]
+atlas = ExtResource("2_iuylt")
+region = Rect2(96, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhkyb"]
+atlas = ExtResource("2_iuylt")
+region = Rect2(144, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h70g8"]
+atlas = ExtResource("2_iuylt")
+region = Rect2(192, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qkye"]
+atlas = ExtResource("2_iuylt")
+region = Rect2(240, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6lhm"]
+atlas = ExtResource("2_iuylt")
+region = Rect2(288, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tp115"]
+atlas = ExtResource("2_iuylt")
+region = Rect2(336, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvrpt"]
+atlas = ExtResource("1_1gla8")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uee50"]
+atlas = ExtResource("1_1gla8")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_33qog"]
+atlas = ExtResource("1_1gla8")
+region = Rect2(96, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utveo"]
+atlas = ExtResource("1_1gla8")
+region = Rect2(144, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3nuh6"]
+atlas = ExtResource("1_1gla8")
+region = Rect2(192, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhgio"]
+atlas = ExtResource("1_1gla8")
+region = Rect2(240, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ynvi8"]
+atlas = ExtResource("1_1gla8")
+region = Rect2(288, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_of8i4"]
+atlas = ExtResource("1_1gla8")
+region = Rect2(336, 0, 48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qqcxv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjptq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_711kt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qq1ui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhkyb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h70g8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6qkye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6lhm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tp115")
+}],
+"loop": false,
+"name": &"snail_hide",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvrpt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uee50")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_33qog")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utveo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3nuh6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhgio")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ynvi8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_of8i4")
+}],
+"loop": true,
+"name": &"snail_walk",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_islqh"]
+radius = 11.9572
+
+[node name="Snail" type="CharacterBody2D"]
+script = ExtResource("1_0jju1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -17)
+sprite_frames = SubResource("SpriteFrames_qqcxv")
+animation = &"snail_hide"
+autoplay = "snail_hide"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -13)
+scale = Vector2(1.1, 1.1)
+shape = SubResource("CircleShape2D_islqh")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

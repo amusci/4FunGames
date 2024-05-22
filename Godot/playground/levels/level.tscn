@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqmq6o666kkay"]
+[gd_scene load_steps=6 format=3 uid="uid://cqmq6o666kkay"]
 
 [ext_resource type="Texture2D" uid="uid://dnf0yon7jiqn3" path="res://tileset/Assets/Tiles.png" id="1_6saoy"]
 [ext_resource type="PackedScene" uid="uid://x350505773g2" path="res://player.tscn" id="2_3wg5p"]
+[ext_resource type="PackedScene" uid="uid://coljgaveop2o8" path="res://enemies/snail.tscn" id="3_5wt2n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6kxet"]
 texture = ExtResource("1_6saoy")
@@ -1434,3 +1435,15 @@ layer_0/tile_data = PackedInt32Array(131065, 0, 0, 196601, 0, 1, 262137, 0, 2, 3
 position = Vector2(-1, 0)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="Snail" parent="." node_paths=PackedStringArray("patrol_points") instance=ExtResource("3_5wt2n")]
+position = Vector2(379, 16)
+patrol_points = NodePath("PatrolPoints")
+
+[node name="PatrolPoints" type="Node2D" parent="Snail"]
+
+[node name="Point1" type="Marker2D" parent="Snail/PatrolPoints"]
+position = Vector2(-87, 2)
+
+[node name="Point2" type="Marker2D" parent="Snail/PatrolPoints"]
+position = Vector2(84, 0)

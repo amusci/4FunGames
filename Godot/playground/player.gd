@@ -23,7 +23,7 @@ func _ready():
 
 func _physics_process(delta):
 	# Function called every physics frame.
-	print("Current State: ", State.keys()[current_state])
+	# print("Current State: ", State.keys()[current_state])
 	player_falling(delta)
 	player_idle(delta)
 	player_run(delta)
@@ -53,7 +53,7 @@ func player_run(delta):
 	
 	# Function handles player run
 	var direction = Input.get_axis("move_left","move_right") # get left and right inputs
-	print(direction) # left = -1, right = 1, nothing = 0
+	#print(direction) # left = -1, right = 1, nothing = 0
 	if direction: # if there's left and right input
 		velocity.x = direction * SPEED # multiply speed to that direction
 	else: # if there's no input
