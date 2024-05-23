@@ -4,11 +4,11 @@ extends CharacterBody2D
 
 const GRAVITY : int = 1000
 # setting gravity constant
-const SPEED : int = 300
+const SPEED : int = 200
 # setting speed constant
-const JUMPHEIGHT : int = -500
+const JUMPHEIGHT : int = -350
 # setting jumpheight constant
-const JUMPSPEED : int = 300
+const JUMPSPEED : int = 100
 # setting jumpspeed constant
 
 enum State {idle,run,jump,slash} 

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Playground"
-run/main_scene="res://levels/level.tscn"
+run/main_scene="res://levels/pixel_platformer_test_level.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
@@ -21,7 +21,7 @@ window/size/viewport_width=640
 window/size/viewport_height=360
 window/size/window_width_override=1280
 window/size/window_height_override=780
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
 
 [dotnet]
 
@@ -66,8 +66,10 @@ slash={
 
 [layer_names]
 
-2d_physics/layer_1="Ground"
+2d_physics/layer_1="static"
 2d_physics/layer_2="Player"
+2d_physics/layer_3="dynamic"
+2d_physics/layer_4="danger"
 
 [rendering]
 

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0r7vt626s7mw"]
+
+[ext_resource type="Script" path="res://PixelPlatformer/Player/player.gd" id="1_c77b4"]
+[ext_resource type="Texture2D" uid="uid://bk2ug5qewty7s" path="res://art/pixel_platformer/Tilemap/tilemap-characters.png" id="1_x8vr3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_013lo"]
+radius = 24.0
+height = 48.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_c77b4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_x8vr3")
+hframes = 2
+region_enabled = true
+region_rect = Rect2(100, 0, 50, 24)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_013lo")
