@@ -1,21 +1,22 @@
 extends CharacterBody2D
 
-
+# Export variables
 @export var speed = 300.0
 @export var jump_force = -250.0
 @export var jump_time : float = 0.25
 @export var coyote_time : float = 0.075
 @export var gravity_multiplier : float = 3.0
 
+# Variables in-house
 var gravity = 980
 var is_jumping : bool = false
 var jump_timer : float = 0
 var coyote_timer : float = 0
 
+
+# On ready variables
 @onready var sprite_2d = $Sprite2D
 @onready var animation_player = $AnimationPlayer
-
-
 
 func _physics_process(delta):
 	# Function called once per physics frame
@@ -54,7 +55,6 @@ func player_jump(delta):
 	else:
 		is_jumping = false # End jumping if conditions are not met
 		jump_timer = 0 # Reset jump timer
-		
 
 func player_animations(direction : float) -> void:
 	# Function handles all player animations
