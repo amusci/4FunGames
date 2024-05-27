@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Playground"
-run/main_scene="res://levels/pixel_platformer_test_level.tscn"
+run/main_scene="res://levels/level_one.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+LevelManager="*res://Scripts/Managers/LevelManager.gd"
 
 [display]
 
