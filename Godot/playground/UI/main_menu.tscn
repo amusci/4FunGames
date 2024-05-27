@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckotovp8cwju4"]
+
+[ext_resource type="Texture2D" uid="uid://une7gipolxos" path="res://art/pixel_platformer/Tilemap/tilemap-backgrounds_packed.png" id="1_tnhbf"]
+
+[sub_resource type="SystemFont" id="SystemFont_rag50"]
+font_names = PackedStringArray("")
+oversampling = 4.5
+
+[sub_resource type="LabelSettings" id="LabelSettings_u5o68"]
+font = SubResource("SystemFont_rag50")
+font_size = 50
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_tnhbf")
+stretch_mode = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="BG"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BG/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = 32
+
+[node name="Zhu Zhu Run" type="Label" parent="BG/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "ZHU ZHU RUN"
+label_settings = SubResource("LabelSettings_u5o68")
+
+[node name="Play Button" type="Button" parent="BG/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
+text = "PLAY GAME"
+
+[node name="Settings Button" type="Button" parent="BG/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
+text = "SETTINGS"
+
+[node name="Quit Button" type="Button" parent="BG/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
+text = "QUIT GAME"
