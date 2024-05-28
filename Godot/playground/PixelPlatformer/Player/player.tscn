@@ -95,9 +95,8 @@ region_enabled = true
 region_rect = Rect2(100, 0, 50, 24)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(0.995504, 0.977616)
 drag_vertical_enabled = true
-drag_top_margin = 0.5
-drag_bottom_margin = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_013lo")

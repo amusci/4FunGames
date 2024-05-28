@@ -4,16 +4,16 @@ extends CharacterBody2D
 
 # Export variables
 @export var speed = 300.0
-@export var jump_force = -250.0
-@export var jump_time : float = 0.25
-@export var coyote_time : float = 0.075
+@export var jump_force = -290.0
+@export var jump_time : float = 0.2
+@export var coyote_time : float = 0.2
 @export var gravity_multiplier : float = 3.0
 
 # Variables in-house
 var gravity = 980
 var is_jumping : bool = false
 var jump_timer : float = 0
-var coyote_timer : float = 0
+var coyote_counter : float = 0
 var can_control : bool = true
 
 
@@ -45,22 +45,37 @@ func player_run(delta):
 	player_animations(direction) # call animations
 
 func player_jump(delta):
-	if not is_on_floor() and not is_jumping: # Apply gravity if not on the floor and not currently jumping
+	# Print debug information
+	print("is_on_floor: ", is_on_floor())
+	print("is_jumping: ", is_jumping)
+	print("coyote_counter: ", coyote_counter)
+	print("jump_timer: ", jump_timer)
+	
+	# This function handles player's ability to jump
+	
+	if is_on_floor(): # if we are on the floor
+		coyote_counter = coyote_time # set the counter to the time 
+	else: # if we aren't on the floor (falling)
 		velocity.y += gravity * gravity_multiplier * delta # Apply gravity with multiplier
-		coyote_timer += delta # Increment coyote timer
-	else:
-		coyote_timer = 0 # Reset coyote timer if on the floor or jumping
-	if Input.is_action_just_pressed("jump") and (is_on_floor() or coyote_timer < coyote_time): # Check for jump
-		velocity.y = jump_force # Apply jump force
-		is_jumping = true # Set jumping flag to true
-	elif Input.is_action_pressed("jump") and is_jumping:
+		coyote_counter -= delta # decrement counter
+
+	if coyote_counter >= 0 and Input.is_action_just_pressed("jump"): # if we arent jumping (since 0) and pressed jump
+		velocity.y = jump_force # apply jump force
+		is_jumping = true # switch jump flag to true
+	elif Input.is_action_pressed("jump") and is_jumping: # if we are holding jump while jumping
 		velocity.y = jump_force # Maintain jump force if jump button is held
 	if is_jumping and Input.is_action_pressed("jump") and jump_timer < jump_time: # Handle variable jump height based on button hold duration
 		jump_timer += delta # Increment jump timer
 	else:
 		is_jumping = false # End jumping if conditions are not met
 		jump_timer = 0 # Reset jump timer
+	
+	
 		
+	
+	
+	
+
 
 func handle_death() -> void:
 	# Function handles player death
@@ -74,7 +89,7 @@ func handle_death() -> void:
 	
 func reset_player() -> void:
 	# Function handles player reset
-	global_position = Vector2(0, 0)  # Set the global position to (0, 0)
+	global_position = Vector2(0,0)  # Set the global position to (0, 0)
 	visible = true
 	can_control = true
 	
