@@ -9,6 +9,7 @@ extends CharacterBody2D
 @export var coyote_time : float = 0.1
 @export var jump_buffer_time : float = 0.2
 @export var gravity_multiplier : float = 3.0
+@export var acceleration : float = 15
 
 # Variables in-house
 var gravity = 980
@@ -34,16 +35,16 @@ func _physics_process(delta):
 
 func player_run(delta):
 	var direction = Input.get_axis("move_left", "move_right") # Get left and right inputs
-	if direction: # If inputs exist
-		velocity.x = direction * speed # Add speed to that direction
-	else:
-		velocity.x = move_toward(velocity.x, 0, speed) # If no inputs, move towards 0 x velocity
-	
-	if direction != 0:
+
+	if direction != 0: # If inputs exist
 		if direction > 0: # If going right
-			sprite_2d.flip_h = true
+			velocity.x = min(velocity.x + acceleration, speed) # Whatver minimum from start acceleration to max speed
+			sprite_2d.flip_h = true 
 		else: # If going left
+			velocity.x = max(velocity.x - acceleration, -speed) # Whatever maximum (remember going left is negative)
 			sprite_2d.flip_h = false
+	else: # If no inputs
+		velocity.x = move_toward(velocity.x, 0, acceleration + 3) # MOVE TO A HALT
 	player_animations(direction) # call animations
 
 func player_jump(delta):
@@ -59,7 +60,7 @@ func player_jump(delta):
 		coyote_counter = coyote_time # set the counter to the time 
 	else: # if we aren't on the floor (falling)
 		velocity.y += gravity * gravity_multiplier * delta # Apply gravity with multiplier
-		coyote_counter -= delta # decrement counter
+		coyote_counter -= delta # decrement counterq
 		
 	if Input.is_action_just_pressed("jump"):
 		# This allows us to press jump slightly before we land for smooth controls
@@ -77,22 +78,13 @@ func player_jump(delta):
 	else:
 		is_jumping = false # End jumping if conditions are not met
 		jump_timer = 0 # Reset jump timer
-	
-	
-		
-	
-	
-	
-
 
 func handle_death() -> void:
 	# Function handles player death
 	print("Player Died!")
 	visible = false
 	can_control = false
-	
 	await get_tree().create_timer(1).timeout # Wait for timer to time out
-	
 	reset_player()
 	
 func reset_player() -> void:
