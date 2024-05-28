@@ -6,7 +6,8 @@ extends CharacterBody2D
 @export var speed = 300.0
 @export var jump_force = -290.0
 @export var jump_time : float = 0.2
-@export var coyote_time : float = 0.2
+@export var coyote_time : float = 0.1
+@export var jump_buffer_time : float = 0.2
 @export var gravity_multiplier : float = 3.0
 
 # Variables in-house
@@ -14,6 +15,7 @@ var gravity = 980
 var is_jumping : bool = false
 var jump_timer : float = 0
 var coyote_counter : float = 0
+var jump_buffer_counter : float = 0
 var can_control : bool = true
 
 
@@ -58,11 +60,17 @@ func player_jump(delta):
 	else: # if we aren't on the floor (falling)
 		velocity.y += gravity * gravity_multiplier * delta # Apply gravity with multiplier
 		coyote_counter -= delta # decrement counter
-
-	if coyote_counter >= 0 and Input.is_action_just_pressed("jump"): # if we arent jumping (since 0) and pressed jump
-		velocity.y = jump_force # apply jump force
-		is_jumping = true # switch jump flag to true
-	elif Input.is_action_pressed("jump") and is_jumping: # if we are holding jump while jumping
+		
+	if Input.is_action_just_pressed("jump"):
+		# This allows us to press jump slightly before we land for smooth controls
+		jump_buffer_counter = jump_buffer_time # We set the counter to the time we want our character to jump before landing
+	else:
+		jump_buffer_counter -= delta # Decrement the counter by delta since we aren't jumping we want it to go to 0
+	if coyote_counter >= 0 and jump_buffer_counter > 0: # if we arent jumping (since 0) and jumping (line 64) 
+		jump_buffer_counter = 0 # Instantly set counter back to 0
+		velocity.y = jump_force # Apply jump force
+		is_jumping = true # Switch jump flag to true
+	elif Input.is_action_pressed("jump") and is_jumping: # If we are holding jump while jumping
 		velocity.y = jump_force # Maintain jump force if jump button is held
 	if is_jumping and Input.is_action_pressed("jump") and jump_timer < jump_time: # Handle variable jump height based on button hold duration
 		jump_timer += delta # Increment jump timer
