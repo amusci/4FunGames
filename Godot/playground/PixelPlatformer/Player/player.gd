@@ -95,7 +95,7 @@ func player_jump(delta):
 
 func handle_death() -> void:
 	# Function handles player death
-	emit_signal("player_death")
+	emit_signal("player_death") # Emit death
 	visible = false
 	can_control = false
 	await get_tree().create_timer(1).timeout # Wait for timer to time out
@@ -103,7 +103,7 @@ func handle_death() -> void:
 	
 func reset_player() -> void:
 	# Function handles player reset
-	emit_signal("increment_death")
+	emit_signal("increment_death") # += 1 deaths
 	global_position = Vector2(0,0) # Set the global position to (0, 0)
 	visible = true
 	can_control = true
