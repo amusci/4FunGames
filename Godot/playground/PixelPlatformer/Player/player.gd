@@ -27,6 +27,7 @@ var facing_right : bool = false
 
 # Signals
 signal player_death
+signal increment_death
 
 func _physics_process(delta):
 	if not can_control: # If we cant control our player, return
@@ -102,6 +103,7 @@ func handle_death() -> void:
 	
 func reset_player() -> void:
 	# Function handles player reset
+	emit_signal("increment_death")
 	global_position = Vector2(0,0) # Set the global position to (0, 0)
 	visible = true
 	can_control = true
