@@ -5,7 +5,9 @@ extends Control
 
 func _on_play_button_pressed():
 	# Function loads the first level
+	TransitionScreen.transition()
 	LevelManager.load_level(1)
+	await TransitionScreen.on_transition_finished
 	deactivate() # Line 21
 
 

@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://w576ybnn6hpy"]
+
+[ext_resource type="Script" path="res://UI/timer.gd" id="1_6utbj"]
+
+[node name="Timer" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 65.0
+offset_bottom = 20.0
+script = ExtResource("1_6utbj")
+
+[node name="minutes" type="Label" parent="Panel"]
+layout_mode = 0
+offset_right = 23.0
+offset_bottom = 23.0
+text = "00:"
+
+[node name="seconds" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 23.0
+offset_right = 46.0
+offset_bottom = 23.0
+text = "00:"
+
+[node name="milli" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 46.0
+offset_right = 69.0
+offset_bottom = 23.0
+text = "00"

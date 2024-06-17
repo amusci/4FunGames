@@ -5,6 +5,7 @@
 
 [sub_resource type="SystemFont" id="SystemFont_rag50"]
 font_names = PackedStringArray("")
+subpixel_positioning = 0
 oversampling = 4.5
 
 [sub_resource type="LabelSettings" id="LabelSettings_u5o68"]

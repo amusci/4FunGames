@@ -2,8 +2,8 @@ class_name Player
 extends CharacterBody2D
 
 # Export variables
-@export var speed = 300.0
-@export var jump_force = -290.0
+@export var speed = 250.0
+@export var jump_force = -250.0
 @export var jump_time : float = 0.2
 @export var coyote_time : float = 0.1
 @export var jump_buffer_time : float = 0.2
@@ -24,6 +24,9 @@ var facing_right : bool = false
 # On ready variables
 @onready var sprite_2d = $Sprite2D
 @onready var animation_player = $AnimationPlayer
+
+# Signals
+signal player_death
 
 func _physics_process(delta):
 	if not can_control: # If we cant control our player, return
@@ -51,10 +54,10 @@ func player_run(delta):
 
 func player_jump(delta):
 	# Print debug information
-	print("is_on_floor: ", is_on_floor())
+	'''print("is_on_floor: ", is_on_floor())
 	print("is_jumping: ", is_jumping)
 	print("coyote_counter: ", coyote_counter)
-	print("jump_timer: ", jump_timer)
+	print("jump_timer: ", jump_timer)'''
 	
 	# This function handles player's ability to jump
 	if is_on_floor(): # If we are on the floor
@@ -91,10 +94,10 @@ func player_jump(delta):
 
 func handle_death() -> void:
 	# Function handles player death
-	print("Player Died!")
 	visible = false
 	can_control = false
 	await get_tree().create_timer(1).timeout # Wait for timer to time out
+	emit_signal("player_death")
 	reset_player()
 	
 func reset_player() -> void:
