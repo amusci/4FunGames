@@ -25,7 +25,7 @@ func start_timer(delta) -> void:
 		
 func reset_timer():
 	# When player dies, this function is called to reset the timer
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(.5).timeout
 	time = 0
 	minutes = 0
 	seconds = 0

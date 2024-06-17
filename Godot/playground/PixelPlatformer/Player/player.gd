@@ -96,9 +96,10 @@ func player_jump(delta):
 func handle_death() -> void:
 	# Function handles player death
 	emit_signal("player_death") # Emit death
+	TransitionScreen.transition()
 	visible = false
 	can_control = false
-	await get_tree().create_timer(1).timeout # Wait for timer to time out
+	await get_tree().create_timer(.5).timeout # Wait for timer to time out
 	reset_player()
 	
 func reset_player() -> void:

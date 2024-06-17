@@ -7,7 +7,7 @@ var deaths : int = 0
 
 
 func _process(delta):
-	# This gets the player node and connects the signal
+	# This gets the player node and connects the signal 
 	var playernode = get_tree().get_root().find_child("Player", true, false)
 	playernode.connect("increment_death", increment_deaths)
 
