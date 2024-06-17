@@ -20,6 +20,7 @@ func start_timer(delta) -> void:
 	$milli.text = "%02d" % msec
 		
 func reset_timer():
+	await get_tree().create_timer(1).timeout
 	time = 0
 	minutes = 0
 	seconds = 0
