@@ -570,14 +570,17 @@ texture_region_size = Vector2i(18, 18)
 13:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 13:7/0/physics_layer_0/angular_velocity = 0.0
 13:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 3.5, 4.25, 5.125, 0.375, 3.625, -7.625, -0.625)
+13:7/0/physics_layer_0/polygon_0/one_way = true
 14:7/0 = 0
 14:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 14:7/0/physics_layer_0/angular_velocity = 0.0
 14:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 3.375, 0.125, 6.125, -9, 3.5)
+14:7/0/physics_layer_0/polygon_0/one_way = true
 15:7/0 = 0
 15:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 15:7/0/physics_layer_0/angular_velocity = 0.0
 15:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, -3, -0.125, 4.875, -9, 3.625)
+15:7/0/physics_layer_0/polygon_0/one_way = true
 16:7/0 = 0
 16:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 16:7/0/physics_layer_0/angular_velocity = 0.0
@@ -860,7 +863,6 @@ debug_color = Color(1, 0.15152, 0.560619, 0.42)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainTileMap/KillZone3/KillZone"]
 position = Vector2(-1452.1, -56.7666)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ybor6")
 debug_color = Color(1, 0.15152, 0.560619, 0.42)
 
