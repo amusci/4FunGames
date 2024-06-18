@@ -4,23 +4,17 @@ extends Area2D
 
 var entered : bool = false # Set flag to false
 
-func _on_body_entered(body: Node): # If player enters collision radius
-	if body.is_in_group("Player"): # Ensure it's the player
-		entered = true # Flag set to true
-
-func _on_body_exited(body: Node): # If player leaves collision radius
-	if body.is_in_group("Player"): # Ensure it's the player
-		entered = false # Flag set to false
-
-func _physics_process(delta: float):
-	# This function will handle the scene switching
-	if entered:
-		TransitionScreen.transition()
-		await get_tree().create_timer(.5).timeout
-		print("Player entered the Area2D")
-		# Implement your scene switching logic here
+func _on_body_entered(body: Node) -> void:
+	if body.is_in_group("Player") and body.collected_coins >= 3:
+		print("Player can finish the level!")
+		# Implement your logic for finishing the level
 		if desired_scene != "":
+			TransitionScreen.transition()
+			await get_tree().create_timer(.5).timeout
 			print("Changing scene to: " + desired_scene)
 			get_tree().change_scene_to_file(desired_scene) # Change to desired scene
 		else:
 			print("Error: desired_scene is not set.")
+	else:
+		print("Player needs to collect more coins to finish the level.")
+

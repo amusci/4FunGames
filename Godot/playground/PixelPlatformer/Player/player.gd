@@ -11,6 +11,7 @@ extends CharacterBody2D
 @export var acceleration : float = 15
 @export var gravity_jump_increment : float = 15
 @export var gravity_clamp : float = 1300
+@export var amount_of_coins_in_level : int = 10
 
 # Variables in-house
 var gravity = 980
@@ -20,6 +21,10 @@ var coyote_counter : float = 0
 var jump_buffer_counter : float = 0
 var can_control : bool = true
 var facing_right : bool = false
+
+var collected_coins : int = 0
+
+var debug_flying : bool = false
 
 # On ready variables
 @onready var sprite_2d = $Sprite2D
@@ -35,6 +40,7 @@ func _physics_process(delta):
 	# Function called once per physics frame
 	player_jump(delta) # Line 33
 	player_run(delta) # Line 47
+	#player_debug(delta) # Comment out to test level easily
 	move_and_slide() # 
 
 func player_run(delta):
@@ -92,6 +98,16 @@ func player_jump(delta):
 	else: # If anything else is happening
 		is_jumping = false # Switch flag back to not jumping
 		jump_timer = 0 # Reset timer since we aren't jumping
+		
+func player_debug(delta):
+	if Input.is_action_pressed("debug_fly_up"):
+		gravity = 0
+		debug_flying = true
+		velocity.y -= 1000 * delta # Adjust the upward velocity
+	elif Input.is_action_pressed("debug_fly_down"):
+		debug_flying = false
+		gravity = 400
+		
 
 func handle_death() -> void:
 	# Function handles player death
@@ -108,6 +124,24 @@ func reset_player() -> void:
 	global_position = Vector2(0,0) # Set the global position to (0, 0)
 	visible = true
 	can_control = true
+	
+func increment_coin_count() -> void:
+	collected_coins += 1
+	print("Collected coins: ", collected_coins)
+
+	# Adjust the path to find the real_finish_flag node correctly
+	var real_finish_flag = get_tree().get_root().find_child("real_finish_flag", true, false)
+	if real_finish_flag:
+		if collected_coins >= amount_of_coins_in_level:
+			# Enable interaction with the real_finish_flag
+			real_finish_flag.set_process_input(true)
+		else:
+			# Disable interaction with the real_finish_flag
+			real_finish_flag.set_process_input(false)
+	else:
+		print("Error: 'real_finish_flag' not found in the scene tree.")
+		
+
 	
 func player_animations(direction : float) -> void:
 	# Function handles all player animations

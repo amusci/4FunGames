@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://8hqvucgxe26w"]
+
+[ext_resource type="Texture2D" uid="uid://dwcrmi21nye2d" path="res://art/pixel_platformer/Tiles/tile_0151.png" id="1_bmx2t"]
+[ext_resource type="Texture2D" uid="uid://bfl6qome4kjps" path="res://art/pixel_platformer/Tiles/tile_0152.png" id="2_fvk1y"]
+[ext_resource type="Script" path="res://interactables/coin.gd" id="3_taism"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qt4hx"]
+radius = 7.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vq3km"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bmx2t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fvk1y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="coin" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 4
+script = ExtResource("3_taism")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_qt4hx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+sprite_frames = SubResource("SpriteFrames_vq3km")
+autoplay = "default"
+frame_progress = 0.534688
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

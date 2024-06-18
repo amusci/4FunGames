@@ -1,9 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://mqq41jm7voip"]
+[gd_scene load_steps=6 format=3 uid="uid://mqq41jm7voip"]
 
 [ext_resource type="Script" path="res://interactables/finish_level_flag.gd" id="1_iy6vr"]
 [ext_resource type="Texture2D" uid="uid://b228kvwiokda4" path="res://art/pixel_platformer/Tiles/tile_0112.png" id="2_dqovx"]
+[ext_resource type="Texture2D" uid="uid://s41oio57dmmk" path="res://art/pixel_platformer/Tiles/tile_0111.png" id="2_q0uhs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_krkfq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a25ru"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_q0uhs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dqovx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="finish_flag" type="Node2D"]
 
@@ -11,14 +26,16 @@
 position = Vector2(-141.845, 54.985)
 collision_mask = 4
 script = ExtResource("1_iy6vr")
+desired_scene = "res://UI/main_scene.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_krkfq")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-position = Vector2(0, 1)
-texture = ExtResource("2_dqovx")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+sprite_frames = SubResource("SpriteFrames_a25ru")
+autoplay = "default"
+frame_progress = 0.793381
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
