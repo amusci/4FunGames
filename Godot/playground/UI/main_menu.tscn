@@ -53,7 +53,7 @@ theme_override_constants/separation = 32
 
 [node name="Zhu Zhu Run" type="Label" parent="BG/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "ZHU ZHU RUN"
+text = "SQUIGGY RUN"
 label_settings = SubResource("LabelSettings_u5o68")
 
 [node name="Play Button" type="Button" parent="BG/MarginContainer/VBoxContainer"]
