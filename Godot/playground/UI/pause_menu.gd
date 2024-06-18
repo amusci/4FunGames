@@ -1,31 +1,20 @@
 extends Control
 
-func _ready():
-	$AnimationPlayer.play("RESET")
 
-func resume():
-	get_tree().paused = false
-	$AnimationPlayer.play_backwards("blur")
-
-func pause():
-	get_tree().paused = true
-	$AnimationPlayer.play("blur")
-
-func testEsc():
-	if Input.is_action_just_pressed("pause") and !get_tree().paused:
-		pause()
-	elif Input.is_action_just_pressed("pause") and get_tree().paused:
-		resume()
-
+@onready var main = $"../../"
 
 func _on_resume_pressed():
-	resume()
+	main.pause_menu()
+
+func _on_level_select_pressed():
+	Engine.time_scale = 1
+	TransitionScreen.transition()
+	await get_tree().create_timer(.5).timeout
+	print("Changing scene to level select")
+	get_tree().change_scene_to_file("res://UI/level_select.tscn")
+	
+
 func _on_quit_pressed():
 	get_tree().quit()
 
-func _process(delta):
-	testEsc()
 
-
-func _on_options_pressed():
-	pass
