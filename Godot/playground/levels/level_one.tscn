@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dh82nrqfj0qo7"]
+[gd_scene load_steps=22 format=3 uid="uid://dh82nrqfj0qo7"]
 
 [ext_resource type="Script" path="res://Scripts/Classes/level.gd" id="1_cxrli"]
 [ext_resource type="Texture2D" uid="uid://2u4xmtka78uw" path="res://art/pixel_platformer/Tilemap/tilemap.png" id="2_uy3ne"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c2g5hav50kcu1" path="res://UI/coins_collected.tscn" id="8_fswe5"]
 [ext_resource type="PackedScene" uid="uid://mqq41jm7voip" path="res://interactables/finish_level_flag.tscn" id="8_mlk8t"]
 [ext_resource type="PackedScene" uid="uid://8hqvucgxe26w" path="res://interactables/coin.tscn" id="9_kogl1"]
+[ext_resource type="PackedScene" uid="uid://1f407wa2mcti" path="res://UI/pause_menu.tscn" id="11_1p46a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1lfxb"]
 texture = ExtResource("2_uy3ne")
@@ -956,3 +957,5 @@ transform = Transform2D(1, 0, 0, 1, 230, 5)
 [node name="Timer" parent="UI" instance=ExtResource("6_crnko")]
 offset = Vector2(5, 5)
 transform = Transform2D(1, 0, 0, 1, 5, 5)
+
+[node name="pause_menu" parent="UI" instance=ExtResource("11_1p46a")]
