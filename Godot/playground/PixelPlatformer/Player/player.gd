@@ -117,3 +117,5 @@ func player_animations(direction : float) -> void:
 		animation_player.play("jump") # Jumping animation
 	else: 
 		animation_player.play("idle") # Idle animation
+
+

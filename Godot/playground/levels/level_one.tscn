@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dh82nrqfj0qo7"]
+[gd_scene load_steps=19 format=3 uid="uid://dh82nrqfj0qo7"]
 
 [ext_resource type="Script" path="res://Scripts/Classes/level.gd" id="1_cxrli"]
 [ext_resource type="Texture2D" uid="uid://2u4xmtka78uw" path="res://art/pixel_platformer/Tilemap/tilemap.png" id="2_uy3ne"]
@@ -7,8 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d0r7vt626s7mw" path="res://PixelPlatformer/Player/player.tscn" id="4_gr2fj"]
 [ext_resource type="PackedScene" uid="uid://w576ybnn6hpy" path="res://UI/timer.tscn" id="6_crnko"]
 [ext_resource type="PackedScene" uid="uid://b2mddi750n2fb" path="res://UI/deaths.tscn" id="7_pug54"]
-[ext_resource type="Script" path="res://interactables/finish_level_flag.gd" id="8_gr7an"]
-[ext_resource type="Texture2D" uid="uid://b228kvwiokda4" path="res://art/pixel_platformer/Tiles/tile_0112.png" id="8_hvkjj"]
+[ext_resource type="PackedScene" uid="uid://mqq41jm7voip" path="res://interactables/finish_level_flag.tscn" id="8_mlk8t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1lfxb"]
 texture = ExtResource("2_uy3ne")
@@ -828,8 +827,6 @@ texture_region_size = Vector2i(24, 24)
 tile_size = Vector2i(24, 24)
 sources/0 = SubResource("TileSetAtlasSource_kua3j")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_atpk8"]
-
 [node name="pixel_platformer_test_level" type="Node2D"]
 script = ExtResource("1_cxrli")
 level_id = 1
@@ -914,17 +911,5 @@ position = Vector2(360, -82)
 offset = Vector2(80.64, 0)
 transform = Transform2D(1, 0, 0, 1, 80.64, 0)
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(-112, 24)
-script = ExtResource("8_gr7an")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-35, 31)
-shape = SubResource("RectangleShape2D_atpk8")
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-position = Vector2(-35, 32)
-texture = ExtResource("8_hvkjj")
-
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[node name="finish_flag" parent="." instance=ExtResource("8_mlk8t")]
+scale = Vector2(1.05755, 0.955947)
