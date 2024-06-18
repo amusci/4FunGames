@@ -50,11 +50,11 @@ func player_run(delta):
 	if direction != 0: # If inputs exist
 		if direction > 0: # If going right
 			velocity.x = min(velocity.x + acceleration, speed) # Whatever minimum from start acceleration to max speed
-			sprite_2d.flip_h = false # Make sure the sprite is not flipped
+			sprite_2d.flip_h = true # Make sure the sprite is not flipped
 			facing_right = true
 		else: # If going left
 			velocity.x = max(velocity.x - acceleration, -speed) # Whatever maximum (remember going left is negative)
-			sprite_2d.flip_h = true # Flip the sprite horizontally
+			sprite_2d.flip_h = false # Flip the sprite horizontally
 			facing_right = false
 	else: # If no inputs
 		velocity.x = move_toward(velocity.x, 0, acceleration + 3) # MOVE TO A HALT

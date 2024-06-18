@@ -8,8 +8,6 @@ func _on_play_button_pressed():
 	get_tree().change_scene_to_file("res://UI/level_select.tscn")
 	deactivate() # Line 21
 	
-
-
 func _on_settings_button_pressed():
 	# Function open settings
 	pass
