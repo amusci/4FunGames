@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dh82nrqfj0qo7"]
+[gd_scene load_steps=21 format=3 uid="uid://dh82nrqfj0qo7"]
 
 [ext_resource type="Script" path="res://Scripts/Classes/level.gd" id="1_cxrli"]
 [ext_resource type="Texture2D" uid="uid://2u4xmtka78uw" path="res://art/pixel_platformer/Tilemap/tilemap.png" id="2_uy3ne"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d0r7vt626s7mw" path="res://PixelPlatformer/Player/player.tscn" id="4_gr2fj"]
 [ext_resource type="PackedScene" uid="uid://w576ybnn6hpy" path="res://UI/timer.tscn" id="6_crnko"]
 [ext_resource type="PackedScene" uid="uid://b2mddi750n2fb" path="res://UI/deaths.tscn" id="7_pug54"]
+[ext_resource type="PackedScene" uid="uid://c2g5hav50kcu1" path="res://UI/coins_collected.tscn" id="8_fswe5"]
 [ext_resource type="PackedScene" uid="uid://mqq41jm7voip" path="res://interactables/finish_level_flag.tscn" id="8_mlk8t"]
 [ext_resource type="PackedScene" uid="uid://8hqvucgxe26w" path="res://interactables/coin.tscn" id="9_kogl1"]
 
@@ -906,12 +907,6 @@ layer_0/tile_data = PackedInt32Array(65532, 196608, 1, 65533, 196608, 1, 65534, 
 [node name="Player" parent="." instance=ExtResource("4_gr2fj")]
 position = Vector2(153, -58)
 
-[node name="Timer" parent="." instance=ExtResource("6_crnko")]
-
-[node name="Deaths" parent="." instance=ExtResource("7_pug54")]
-offset = Vector2(80.64, 0)
-transform = Transform2D(1, 0, 0, 1, 80.64, 0)
-
 [node name="real_finish_flag" parent="." instance=ExtResource("8_mlk8t")]
 position = Vector2(2719, -1229)
 scale = Vector2(1.05755, 0.955947)
@@ -919,7 +914,7 @@ scale = Vector2(1.05755, 0.955947)
 [node name="coins" type="Node2D" parent="."]
 
 [node name="coin" parent="coins" instance=ExtResource("9_kogl1")]
-position = Vector2(-906, -231)
+position = Vector2(-891, -259)
 
 [node name="coin10" parent="coins" instance=ExtResource("9_kogl1")]
 position = Vector2(1253, -1091)
@@ -947,3 +942,17 @@ position = Vector2(618, -10)
 
 [node name="coin3" parent="coins" instance=ExtResource("9_kogl1")]
 position = Vector2(-105, -487)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="coins_collected" parent="UI" instance=ExtResource("8_fswe5")]
+offset = Vector2(80.485, 5)
+transform = Transform2D(1, 0, 0, 1, 80.485, 5)
+
+[node name="Deaths" parent="UI" instance=ExtResource("7_pug54")]
+offset = Vector2(230, 5)
+transform = Transform2D(1, 0, 0, 1, 230, 5)
+
+[node name="Timer" parent="UI" instance=ExtResource("6_crnko")]
+offset = Vector2(5, 5)
+transform = Transform2D(1, 0, 0, 1, 5, 5)

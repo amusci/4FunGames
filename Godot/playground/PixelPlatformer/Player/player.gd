@@ -33,6 +33,7 @@ var debug_flying : bool = false
 # Signals
 signal player_death
 signal increment_death
+signal coin_collected
 
 func _physics_process(delta):
 	if not can_control: # If we cant control our player, return
@@ -127,6 +128,7 @@ func reset_player() -> void:
 	
 func increment_coin_count() -> void:
 	collected_coins += 1
+	emit_signal("coin_collected")
 	print("Collected coins: ", collected_coins)
 
 	# Adjust the path to find the real_finish_flag node correctly
