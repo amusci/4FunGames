@@ -1,14 +1,13 @@
 class_name MainMenu
 extends Control
 
-
-
 func _on_play_button_pressed():
-	# Function loads the first level
 	TransitionScreen.transition()
-	LevelManager.load_level(1)
-	await TransitionScreen.on_transition_finished
+	await get_tree().create_timer(.5).timeout
+	print("Changing scene to level select")
+	get_tree().change_scene_to_file("res://UI/level_select.tscn")
 	deactivate() # Line 21
+	
 
 
 func _on_settings_button_pressed():

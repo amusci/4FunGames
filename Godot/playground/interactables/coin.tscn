@@ -31,9 +31,10 @@ script = ExtResource("3_taism")
 shape = SubResource("CircleShape2D_qt4hx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+scale = Vector2(0.965794, 1)
 sprite_frames = SubResource("SpriteFrames_vq3km")
 autoplay = "default"
-frame_progress = 0.534688
+frame_progress = 0.723184
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

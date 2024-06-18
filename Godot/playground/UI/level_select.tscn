@@ -1,0 +1,79 @@
+[gd_scene load_steps=2 format=3 uid="uid://cibhiffatxe8h"]
+
+[ext_resource type="Script" path="res://UI/level_select.gd" id="1_aslab"]
+
+[node name="level_select" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aslab")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Level1" type="Button" parent="."]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 36.0
+offset_right = 176.0
+offset_bottom = 155.0
+text = "LEVEL ONE"
+
+[node name="Level2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 242.0
+offset_top = 36.0
+offset_right = 380.0
+offset_bottom = 155.0
+
+[node name="Level3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 438.0
+offset_top = 38.0
+offset_right = 576.0
+offset_bottom = 157.0
+
+[node name="Level4" type="Button" parent="."]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 182.0
+offset_right = 176.0
+offset_bottom = 301.0
+
+[node name="Level5" type="Button" parent="."]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 180.0
+offset_right = 387.0
+offset_bottom = 299.0
+
+[node name="Level6" type="Button" parent="."]
+layout_mode = 0
+offset_left = 446.0
+offset_top = 175.0
+offset_right = 584.0
+offset_bottom = 294.0
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 322.0
+offset_right = 174.0
+offset_bottom = 349.0
+text = "BACK"
+
+[connection signal="pressed" from="Level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="Level3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="Level4" to="." method="_on_level_4_pressed"]
+[connection signal="pressed" from="Level5" to="." method="_on_level_5_pressed"]
+[connection signal="pressed" from="Level6" to="." method="_on_level_6_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
