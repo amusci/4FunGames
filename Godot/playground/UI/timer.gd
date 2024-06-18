@@ -7,10 +7,12 @@ var minutes: int = 0
 var seconds: int = 0
 var msec: int = 0
 
-func _process(delta):
+func _ready() -> void:
 	# This function gets the player node, then connects the signal
 	var playernode = get_tree().get_root().find_child("Player", true, false)
 	playernode.connect("player_death", reset_timer)
+
+func _physics_process(delta):
 	start_timer(delta)
 	
 func start_timer(delta) -> void:
