@@ -6,5 +6,3 @@ extends Node
 func _ready():
 	# Example: Play music when the main scene is ready
 	audio_manager.play_music()
-	
-	
