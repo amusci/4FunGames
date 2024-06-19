@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Playground"
-run/main_scene="res://levels/level_one.tscn"
+run/main_scene="res://UI/main_scene.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 

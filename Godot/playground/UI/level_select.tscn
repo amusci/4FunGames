@@ -20,54 +20,67 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Level1" type="Button" parent="."]
-layout_mode = 0
-offset_left = 38.0
-offset_top = 36.0
-offset_right = 176.0
-offset_bottom = 155.0
+layout_mode = 1
+offset_left = 64.0
+offset_top = 16.0
+offset_right = 192.0
+offset_bottom = 144.0
+scale = Vector2(0.997725, 1)
 text = "LEVEL ONE"
 
 [node name="Level2" type="Button" parent="."]
-layout_mode = 0
-offset_left = 242.0
-offset_top = 36.0
-offset_right = 380.0
-offset_bottom = 155.0
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.0222222
+anchor_right = 0.0125
+anchor_bottom = 0.00277778
+offset_left = 256.0
+offset_top = 24.0
+offset_right = 376.0
+offset_bottom = 144.0
+scale = Vector2(1, 0.992558)
+text = "LEVEL TWO"
+metadata/_edit_use_anchors_ = true
 
 [node name="Level3" type="Button" parent="."]
 layout_mode = 0
-offset_left = 438.0
-offset_top = 38.0
+offset_left = 448.0
+offset_top = 16.0
 offset_right = 576.0
-offset_bottom = 157.0
+offset_bottom = 144.0
+text = "LEVEL THREE"
 
 [node name="Level4" type="Button" parent="."]
 layout_mode = 0
-offset_left = 38.0
-offset_top = 182.0
-offset_right = 176.0
-offset_bottom = 301.0
+offset_left = 64.0
+offset_top = 192.0
+offset_right = 193.0
+offset_bottom = 312.0
+scale = Vector2(0.995563, 1)
+text = "LEVEL FOUR"
 
 [node name="Level5" type="Button" parent="."]
 layout_mode = 0
-offset_left = 249.0
-offset_top = 180.0
-offset_right = 387.0
-offset_bottom = 299.0
+offset_left = 256.0
+offset_top = 192.0
+offset_right = 384.0
+offset_bottom = 312.0
+text = "LEVEL FIVE"
 
 [node name="Level6" type="Button" parent="."]
 layout_mode = 0
-offset_left = 446.0
-offset_top = 175.0
-offset_right = 584.0
-offset_bottom = 294.0
+offset_left = 448.0
+offset_top = 192.0
+offset_right = 576.0
+offset_bottom = 312.0
+text = "LEVEL SIX"
 
 [node name="Back" type="Button" parent="."]
 layout_mode = 0
-offset_left = 36.0
-offset_top = 322.0
-offset_right = 174.0
-offset_bottom = 349.0
+offset_left = 16.0
+offset_top = 320.0
+offset_right = 154.0
+offset_bottom = 351.0
 text = "BACK"
 
 [connection signal="pressed" from="Level1" to="." method="_on_level_1_pressed"]

@@ -34,7 +34,7 @@ shape = SubResource("CircleShape2D_qt4hx")
 scale = Vector2(0.965794, 1)
 sprite_frames = SubResource("SpriteFrames_vq3km")
 autoplay = "default"
-frame_progress = 0.723184
+frame_progress = 0.293078
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

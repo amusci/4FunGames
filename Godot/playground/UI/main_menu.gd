@@ -9,8 +9,11 @@ func _on_play_button_pressed():
 	deactivate() # Line 21
 	
 func _on_settings_button_pressed():
-	# Function open settings
-	pass
+	TransitionScreen.transition()
+	await get_tree().create_timer(.5).timeout
+	print("Changing scene to instructions")
+	get_tree().change_scene_to_file("res://UI/instructions.tscn")
+	deactivate() # Line 21
 
 
 func _on_quit_button_pressed():
