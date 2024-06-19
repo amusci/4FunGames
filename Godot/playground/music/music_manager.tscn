@@ -6,4 +6,4 @@
 script = ExtResource("1_fohdk")
 
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
-volume_db = -14.857
+volume_db = -32.191

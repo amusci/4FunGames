@@ -1,6 +1,6 @@
 extends Node
 
-const bg_music_path = "res://music/outoflevel/1332868_Sunken-Lights-SNES.mp3"
+const bg_music_path = "res://music/outoflevel/Freestyle.mp3"
 
 @onready var audio_player = $AudioPlayer
 
