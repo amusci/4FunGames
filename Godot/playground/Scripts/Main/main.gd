@@ -1,11 +1,10 @@
 extends Node
 
-@export var available_levels : Array[LevelData]
+# Autoload the AudioManager scene in Project Settings -> Autoload
+@onready var audio_manager = get_tree().get_root().find_child("MusicManager", true, false)
 
-@onready var node_2d = $Node2D
-
-func _ready() -> void:
-	LevelManager.main_scene = node_2d # set the current level to the Node2D
-	LevelManager.levels = available_levels # hold available levels
+func _ready():
+	# Example: Play music when the main scene is ready
+	audio_manager.play_music()
 	
-
+	

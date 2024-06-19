@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 LevelManager="*res://Scripts/Managers/LevelManager.gd"
 TransitionScreen="*res://Scripts/Animations/transition_screen.tscn"
+MusicManager="*res://music/music_manager.tscn"
+SFXManager="*res://music/sfx_manager.tscn"
 
 [display]
 
