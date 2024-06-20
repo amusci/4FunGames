@@ -6,6 +6,7 @@
 script = ExtResource("1_fohdk")
 
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
+scale = Vector2(1.02697, 0.984196)
 volume_db = -32.191
 max_distance = 999999.0
 panning_strength = 0.0
