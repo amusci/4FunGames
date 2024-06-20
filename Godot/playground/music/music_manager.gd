@@ -2,6 +2,8 @@ extends Node
 
 const bg_music_path = "res://music/outoflevel/Freestyle.mp3"
 
+var music_position = 0
+
 @onready var audio_player = $AudioPlayer
 
 
@@ -13,3 +15,7 @@ func play_music():
 
 func stop_music():
 	audio_player.stop()
+	
+
+		
+	
