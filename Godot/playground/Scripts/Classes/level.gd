@@ -2,7 +2,7 @@ class_name Level
 
 extends Node
 
-@onready var pausemenu = $UI/pause_menu
+@onready var pausemenu = $UI/PauseMenu
 @onready var level_one_music = get_tree().get_root().find_child("level_one_music", true, false)
 var paused : bool = false
 var music_position = 0
