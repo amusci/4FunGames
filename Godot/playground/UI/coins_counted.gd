@@ -1,5 +1,5 @@
 
-extends Panel
+extends PanelContainer
 
 var coins : int = 0 
 

@@ -95,6 +95,9 @@ region_rect = Rect2(100, 0, 50, 24)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(0.995504, 0.977616)
+zoom = Vector2(0.9, 0.9)
+limit_smoothed = true
+position_smoothing_speed = 2.5
 drag_vertical_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

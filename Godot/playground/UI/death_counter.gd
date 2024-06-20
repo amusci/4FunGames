@@ -1,4 +1,4 @@
-extends Panel
+extends PanelContainer
 
 var deaths : int = 0 
 

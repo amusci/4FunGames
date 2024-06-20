@@ -955,6 +955,7 @@ layer_0/tile_data = PackedInt32Array(65532, 196608, 1, 65533, 196608, 1, 65534, 
 
 [node name="Player" parent="." instance=ExtResource("4_gr2fj")]
 position = Vector2(110, 0)
+scale = Vector2(0.5, 0.502853)
 
 [node name="real_finish_flag" parent="." instance=ExtResource("8_mlk8t")]
 position = Vector2(2719, -1229)
