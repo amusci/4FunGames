@@ -4,14 +4,11 @@
 
 [node name="coins_collected" type="CanvasLayer"]
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="PanelContainer" parent="."]
 offset_right = 137.0
 offset_bottom = 16.0
 script = ExtResource("1_j5ys4")
 
 [node name="coins_collected" type="Label" parent="Panel"]
-layout_mode = 0
-offset_top = -4.0
-offset_right = 136.0
-offset_bottom = 19.0
+layout_mode = 2
 text = "Coins Collected: 0"
