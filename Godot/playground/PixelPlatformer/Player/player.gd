@@ -12,6 +12,8 @@ extends CharacterBody2D
 @export var gravity_jump_increment : float = 15
 @export var gravity_clamp : float = 1300
 @export var amount_of_coins_in_level : int = 10
+@export var wall_jump_pushoff : float = 300
+@export var wall_slide_gravity : float = 50
 
 # Variables in-house
 var gravity = 980
@@ -21,6 +23,7 @@ var coyote_counter : float = 0
 var jump_buffer_counter : float = 0
 var can_control : bool = true
 var facing_right : bool = false
+var is_wall_sliding : bool = false
 
 var collected_coins : int = 0
 
@@ -41,6 +44,7 @@ func _physics_process(delta):
 	# Function called once per physics frame
 	player_jump(delta) # Line 33
 	player_run(delta) # Line 47
+	wall_slide(delta) # Line 106
 	player_debug(delta) # Comment out to test level easily
 	move_and_slide() # 
 
@@ -99,6 +103,29 @@ func player_jump(delta):
 	else: # If anything else is happening
 		is_jumping = false # Switch flag back to not jumping
 		jump_timer = 0 # Reset timer since we aren't jumping
+	if is_on_wall() and Input.is_action_pressed("move_right") and Input.is_action_just_pressed("jump"): # If holding right and tap jump
+		gravity = 550 # Set gravity to a bit lighter for better feeling walljumps
+		velocity.y = jump_force * 1.5 # Jump up
+		velocity.x = -wall_jump_pushoff # Jump towards left
+	elif is_on_wall() and Input.is_action_pressed("move_left") and Input.is_action_just_pressed("jump"):
+		gravity = 550 # Set gravity to a bit lighter for better feeling walljumps
+		velocity.y = jump_force * 1.5 # Jump up
+		velocity.x = wall_jump_pushoff # Jump towards left
+		
+		
+func wall_slide(delta):
+	# This will handle all player movement against the wall
+	if is_on_wall() and not is_on_floor(): # If on wall in air
+		if Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"): # If we want to hug the wall
+			is_wall_sliding = true # Slide down
+		else:
+			is_wall_sliding = false # We aren't on a wall
+	else:
+		is_wall_sliding = false # We aren't on a wall
+	
+	if is_wall_sliding: # If we are on a wall
+		velocity.y += (wall_slide_gravity * delta) # Slide down
+		velocity.y = min(velocity.y, wall_slide_gravity) # Slide down
 		
 func player_debug(delta):
 	if Input.is_action_pressed("debug_fly_up"):
