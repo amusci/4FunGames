@@ -5,7 +5,7 @@ extends Area2D
 var entered : bool = false # Set flag to false
 
 func _on_body_entered(body: Node) -> void:
-	if body.is_in_group("Player") and body.collected_coins >= 3:
+	if body.is_in_group("Player") and body.collected_coins >= 10:
 		print("Player can finish the level!")
 		# Implement your logic for finishing the level
 		if desired_scene != "":
