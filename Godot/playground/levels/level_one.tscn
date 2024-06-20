@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Classes/level.gd" id="1_cxrli"]
 [ext_resource type="Texture2D" uid="uid://2u4xmtka78uw" path="res://art/pixel_platformer/Tilemap/tilemap.png" id="2_uy3ne"]
-[ext_resource type="PackedScene" path="res://UI/base_ui.tscn" id="3_cyicn"]
+[ext_resource type="PackedScene" uid="uid://32f5ka1e7pt1" path="res://UI/base_ui.tscn" id="3_cyicn"]
 [ext_resource type="PackedScene" uid="uid://by0flxkafsuuf" path="res://obstacles/kill_zone.tscn" id="3_koj2o"]
 [ext_resource type="Texture2D" uid="uid://rotlyyu0x83j" path="res://art/pixel_platformer/Tilemap/tilemap-backgrounds.png" id="3_lvqrx"]
 [ext_resource type="PackedScene" uid="uid://d0r7vt626s7mw" path="res://PixelPlatformer/Player/player.tscn" id="4_gr2fj"]
