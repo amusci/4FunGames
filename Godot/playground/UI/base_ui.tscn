@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dt4dlgn05cpd1"]
+
+[ext_resource type="PackedScene" uid="uid://w576ybnn6hpy" path="res://UI/timer.tscn" id="1_phsrs"]
+[ext_resource type="PackedScene" uid="uid://c2g5hav50kcu1" path="res://UI/coins_collected.tscn" id="2_gv7fe"]
+[ext_resource type="PackedScene" uid="uid://b2mddi750n2fb" path="res://UI/deaths.tscn" id="3_ei0t3"]
+
+[node name="base_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Timer" parent="." instance=ExtResource("1_phsrs")]
+offset = Vector2(250, 10)
+transform = Transform2D(1, 0, 0, 1, 250, 10)
+
+[node name="coins_collected" parent="." instance=ExtResource("2_gv7fe")]
+offset = Vector2(400, 10)
+transform = Transform2D(1, 0, 0, 1, 400, 10)
+
+[node name="Deaths" parent="." instance=ExtResource("3_ei0t3")]
+offset = Vector2(550, 10)
+transform = Transform2D(1, 0, 0, 1, 550, 10)

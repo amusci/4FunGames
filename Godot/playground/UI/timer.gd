@@ -1,4 +1,4 @@
-extends Panel
+extends PanelContainer
 
 # Initalizing time variables
 
@@ -10,7 +10,7 @@ var msec: int = 0
 func _ready() -> void:
 	# This function gets the player node, then connects the signal
 	var playernode = get_tree().get_root().find_child("Player", true, false)
-	playernode.connect("player_death", reset_timer)
+	# playernode.connect("player_death", reset_timer)
 
 func _physics_process(delta):
 	start_timer(delta)
@@ -18,20 +18,20 @@ func _physics_process(delta):
 func start_timer(delta) -> void:
 	# This function handles the timer
 	time += delta
-	msec = fmod(time, 1) * 100
-	seconds = fmod(time, 60)
-	minutes = fmod(time, 3600) / 60
-	$minutes.text = "%02d:" % minutes
-	$seconds.text = "%02d." % seconds
-	$milli.text = "%02d" % msec
+	msec = int(fmod(time * 1000, 1000))
+	seconds = int(fmod(time, 60))
+	minutes = int(fmod(time / 60, 60))
+	$timer.text = get_time_formatted()
 		
-func reset_timer():
+'''func reset_timer():
 	# When player dies, this function is called to reset the timer
 	await get_tree().create_timer(.5).timeout
 	time = 0
 	minutes = 0
 	seconds = 0
 	msec = 0
+	$timer.text = get_time_formatted()
+	'''
 	
 func get_time_formatted() -> String:
 	# Helper function

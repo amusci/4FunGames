@@ -4,30 +4,11 @@
 
 [node name="Timer" type="CanvasLayer"]
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="PanelContainer" parent="."]
 offset_right = 65.0
 offset_bottom = 16.0
 script = ExtResource("1_6utbj")
 
-[node name="minutes" type="Label" parent="Panel"]
+[node name="timer" type="Label" parent="Panel"]
 layout_mode = 2
-offset_top = -4.0
-offset_right = 65.0
-offset_bottom = 19.0
-text = "00:"
-
-[node name="seconds" type="Label" parent="Panel"]
-layout_mode = 2
-offset_left = 23.14
-offset_top = -4.0
-offset_right = 88.14
-offset_bottom = 19.0
-text = "00:"
-
-[node name="milli" type="Label" parent="Panel"]
-layout_mode = 2
-offset_left = 45.645
-offset_top = -4.0
-offset_right = 110.645
-offset_bottom = 19.0
-text = "00"
+text = "00:00:000"

@@ -1,13 +1,11 @@
-[gd_scene load_steps=25 format=3 uid="uid://dh82nrqfj0qo7"]
+[gd_scene load_steps=23 format=3 uid="uid://dh82nrqfj0qo7"]
 
 [ext_resource type="Script" path="res://Scripts/Classes/level.gd" id="1_cxrli"]
 [ext_resource type="Texture2D" uid="uid://2u4xmtka78uw" path="res://art/pixel_platformer/Tilemap/tilemap.png" id="2_uy3ne"]
+[ext_resource type="PackedScene" uid="uid://dt4dlgn05cpd1" path="res://UI/base_ui.tscn" id="3_cyicn"]
 [ext_resource type="PackedScene" uid="uid://by0flxkafsuuf" path="res://obstacles/kill_zone.tscn" id="3_koj2o"]
 [ext_resource type="Texture2D" uid="uid://rotlyyu0x83j" path="res://art/pixel_platformer/Tilemap/tilemap-backgrounds.png" id="3_lvqrx"]
 [ext_resource type="PackedScene" uid="uid://d0r7vt626s7mw" path="res://PixelPlatformer/Player/player.tscn" id="4_gr2fj"]
-[ext_resource type="PackedScene" uid="uid://w576ybnn6hpy" path="res://UI/timer.tscn" id="6_crnko"]
-[ext_resource type="PackedScene" uid="uid://b2mddi750n2fb" path="res://UI/deaths.tscn" id="7_pug54"]
-[ext_resource type="PackedScene" uid="uid://c2g5hav50kcu1" path="res://UI/coins_collected.tscn" id="8_fswe5"]
 [ext_resource type="PackedScene" uid="uid://mqq41jm7voip" path="res://interactables/finish_level_flag.tscn" id="8_mlk8t"]
 [ext_resource type="PackedScene" uid="uid://8hqvucgxe26w" path="res://interactables/coin.tscn" id="9_kogl1"]
 [ext_resource type="PackedScene" uid="uid://1f407wa2mcti" path="res://UI/pause_menu.tscn" id="11_1p46a"]
@@ -846,17 +844,7 @@ script = ExtResource("1_cxrli")
 size_flags_horizontal = 4
 metadata/_edit_use_anchors_ = true
 
-[node name="coins_collected" parent="UI" instance=ExtResource("8_fswe5")]
-offset = Vector2(80.485, 5)
-transform = Transform2D(1, 0, 0, 1, 80.485, 5)
-
-[node name="Deaths" parent="UI" instance=ExtResource("7_pug54")]
-offset = Vector2(230, 5)
-transform = Transform2D(1, 0, 0, 1, 230, 5)
-
-[node name="Timer" parent="UI" instance=ExtResource("6_crnko")]
-offset = Vector2(5, 5)
-transform = Transform2D(1, 0, 0, 1, 5, 5)
+[node name="base_ui" parent="UI" instance=ExtResource("3_cyicn")]
 
 [node name="MainTileMap" type="TileMap" parent="."]
 position = Vector2(0, -2)

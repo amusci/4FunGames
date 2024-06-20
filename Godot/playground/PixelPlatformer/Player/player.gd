@@ -31,7 +31,7 @@ var debug_flying : bool = false
 @onready var animation_player = $AnimationPlayer
 
 # Signals
-signal player_death
+
 signal increment_death
 signal coin_collected
 
@@ -112,7 +112,7 @@ func player_debug(delta):
 
 func handle_death() -> void:
 	# Function handles player death
-	emit_signal("player_death") # Emit death
+	# emit_signal("player_death") # Emit death
 	TransitionScreen.transition()
 	visible = false
 	can_control = false
