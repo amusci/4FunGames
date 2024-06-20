@@ -976,20 +976,20 @@ position = Vector2(-1841, -260)
 [node name="coin6" parent="coins" instance=ExtResource("9_kogl1")]
 position = Vector2(-1249, -112)
 
-[node name="coin7" parent="coins" instance=ExtResource("9_kogl1")]
-position = Vector2(-2491, -182)
-
 [node name="coin8" parent="coins" instance=ExtResource("9_kogl1")]
 position = Vector2(-257, -702)
+
+[node name="coin11" parent="coins" instance=ExtResource("9_kogl1")]
+position = Vector2(-1960, -466)
+
+[node name="coin12" parent="coins" instance=ExtResource("9_kogl1")]
+position = Vector2(-2629, -229)
 
 [node name="coin9" parent="coins" instance=ExtResource("9_kogl1")]
 position = Vector2(1539, -619)
 
 [node name="coin2" parent="coins" instance=ExtResource("9_kogl1")]
 position = Vector2(618, -10)
-
-[node name="coin3" parent="coins" instance=ExtResource("9_kogl1")]
-position = Vector2(-1959, -468)
 
 [node name="level_one_music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_ucmtr")

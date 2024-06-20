@@ -9,3 +9,5 @@ script = ExtResource("1_tp3rn")
 [node name="coinsfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_gn6sd")
 volume_db = -19.84
+max_distance = 999999.0
+panning_strength = 0.0

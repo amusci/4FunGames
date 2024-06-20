@@ -41,7 +41,7 @@ func _physics_process(delta):
 	# Function called once per physics frame
 	player_jump(delta) # Line 33
 	player_run(delta) # Line 47
-	#player_debug(delta) # Comment out to test level easily
+	player_debug(delta) # Comment out to test level easily
 	move_and_slide() # 
 
 func player_run(delta):
