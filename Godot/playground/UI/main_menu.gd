@@ -8,13 +8,21 @@ func _on_play_button_pressed():
 	get_tree().change_scene_to_file("res://UI/level_select.tscn")
 	deactivate() # Line 21
 	
-func _on_settings_button_pressed():
+	
+func _on_instructions_pressed():
 	TransitionScreen.transition()
 	await get_tree().create_timer(.5).timeout
 	print("Changing scene to instructions")
 	get_tree().change_scene_to_file("res://UI/instructions.tscn")
 	deactivate() # Line 21
 
+func _on_settings_pressed():
+	TransitionScreen.transition()
+	await get_tree().create_timer(.5).timeout
+	print("Changing scene to settings")
+	get_tree().change_scene_to_file("res://UI/settings.tscn")
+	deactivate() # Line 21
+	
 
 func _on_quit_button_pressed():
 	# This function when pressed quits the game
@@ -36,3 +44,7 @@ func activate() -> void:
 	set_physics_process(true)
 	set_process_unhandled_input(true)
 	set_process_input(true)
+
+
+
+
