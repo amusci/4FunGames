@@ -986,3 +986,4 @@ volume_db = -29.017
 autoplay = true
 max_distance = 1e+07
 panning_strength = 0.0
+bus = &"game_music"
