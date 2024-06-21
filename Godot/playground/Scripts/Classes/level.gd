@@ -24,7 +24,7 @@ func pause_menu():
 		pausemenu.show()
 		music_position = level_one_music.get_playback_position()
 		level_one_music.stop()
-		Engine.time_scale = 1
+		Engine.time_scale = 0
 		
 	paused = !paused
 
