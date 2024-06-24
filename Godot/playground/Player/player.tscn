@@ -8,13 +8,13 @@ script/source = "#class_name Player
 extends CharacterBody2D
 
 # Export variables
-@export var speed = 250.0
-@export var jump_force = -250.0
+@export var speed = 200.0
+@export var jump_force = -200.0
 @export var jump_time : float = 0.2
 @export var coyote_time : float = 0.1
 @export var jump_buffer_time : float = 0.2
 @export var gravity_multiplier : float = 3.0
-@export var acceleration : float = 15
+@export var acceleration : float = 20
 @export var gravity_jump_increment : float = 15
 @export var gravity_clamp : float = 1300
 @export var amount_of_coins_in_level : int = 10
@@ -22,7 +22,7 @@ extends CharacterBody2D
 @export var wall_slide_gravity : float = 50
 
 # Variables in-house
-var gravity = 980
+var gravity = 700
 var is_jumping : bool = false
 var jump_timer : float = 0
 var coyote_counter : float = 0
@@ -80,7 +80,7 @@ func player_jump(delta):
 	# This function handles player's ability to jump
 	if is_on_floor(): # If we are on the floor
 		coyote_counter = coyote_time
-		gravity = 800 # Make sure gravity starts at 980
+		gravity = 580 # Make sure gravity starts at 980
 	else: # If we are jumping/falling
 		gravity += gravity_jump_increment * delta # Increase gravity to give player weight
 		# Clamp gravity after incrementing
@@ -190,9 +190,6 @@ func player_animations(direction : float) -> void:
 
 "
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_cnt1w"]
-radius = 8.5
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_bhu5a"]
 atlas = ExtResource("1_d1a7i")
 region = Rect2(0, 0, 16, 16)
@@ -269,6 +266,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_cnt1w"]
+radius = 6.875
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 20
 collision_mask = 13
@@ -276,12 +276,8 @@ script = SubResource("GDScript_fdles")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(0.995504, 0.977616)
+zoom = Vector2(1.1, 1.1)
 drag_vertical_enabled = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0)
-scale = Vector2(0.8, 1)
-shape = SubResource("CircleShape2D_cnt1w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -289,3 +285,8 @@ sprite_frames = SubResource("SpriteFrames_isias")
 animation = &"player_idle"
 autoplay = "player_idle"
 frame_progress = 0.82026
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+scale = Vector2(0.8, 1)
+shape = SubResource("CircleShape2D_cnt1w")
