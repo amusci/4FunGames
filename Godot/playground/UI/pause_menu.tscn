@@ -82,6 +82,7 @@ scale = Vector2(0.2, 0.2)
 text = "SFX VOLUME"
 
 [node name="master_slider" type="HSlider" parent="."]
+layout_mode = 0
 offset_left = 61.0
 offset_top = 33.0
 offset_right = 192.0
