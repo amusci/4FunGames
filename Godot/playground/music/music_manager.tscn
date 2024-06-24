@@ -10,3 +10,4 @@ scale = Vector2(1.02697, 0.984196)
 volume_db = -32.191
 max_distance = 999999.0
 panning_strength = 0.0
+bus = &"game_music"

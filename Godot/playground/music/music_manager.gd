@@ -16,6 +16,3 @@ func play_music():
 func stop_music():
 	audio_player.stop()
 	
-
-		
-	
