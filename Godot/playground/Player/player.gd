@@ -30,7 +30,7 @@ var collected_coins : int = 0
 var debug_flying : bool = false
 
 # On ready variables
-@onready var sprite_2d = $Sprite2D
+@onready var sprite_2d = $AnimatedSprite2D
 @onready var animation_player = $AnimationPlayer
 
 # Signals
@@ -54,11 +54,11 @@ func player_run(delta):
 	if direction != 0: # If inputs exist
 		if direction > 0: # If going right
 			velocity.x = min(velocity.x + acceleration, speed) # Whatever minimum from start acceleration to max speed
-			sprite_2d.flip_h = true # Make sure the sprite is not flipped
+			sprite_2d.flip_h = false # Make sure the sprite is not flipped
 			facing_right = true
 		else: # If going left
 			velocity.x = max(velocity.x - acceleration, -speed) # Whatever maximum (remember going left is negative)
-			sprite_2d.flip_h = false # Flip the sprite horizontally
+			sprite_2d.flip_h = true # Flip the sprite horizontally
 			facing_right = false
 	else: # If no inputs
 		velocity.x = move_toward(velocity.x, 0, acceleration + 3) # MOVE TO A HALT
@@ -175,10 +175,10 @@ func increment_coin_count() -> void:
 func player_animations(direction : float) -> void:
 	# Function handles all player animations
 	if abs(direction) > 0.1 and is_on_floor(): # If we are moving and on floor
-		animation_player.play("running") # Running animation
+		sprite_2d.play("player_walk") # Running animation
 	elif not is_on_floor(): # If we are in the air
-		animation_player.play("jump") # Jumping animation
+		sprite_2d.play("jump") # Jumping animation
 	else: 
-		animation_player.play("idle") # Idle animation
+		sprite_2d.play("player_idle") # Idle animation
 
 

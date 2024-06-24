@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxjqxovnpvxje"]
+
+[ext_resource type="Texture2D" uid="uid://byrttha8a5gu7" path="res://art/homegrown/animated vines-Sheet.png" id="1_lwyq1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roj47"]
+atlas = ExtResource("1_lwyq1")
+region = Rect2(34, 0, 17, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlg6j"]
+atlas = ExtResource("1_lwyq1")
+region = Rect2(85, 0, 17, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s8xlp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roj47")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlg6j")
+}],
+"loop": true,
+"name": &"swinging3",
+"speed": 1.0
+}]
+
+[node name="vine2" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_s8xlp")
+animation = &"swinging3"
+autoplay = "swinging3"
+frame_progress = 0.580253
