@@ -4,7 +4,7 @@ extends Node
 
 @onready var pausemenu = $UI/PauseMenu
 @onready var level_music = get_tree().get_root().find_child("level_music", true, false)
-var paused : bool = false
+var paused : bool = true
 var music_position = 0
 
 func _ready() -> void:

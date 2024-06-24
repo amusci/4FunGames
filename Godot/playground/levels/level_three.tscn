@@ -307,7 +307,6 @@ sources/0 = SubResource("TileSetAtlasSource_fxg16")
 [node name="LevelThree" type="Node2D"]
 
 [node name="Tile Map Background" type="TileMap" parent="."]
-scale = Vector2(1, 0.984211)
 tile_set = SubResource("TileSet_qm6io")
 format = 2
 layer_0/name = "Background"

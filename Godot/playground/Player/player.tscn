@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://d0r7vt626s7mw"]
+[gd_scene load_steps=15 format=3 uid="uid://d0r7vt626s7mw"]
 
 [ext_resource type="Texture2D" uid="uid://b23kh1sivfxb4" path="res://art/homegrown/bunny idle front n back.png" id="1_d1a7i"]
+[ext_resource type="Texture2D" uid="uid://ck3h8rn7johdi" path="res://art/homegrown/bunny walk-Sheet.png" id="2_t8j2t"]
 
 [sub_resource type="GDScript" id="GDScript_fdles"]
 script/source = "#class_name Player
@@ -35,7 +36,7 @@ var collected_coins : int = 0
 var debug_flying : bool = false
 
 # On ready variables
-@onready var sprite_2d = $Sprite2D
+@onready var sprite_2d = $AnimatedSprite2D
 @onready var animation_player = $AnimationPlayer
 
 # Signals
@@ -59,11 +60,11 @@ func player_run(delta):
 	if direction != 0: # If inputs exist
 		if direction > 0: # If going right
 			velocity.x = min(velocity.x + acceleration, speed) # Whatever minimum from start acceleration to max speed
-			sprite_2d.flip_h = true # Make sure the sprite is not flipped
+			sprite_2d.flip_h = false # Make sure the sprite is not flipped
 			facing_right = true
 		else: # If going left
 			velocity.x = max(velocity.x - acceleration, -speed) # Whatever maximum (remember going left is negative)
-			sprite_2d.flip_h = false # Flip the sprite horizontally
+			sprite_2d.flip_h = true # Flip the sprite horizontally
 			facing_right = false
 	else: # If no inputs
 		velocity.x = move_toward(velocity.x, 0, acceleration + 3) # MOVE TO A HALT
@@ -180,91 +181,112 @@ func increment_coin_count() -> void:
 func player_animations(direction : float) -> void:
 	# Function handles all player animations
 	if abs(direction) > 0.1 and is_on_floor(): # If we are moving and on floor
-		animation_player.play(\"running\") # Running animation
+		sprite_2d.play(\"player_walk\") # Running animation
 	elif not is_on_floor(): # If we are in the air
-		animation_player.play(\"jump\") # Jumping animation
+		sprite_2d.play(\"jump\") # Jumping animation
 	else: 
-		animation_player.play(\"idle\") # Idle animation
+		sprite_2d.play(\"player_idle\") # Idle animation
 
 
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ruxl1"]
-size = Vector2(32, 32)
+size = Vector2(12.6831, 14.8637)
 
-[sub_resource type="Animation" id="Animation_g0fvo"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [Vector2i(0, 0)]
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhu5a"]
+atlas = ExtResource("1_d1a7i")
+region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="Animation" id="Animation_egp78"]
-resource_name = "idle"
-length = 0.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:frame_coords")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [Vector2i(0, 0), Vector2i(1, 0)]
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dyi4"]
+atlas = ExtResource("1_d1a7i")
+region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_j2o44"]
-_data = {
-"RESET": SubResource("Animation_g0fvo"),
-"idle": SubResource("Animation_egp78")
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wxjh"]
+atlas = ExtResource("2_t8j2t")
+region = Rect2(0, 0, 19, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdbbu"]
+atlas = ExtResource("2_t8j2t")
+region = Rect2(19, 0, 19, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1au5h"]
+atlas = ExtResource("2_t8j2t")
+region = Rect2(38, 0, 19, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_keygy"]
+atlas = ExtResource("2_t8j2t")
+region = Rect2(57, 0, 19, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5pwa"]
+atlas = ExtResource("2_t8j2t")
+region = Rect2(76, 0, 19, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xeia7"]
+atlas = ExtResource("2_t8j2t")
+region = Rect2(95, 0, 19, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lwe6"]
+atlas = ExtResource("2_t8j2t")
+region = Rect2(114, 0, 19, 19)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_isias"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhu5a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7dyi4")
+}],
+"loop": true,
+"name": &"player_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5wxjh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdbbu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1au5h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_keygy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5pwa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xeia7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lwe6")
+}],
+"loop": true,
+"name": &"player_walk",
+"speed": 5.0
+}]
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
-scale = Vector2(0.5, 0.5)
 collision_layer = 20
 collision_mask = 13
 script = SubResource("GDScript_fdles")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(0.995504, 0.977616)
-zoom = Vector2(0.9, 0.9)
 drag_vertical_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.283799, 0.333333)
+scale = Vector2(0.990897, 1.0316)
 shape = SubResource("RectangleShape2D_ruxl1")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_j2o44")
-}
-autoplay = "idle"
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1, 0)
-scale = Vector2(2, 2)
-texture = ExtResource("1_d1a7i")
-hframes = 2
-vframes = 2
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.966258, 0.984784)
+sprite_frames = SubResource("SpriteFrames_isias")
+animation = &"player_idle"
+autoplay = "player_idle"
+frame_progress = 0.82026
