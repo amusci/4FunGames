@@ -976,7 +976,7 @@ position = Vector2(1539, -619)
 [node name="coin2" parent="coins" instance=ExtResource("9_kogl1")]
 position = Vector2(618, -10)
 
-[node name="level_one_music" type="AudioStreamPlayer2D" parent="."]
+[node name="level_music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_ucmtr")
 volume_db = -29.017
 autoplay = true

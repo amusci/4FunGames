@@ -3,28 +3,28 @@ class_name Level
 extends Node
 
 @onready var pausemenu = $UI/PauseMenu
-@onready var level_one_music = get_tree().get_root().find_child("level_one_music", true, false)
+@onready var level_music = get_tree().get_root().find_child("level_music", true, false)
 var paused : bool = false
 var music_position = 0
 
 func _ready() -> void:
-	MusicManager.stop_music()
-	pausemenu.hide()
+	MusicManager.stop_music() # Start with main menu music off
+	pausemenu.hide() # Pause menu hidden
 	
 func _process(delta):
-	if Input.is_action_just_pressed("pause"):
-		pause_menu()
+	if Input.is_action_just_pressed("pause"): # If we press Esc
+		pause_menu() # Pause the game and show pause menu
 		
 func pause_menu():
-	if paused:
-		pausemenu.hide()
-		Engine.time_scale = 1
-		level_one_music.play(music_position)
+	if paused: # If we want to pause
+		pausemenu.show() # Show the pause menu 
+		music_position = level_music.get_playback_position() # Get the level's music position
+		level_music.stop() # Stop the music
+		Engine.time_scale = 0 # Stop the Game Engine
 	else:
-		pausemenu.show()
-		music_position = level_one_music.get_playback_position()
-		level_one_music.stop()
-		Engine.time_scale = 0
+		pausemenu.hide() # If we aren't paused, hide the pause menu
+		Engine.time_scale = 1 # Start Game Engine
+		level_music.play(music_position) # Play music from the paused position
 		
-	paused = !paused
+	paused = !paused # BOOLEAN BOOLEAN BOOLEAN BOOLEAN BOOLEAN BOOLEAN BOOLEAN BOOLEAN BOOLEAN BOOLEAN 
 
