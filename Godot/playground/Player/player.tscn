@@ -190,8 +190,8 @@ func player_animations(direction : float) -> void:
 
 "
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ruxl1"]
-size = Vector2(12.6831, 14.8637)
+[sub_resource type="CircleShape2D" id="CircleShape2D_cnt1w"]
+radius = 8.5
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bhu5a"]
 atlas = ExtResource("1_d1a7i")
@@ -279,13 +279,12 @@ scale = Vector2(0.995504, 0.977616)
 drag_vertical_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.283799, 0.333333)
-scale = Vector2(0.990897, 1.0316)
-shape = SubResource("RectangleShape2D_ruxl1")
+position = Vector2(-0.5, 0)
+scale = Vector2(0.8, 1)
+shape = SubResource("CircleShape2D_cnt1w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(0.966258, 0.984784)
 sprite_frames = SubResource("SpriteFrames_isias")
 animation = &"player_idle"
 autoplay = "player_idle"
