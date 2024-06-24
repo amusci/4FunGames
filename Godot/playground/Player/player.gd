@@ -2,13 +2,13 @@ class_name Player
 extends CharacterBody2D
 
 # Export variables
-@export var speed = 250.0
-@export var jump_force = -250.0
+@export var speed = 200.0
+@export var jump_force = -150.0
 @export var jump_time : float = 0.2
 @export var coyote_time : float = 0.1
 @export var jump_buffer_time : float = 0.2
 @export var gravity_multiplier : float = 3.0
-@export var acceleration : float = 15
+@export var acceleration : float = 12
 @export var gravity_jump_increment : float = 15
 @export var gravity_clamp : float = 1300
 @export var amount_of_coins_in_level : int = 10
@@ -16,7 +16,7 @@ extends CharacterBody2D
 @export var wall_slide_gravity : float = 50
 
 # Variables in-house
-var gravity = 980
+var gravity = 700
 var is_jumping : bool = false
 var jump_timer : float = 0
 var coyote_counter : float = 0
@@ -74,7 +74,7 @@ func player_jump(delta):
 	# This function handles player's ability to jump
 	if is_on_floor(): # If we are on the floor
 		coyote_counter = coyote_time
-		gravity = 800 # Make sure gravity starts at 980
+		gravity = 580 # Make sure gravity starts at 980
 	else: # If we are jumping/falling
 		gravity += gravity_jump_increment * delta # Increase gravity to give player weight
 		# Clamp gravity after incrementing

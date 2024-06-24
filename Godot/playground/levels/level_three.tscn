@@ -1,7 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://b0y4242ymfyga"]
+[gd_scene load_steps=15 format=3 uid="uid://b0y4242ymfyga"]
 
 [ext_resource type="Script" path="res://Scripts/Classes/level.gd" id="1_hn0y1"]
-[ext_resource type="Script" path="res://Player/player.gd" id="1_ndq2d"]
 [ext_resource type="Texture2D" uid="uid://une7gipolxos" path="res://art/pixel_platformer/Tilemap/tilemap-backgrounds_packed.png" id="1_tts6c"]
 [ext_resource type="Texture2D" uid="uid://cu13jcadubf7b" path="res://art/pixel_platformer/Tilemap/josie tileset.png" id="1_uodef"]
 [ext_resource type="PackedScene" uid="uid://d0r7vt626s7mw" path="res://Player/player.tscn" id="4_ep5fr"]
@@ -330,7 +329,6 @@ layer_1/tile_data = PackedInt32Array(262136, 1048576, 2, 327672, 1048576, 2, 393
 
 [node name="Player" parent="." instance=ExtResource("4_ep5fr")]
 position = Vector2(13, -46)
-script = ExtResource("1_ndq2d")
 
 [node name="vine1" parent="." instance=ExtResource("6_iaiui")]
 position = Vector2(88, -72)
