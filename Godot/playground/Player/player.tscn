@@ -1,6 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d0r7vt626s7mw"]
-
-[ext_resource type="Texture2D" uid="uid://bk2ug5qewty7s" path="res://art/pixel_platformer/Tilemap/tilemap-characters.png" id="1_x8vr3"]
+[gd_scene load_steps=8 format=3 uid="uid://d0r7vt626s7mw"]
 
 [sub_resource type="GDScript" id="GDScript_fdles"]
 script/source = "#class_name Player
@@ -275,7 +273,6 @@ script = SubResource("GDScript_fdles")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2.15816, 1.90891)
-texture = ExtResource("1_x8vr3")
 hframes = 2
 region_enabled = true
 region_rect = Rect2(100, 0, 50, 24)
