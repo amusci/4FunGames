@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 # Export variables
 @export var speed = 200.0
-@export var jump_force = -150.0
+@export var jump_force = -200.0
 @export var jump_time : float = 0.2
 @export var coyote_time : float = 0.1
 @export var jump_buffer_time : float = 0.2
