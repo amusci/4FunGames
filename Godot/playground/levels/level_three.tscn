@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b0y4242ymfyga"]
+[gd_scene load_steps=18 format=3 uid="uid://b0y4242ymfyga"]
 
 [ext_resource type="Script" path="res://Scripts/Classes/level.gd" id="1_hn0y1"]
 [ext_resource type="Texture2D" uid="uid://une7gipolxos" path="res://art/pixel_platformer/Tilemap/tilemap-backgrounds_packed.png" id="1_tts6c"]
@@ -311,6 +311,18 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 7
 sources/0 = SubResource("TileSetAtlasSource_fxg16")
 
+[sub_resource type="Curve2D" id="Curve2D_ua5up"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 288, -56, 0, 0, 0, 0, 392, -56)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_j81bo"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 72, 0, 0, 0, 0, 0, 72, -104)
+}
+point_count = 2
+
 [node name="LevelThree" type="Node2D"]
 script = ExtResource("1_hn0y1")
 
@@ -357,4 +369,10 @@ position = Vector2(120, -72)
 [node name="moving_platforms" type="Node" parent="."]
 
 [node name="m_p1" parent="moving_platforms" instance=ExtResource("11_sd48r")]
+curve = SubResource("Curve2D_ua5up")
+loop = false
+
+[node name="left_to_right_platform" parent="moving_platforms" instance=ExtResource("11_sd48r")]
+position = Vector2(-72, -24)
+curve = SubResource("Curve2D_j81bo")
 loop = false
