@@ -1,16 +1,28 @@
-[gd_scene load_steps=15 format=3 uid="uid://d0r7vt626s7mw"]
+[gd_scene load_steps=18 format=3 uid="uid://d0r7vt626s7mw"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_7aps8"]
-[ext_resource type="Texture2D" uid="uid://b23kh1sivfxb4" path="res://art/homegrown/bunny idle front n back.png" id="1_d1a7i"]
+[ext_resource type="Texture2D" uid="uid://dcb1sxwejbcrk" path="res://art/homegrown/bunny-Sheet-Sheet.png" id="2_dajsq"]
 [ext_resource type="Texture2D" uid="uid://ck3h8rn7johdi" path="res://art/homegrown/bunny walk-Sheet.png" id="2_t8j2t"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bhu5a"]
-atlas = ExtResource("1_d1a7i")
-region = Rect2(0, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjjf6"]
+atlas = ExtResource("2_dajsq")
+region = Rect2(0, 0, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7dyi4"]
-atlas = ExtResource("1_d1a7i")
-region = Rect2(16, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_drqxx"]
+atlas = ExtResource("2_dajsq")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hd67v"]
+atlas = ExtResource("2_dajsq")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dj055"]
+atlas = ExtResource("2_dajsq")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_522iq"]
+atlas = ExtResource("2_dajsq")
+region = Rect2(64, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5wxjh"]
 atlas = ExtResource("2_t8j2t")
@@ -44,10 +56,19 @@ region = Rect2(114, 0, 19, 19)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bhu5a")
+"texture": SubResource("AtlasTexture_kjjf6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7dyi4")
+"texture": SubResource("AtlasTexture_drqxx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hd67v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dj055")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_522iq")
 }],
 "loop": true,
 "name": &"player_idle",
@@ -80,8 +101,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_cnt1w"]
-radius = 6.875
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_25p6j"]
+size = Vector2(13.75, 11.7187)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 20
@@ -98,9 +119,9 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_isias")
 animation = &"player_idle"
 autoplay = "player_idle"
-frame_progress = 0.82026
+frame_progress = 0.481123
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0)
-scale = Vector2(0.8, 1)
-shape = SubResource("CircleShape2D_cnt1w")
+position = Vector2(0.5, 1)
+scale = Vector2(0.793503, 2.56)
+shape = SubResource("RectangleShape2D_25p6j")
