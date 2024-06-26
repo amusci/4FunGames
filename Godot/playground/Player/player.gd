@@ -183,7 +183,7 @@ func player_animations(direction : float) -> void:
 	if abs(direction) > 0.1 and is_on_floor(): # If we are moving and on floor
 		sprite_2d.play("player_walk") # Running animation
 	elif not is_on_floor(): # If we are in the air
-		sprite_2d.play("jump") # Jumping animation
+		sprite_2d.play("player_jump") # Jumping animation
 	else: 
 		sprite_2d.play("player_idle") # Idle animation
 
