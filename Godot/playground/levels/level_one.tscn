@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dh82nrqfj0qo7"]
+[gd_scene load_steps=23 format=3 uid="uid://dh82nrqfj0qo7"]
 
 [ext_resource type="Script" path="res://Scripts/Classes/level.gd" id="1_cxrli"]
 [ext_resource type="Texture2D" uid="uid://2u4xmtka78uw" path="res://art/pixel_platformer/Tilemap/tilemap.png" id="2_uy3ne"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://8hqvucgxe26w" path="res://interactables/coin.tscn" id="9_kogl1"]
 [ext_resource type="PackedScene" uid="uid://d0r7vt626s7mw" path="res://Player/player.tscn" id="10_babun"]
 [ext_resource type="PackedScene" uid="uid://1f407wa2mcti" path="res://UI/pause_menu.tscn" id="11_1p46a"]
-[ext_resource type="PackedScene" uid="uid://cyffsrgr533sn" path="res://decoration/vines.tscn" id="11_qd8rx"]
 [ext_resource type="AudioStream" uid="uid://c1dbt84xo4yl3" path="res://music/level1.mp3" id="12_ucmtr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1lfxb"]
@@ -985,8 +984,3 @@ panning_strength = 0.0
 bus = &"game_music"
 
 [node name="Player" parent="." instance=ExtResource("10_babun")]
-
-[node name="Vines" type="Node2D" parent="."]
-
-[node name="vine1" parent="Vines" instance=ExtResource("11_qd8rx")]
-position = Vector2(208, -64)
