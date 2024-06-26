@@ -58,6 +58,7 @@ remote_path = NodePath("../../AnimatableBody2D")
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
 position = Vector2(369.791, -56)
 rotation = 3.14159
+collision_mask = 21
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
 position = Vector2(0, -8)
@@ -65,7 +66,9 @@ texture = ExtResource("1_l7tww")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
 position = Vector2(0, -1.5)
+rotation = 3.14159
 shape = SubResource("RectangleShape2D_xbhyx")
+one_way_collision = true
 one_way_collision_margin = 36.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

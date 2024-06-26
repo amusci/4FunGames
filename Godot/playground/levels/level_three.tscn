@@ -374,7 +374,7 @@ curve = SubResource("Curve2D_ua5up")
 loop = false
 
 [node name="left_to_right_platform" parent="moving_platforms" instance=ExtResource("11_sd48r")]
-position = Vector2(-71, -66)
+position = Vector2(-71, -25.77)
 curve = SubResource("Curve2D_j81bo")
 loop = false
 
