@@ -127,6 +127,12 @@ func wall_slide(delta):
 		velocity.y += (wall_slide_gravity * delta) # Slide down
 		velocity.y = min(velocity.y, wall_slide_gravity) # Slide down
 		
+		
+func spring(power: float, direction: float) -> void:
+	# This function handles spring.gd
+	velocity.x = velocity.x - cos(direction) * power # Get the horizontal component of force
+	velocity.y = -sin(direction) * power # Get the vertical component of force
+		
 func player_debug(delta):
 	if Input.is_action_pressed("debug_fly_up"):
 		gravity = 0

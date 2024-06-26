@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://doc4fbpv5m6y"]
+
+[ext_resource type="Texture2D" uid="uid://bu7udfkqmfwxu" path="res://art/pixel_platformer/Tiles/tile_0107.png" id="1_mjieo"]
+[ext_resource type="Script" path="res://interactables/spring.gd" id="1_vyur5"]
+[ext_resource type="Texture2D" uid="uid://pwvvksdxsphk" path="res://art/pixel_platformer/Tiles/tile_0108.png" id="2_snpvs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wiuai"]
+size = Vector2(20, 11)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aq5gv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_mjieo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_snpvs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_mjieo")
+}],
+"loop": false,
+"name": &"boing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_mjieo")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="spring" type="Area2D"]
+collision_mask = 20
+script = ExtResource("1_vyur5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_wiuai")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_aq5gv")
+animation = &"idle"
+autoplay = "idle"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
