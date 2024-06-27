@@ -182,7 +182,7 @@ func handle_death() -> void:
 func reset_player() -> void:
 	# Function handles player reset
 	emit_signal("increment_death") # += 1 deaths
-	global_position = Vector2(110,0) # Set the global position to (0, 0)
+	global_position = Vector2(0,-110) # Set the global position to (0, 0), need to make this able to be different each level
 	visible = true
 	can_control = true
 	
