@@ -14,6 +14,9 @@ extends CharacterBody2D
 @export var amount_of_coins_in_level : int = 10
 @export var wall_jump_pushoff : float = 300
 @export var wall_slide_gravity : float = 50
+@export var climbing_speed : float = 50
+@export var climbing_jump_x : float = 50
+@export var climbing_jump_force : float = -100
 
 # Variables in-house
 var gravity = 700
@@ -24,14 +27,14 @@ var jump_buffer_counter : float = 0
 var can_control : bool = true
 var facing_right : bool = false
 var is_wall_sliding : bool = false
-
 var collected_coins : int = 0
-
 var debug_flying : bool = false
+var climbing : bool = false
 
 # On ready variables
 @onready var sprite_2d = $AnimatedSprite2D
 @onready var animation_player = $AnimationPlayer
+
 
 # Signals
 
@@ -42,10 +45,13 @@ func _physics_process(delta):
 	if not can_control: # If we cant control our player, return
 		return
 	# Function called once per physics frame
+	
 	player_jump(delta) # Line 33
 	player_run(delta) # Line 47
 	wall_slide(delta) # Line 106
-	player_debug(delta) # Comment out to test level easily
+	#player_debug(delta) # Comment out to test level easily
+	player_climb(delta)
+	print(climbing)
 	move_and_slide() # 
 
 func player_run(delta):
@@ -132,6 +138,21 @@ func spring(power: float, direction: float) -> void:
 	# This function handles spring.gd
 	velocity.x = velocity.x - cos(direction) * power # Get the horizontal component of force
 	velocity.y = -sin(direction) * power # Get the vertical component of force
+	
+func player_climb(delta):
+	if climbing == true:
+		if Input.is_action_pressed("jump"):
+			climbing == false
+			if facing_right == true:
+				velocity.y = jump_force
+				velocity.x += climbing_jump_x
+			else:
+				velocity.y = jump_force
+				velocity.x -= climbing_jump_x
+		elif Input.is_action_pressed("player_ascend"):
+			velocity.y = -climbing_speed
+		elif Input.is_action_pressed("player_descend"):
+			velocity.y = climbing_speed
 		
 func player_debug(delta):
 	if Input.is_action_pressed("debug_fly_up"):
@@ -182,8 +203,13 @@ func player_animations(direction : float) -> void:
 	# Function handles all player animations
 	if abs(direction) > 0.1 and is_on_floor(): # If we are moving and on floor
 		sprite_2d.play("player_walk") # Running animation
-	elif not is_on_floor(): # If we are in the air
+	elif not is_on_floor() && not climbing: # If we are in the air
 		sprite_2d.play("player_jump") # Jumping animation
+	elif climbing && Input.is_action_pressed("player_ascend"):
+		sprite_2d.play("player_climb")
+	elif climbing && Input.is_action_pressed("player_descend"):
+		sprite_2d.play_backwards("player_climb")
+		
 	else: 
 		sprite_2d.play("player_idle") # Idle animation
 

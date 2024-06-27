@@ -1,9 +1,30 @@
-[gd_scene load_steps=30 format=3 uid="uid://d0r7vt626s7mw"]
+[gd_scene load_steps=36 format=3 uid="uid://d0r7vt626s7mw"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_7aps8"]
 [ext_resource type="Texture2D" uid="uid://dcb1sxwejbcrk" path="res://art/homegrown/bunny-Sheet-Sheet.png" id="2_dajsq"]
+[ext_resource type="Texture2D" uid="uid://6wo00edc83b2" path="res://art/homegrown/bunny climb ladder-Sheet.png" id="2_jdyuh"]
 [ext_resource type="Texture2D" uid="uid://dmj3mwyjsoivc" path="res://art/homegrown/NEW_BUNNY_RUN-Sheet.png" id="3_2n45j"]
 [ext_resource type="Texture2D" uid="uid://cpdejmeg6exee" path="res://art/homegrown/bunny jump-Sheet.png" id="3_rv8x0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27gba"]
+atlas = ExtResource("2_jdyuh")
+region = Rect2(0, 8, 16, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kqey"]
+atlas = ExtResource("2_jdyuh")
+region = Rect2(16, 8, 16, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhxgq"]
+atlas = ExtResource("2_jdyuh")
+region = Rect2(32, 8, 16, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2xqe"]
+atlas = ExtResource("2_jdyuh")
+region = Rect2(48, 8, 16, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njsdj"]
+atlas = ExtResource("2_jdyuh")
+region = Rect2(64, 8, 16, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kjjf6"]
 atlas = ExtResource("2_dajsq")
@@ -99,6 +120,26 @@ region = Rect2(112, 0, 16, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_isias"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27gba")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kqey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dhxgq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2xqe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_njsdj")
+}],
+"loop": false,
+"name": &"player_climb",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kjjf6")
@@ -202,9 +243,9 @@ drag_vertical_enabled = true
 texture_filter = 1
 scale = Vector2(1, 1.00692)
 sprite_frames = SubResource("SpriteFrames_isias")
-animation = &"player_jump"
+animation = &"player_climb"
 autoplay = "player_idle"
-frame_progress = 0.298846
+frame_progress = 0.700494
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 1)
