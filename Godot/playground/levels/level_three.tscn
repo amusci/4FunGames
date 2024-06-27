@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b0y4242ymfyga"]
+[gd_scene load_steps=21 format=3 uid="uid://b0y4242ymfyga"]
 
 [ext_resource type="Script" path="res://Scripts/Classes/level.gd" id="1_hn0y1"]
 [ext_resource type="Texture2D" uid="uid://une7gipolxos" path="res://art/pixel_platformer/Tilemap/tilemap-backgrounds_packed.png" id="1_tts6c"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dgnbxk4sqeciq" path="res://platforms/moving_platform.tscn" id="11_sd48r"]
 [ext_resource type="PackedScene" path="res://interactables/spring.tscn" id="12_263pu"]
 [ext_resource type="PackedScene" uid="uid://ba3bplnmtnu7a" path="res://interactables/ladder.tscn" id="13_fy26i"]
+[ext_resource type="PackedScene" uid="uid://3x22w68bgrw0" path="res://obstacles/cannon.tscn" id="14_ve2e5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w283i"]
 texture = ExtResource("1_tts6c")
@@ -389,3 +390,6 @@ position = Vector2(49, -8)
 [node name="ladder" parent="." instance=ExtResource("13_fy26i")]
 position = Vector2(704, -20)
 scale = Vector2(2, 1)
+
+[node name="main" parent="." instance=ExtResource("14_ve2e5")]
+position = Vector2(103, -136)
