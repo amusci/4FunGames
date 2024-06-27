@@ -8,8 +8,6 @@ var spawnRot : float
 var zdex : int
 
 
-
-
 func _ready():
 	global_position = spawnPos
 	global_rotation = spawnRot
@@ -26,3 +24,7 @@ func _on_area_2d_body_entered(body):
 		queue_free()
 		body.handle_death()
 
+
+
+func _on_projectile_life_time_timeout():
+	queue_free()

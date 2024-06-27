@@ -26,5 +26,11 @@ collision_mask = 20
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_snmii")
 
+[node name="projectile_life_time" type="Timer" parent="."]
+process_callback = 0
+wait_time = 3.0
+autostart = true
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="projectile_life_time" to="." method="_on_projectile_life_time_timeout"]
