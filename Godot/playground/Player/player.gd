@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 # Export variables
 @export var speed = 200.0
-@export var jump_force = -200.0
+@export var jump_force = -230.0
 @export var jump_time : float = 0.2
 @export var coyote_time : float = 0.1
 @export var jump_buffer_time : float = 0.2
@@ -16,7 +16,7 @@ extends CharacterBody2D
 @export var wall_slide_gravity : float = 50
 @export var climbing_speed : float = 50
 @export var climbing_jump_x : float = 50
-@export var climbing_jump_force : float = -100
+@export var climbing_jump_force : float = -300
 
 # Variables in-house
 var gravity = 700
@@ -110,11 +110,11 @@ func player_jump(delta):
 		is_jumping = false # Switch flag back to not jumping
 		jump_timer = 0 # Reset timer since we aren't jumping
 	if is_on_wall() and Input.is_action_pressed("move_right") and Input.is_action_just_pressed("jump"): # If holding right and tap jump
-		gravity = 550 # Set gravity to a bit lighter for better feeling walljumps
+		gravity = 425 # Set gravity to a bit lighter for better feeling walljumps
 		velocity.y = jump_force * 1.5 # Jump up
 		velocity.x = -wall_jump_pushoff # Jump towards left
 	elif is_on_wall() and Input.is_action_pressed("move_left") and Input.is_action_just_pressed("jump"):
-		gravity = 550 # Set gravity to a bit lighter for better feeling walljumps
+		gravity = 425 # Set gravity to a bit lighter for better feeling walljumps
 		velocity.y = jump_force * 1.5 # Jump up
 		velocity.x = wall_jump_pushoff # Jump towards left
 		
@@ -144,10 +144,10 @@ func player_climb(delta):
 		if Input.is_action_pressed("jump"):
 			climbing == false
 			if facing_right == true:
-				velocity.y = jump_force
+				velocity.y = climbing_jump_force
 				velocity.x += climbing_jump_x
 			else:
-				velocity.y = jump_force
+				velocity.y = climbing_jump_force
 				velocity.x -= climbing_jump_x
 		elif Input.is_action_pressed("player_ascend"):
 			velocity.y = -climbing_speed
