@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://cq64o4x1t34w"]
+
+[ext_resource type="Texture2D" uid="uid://ckk004i6gxj7s" path="res://art/homegrown/Tile Set for Carrot Projectile.png" id="1_4o1eb"]
+[ext_resource type="PackedScene" uid="uid://by0flxkafsuuf" path="res://obstacles/kill_zone.tscn" id="2_cw7tj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcjif"]
+atlas = ExtResource("1_4o1eb")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gnnth"]
+atlas = ExtResource("1_4o1eb")
+region = Rect2(32, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsojq"]
+atlas = ExtResource("1_4o1eb")
+region = Rect2(0, 16, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1mlr"]
+atlas = ExtResource("1_4o1eb")
+region = Rect2(32, 16, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o5mu5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcjif")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gnnth")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsojq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1mlr")
+}],
+"loop": true,
+"name": &"spinning",
+"speed": 12.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4l3iv"]
+radius = 4.0
+height = 24.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_o5mu5")
+animation = &"spinning"
+autoplay = "spinning"
+frame = 1
+frame_progress = 0.61666
+
+[node name="KillZone" parent="." instance=ExtResource("2_cw7tj")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
+position = Vector2(3, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_4l3iv")
+debug_color = Color(1, 0, 0, 0.196078)

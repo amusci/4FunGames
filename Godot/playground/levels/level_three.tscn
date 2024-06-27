@@ -11,7 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://c1dbt84xo4yl3" path="res://music/level1.mp3" id="10_yyr17"]
 [ext_resource type="PackedScene" uid="uid://bv8vdu3bk6jp" path="res://decoration/vine3.tscn" id="11_qy2vd"]
 [ext_resource type="PackedScene" uid="uid://dgnbxk4sqeciq" path="res://platforms/moving_platform.tscn" id="11_sd48r"]
-[ext_resource type="PackedScene" uid="uid://doc4fbpv5m6y" path="res://interactables/spring.tscn" id="12_263pu"]
+[ext_resource type="PackedScene" path="res://interactables/spring.tscn" id="12_263pu"]
 [ext_resource type="PackedScene" uid="uid://ba3bplnmtnu7a" path="res://interactables/ladder.tscn" id="13_fy26i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w283i"]
