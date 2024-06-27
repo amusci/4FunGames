@@ -2,9 +2,9 @@ class_name Player
 extends CharacterBody2D
 
 # Export variables
-@export var speed = 200.0
+@export var speed = 180.0
 @export var jump_force = -230.0
-@export var jump_time : float = 0.2
+@export var jump_time : float = 0.21
 @export var coyote_time : float = 0.1
 @export var jump_buffer_time : float = 0.2
 @export var gravity_multiplier : float = 3.0
@@ -12,7 +12,7 @@ extends CharacterBody2D
 @export var gravity_jump_increment : float = 15
 @export var gravity_clamp : float = 1300
 @export var amount_of_coins_in_level : int = 10
-@export var wall_jump_pushoff : float = 300
+@export var wall_jump_pushoff : float = 400
 @export var wall_slide_gravity : float = 50
 @export var climbing_speed : float = 50
 @export var climbing_jump_x : float = 50
@@ -51,7 +51,6 @@ func _physics_process(delta):
 	wall_slide(delta) # Line 106
 	#player_debug(delta) # Comment out to test level easily
 	player_climb(delta)
-	print(climbing)
 	move_and_slide() # 
 
 func player_run(delta):
@@ -138,6 +137,8 @@ func spring(power: float, direction: float) -> void:
 	# This function handles spring.gd
 	velocity.x = velocity.x - cos(direction) * power # Get the horizontal component of force
 	velocity.y = -sin(direction) * power # Get the vertical component of force
+
+	
 	
 func player_climb(delta):
 	if climbing == true:
@@ -153,6 +154,11 @@ func player_climb(delta):
 			velocity.y = -climbing_speed
 		elif Input.is_action_pressed("player_descend"):
 			velocity.y = climbing_speed
+		elif Input.is_anything_pressed() == false:
+			velocity.y = 0
+	
+			
+			
 		
 func player_debug(delta):
 	if Input.is_action_pressed("debug_fly_up"):
