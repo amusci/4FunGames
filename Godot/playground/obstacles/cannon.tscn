@@ -1,12 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://3x22w68bgrw0"]
 
-[ext_resource type="Script" path="res://Cannon.gd" id="1_4gcq6"]
+[ext_resource type="Script" path="res://obstacles/Cannon.gd" id="1_4gcq6"]
 [ext_resource type="Texture2D" uid="uid://b0vm6my6vtu2j" path="res://art/homegrown/Cannon Temp.png" id="2_xcxxl"]
 
-[node name="main" type="Node2D"]
-
-[node name="Cannon" type="Node2D" parent="."]
+[node name="Cannon" type="Node2D"]
 script = ExtResource("1_4gcq6")
 
-[node name="Sprite2D" type="Sprite2D" parent="Cannon"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_xcxxl")

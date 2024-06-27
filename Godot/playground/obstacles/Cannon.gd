@@ -1,6 +1,9 @@
 extends Node2D
 
-@onready var main = get_tree().get_root().get_node("main")
+
+@export var level: String
+
+@onready var main = get_tree().get_root().get_node(level)
 @onready var projectile = load("res://obstacles/egg_projectile.tscn")
 
 func _ready():
