@@ -90,7 +90,7 @@ func player_jump(delta):
 		coyote_counter -= delta # Decrement Counter
 	
 	if is_jumping and velocity.y < .5: # If we are at the apex
-		gravity -= 25 * delta # Remove a bit of gravity to have a floaty apex
+		gravity -= 600 * delta # Remove a bit of gravity to have a floaty apex
 	
 	if Input.is_action_just_pressed("jump"): # This will allow us to jump just before landing
 		jump_buffer_counter = jump_buffer_time # We set the counter to the time we want our character to jump before landing
