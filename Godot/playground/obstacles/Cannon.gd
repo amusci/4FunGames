@@ -3,7 +3,7 @@ extends Node2D
 
 @export var level: String
 @export var rotation_of_cannon: int = 45
-@export var direction_of_bullet : int = 0
+@export var direction_of_bullet : int = 45
 
 @onready var main = get_tree().get_root().get_node(level)
 @onready var projectile = load("res://obstacles/egg_projectile.tscn")

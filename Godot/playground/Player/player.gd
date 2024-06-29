@@ -12,10 +12,10 @@ extends CharacterBody2D
 @export var gravity_jump_increment : float = 15
 @export var gravity_clamp : float = 1300
 @export var amount_of_coins_in_level : int = 10
-@export var wall_jump_pushoff : float = 400
-@export var wall_slide_gravity : float = 50
+@export var wall_jump_pushoff : float = 200
+@export var wall_slide_gravity : float = 75
 @export var climbing_speed : float = 50
-@export var climbing_jump_x : float = 50
+@export var climbing_jump_x : float = 60
 @export var climbing_jump_force : float = -300
 
 # Variables in-house
@@ -109,11 +109,11 @@ func player_jump(delta):
 		is_jumping = false # Switch flag back to not jumping
 		jump_timer = 0 # Reset timer since we aren't jumping
 	if is_on_wall() and Input.is_action_pressed("move_right") and Input.is_action_just_pressed("jump"): # If holding right and tap jump
-		gravity = 425 # Set gravity to a bit lighter for better feeling walljumps
+		gravity = 350 # Set gravity to a bit lighter for better feeling walljumps
 		velocity.y = jump_force * 1.5 # Jump up
 		velocity.x = -wall_jump_pushoff # Jump towards left
 	elif is_on_wall() and Input.is_action_pressed("move_left") and Input.is_action_just_pressed("jump"):
-		gravity = 425 # Set gravity to a bit lighter for better feeling walljumps
+		gravity = 350 # Set gravity to a bit lighter for better feeling walljumps
 		velocity.y = jump_force * 1.5 # Jump up
 		velocity.x = wall_jump_pushoff # Jump towards left
 		

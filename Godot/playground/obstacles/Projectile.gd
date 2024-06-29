@@ -15,6 +15,9 @@ func _ready():
 	
 func _physics_process(delta):
 	velocity = Vector2(0, -SPEED).rotated(dir)
+	#var collision = move_and_collide(velocity * delta)
+	#if collision:
+		#velocity = velocity.bounce(collision.normal)
 	move_and_slide()
 
 
