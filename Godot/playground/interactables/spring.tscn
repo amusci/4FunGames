@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://doc4fbpv5m6y"]
+[gd_scene load_steps=6 format=3 uid="uid://sip0sxjyf5p3"]
 
 [ext_resource type="Texture2D" uid="uid://bu7udfkqmfwxu" path="res://art/pixel_platformer/Tiles/tile_0107.png" id="1_mjieo"]
 [ext_resource type="Script" path="res://interactables/spring.gd" id="1_vyur5"]
