@@ -12,7 +12,7 @@ extends CharacterBody2D
 @export var gravity_jump_increment : float = 15
 @export var gravity_clamp : float = 1300
 @export var amount_of_coins_in_level : int = 10
-@export var wall_jump_pushoff : float = 200
+@export var wall_jump_pushoff : float = 240
 @export var wall_slide_gravity : float = 75
 @export var climbing_speed : float = 50
 @export var climbing_jump_x : float = 60

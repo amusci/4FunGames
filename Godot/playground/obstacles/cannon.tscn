@@ -11,6 +11,7 @@ texture = ExtResource("2_xcxxl")
 
 [node name="shoot_speed" type="Timer" parent="."]
 process_callback = 0
+wait_time = 2.0
 autostart = true
 
 [connection signal="timeout" from="shoot_speed" to="." method="_on_shoot_speed_timeout"]
