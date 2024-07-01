@@ -588,12 +588,15 @@ texture = ExtResource("4_rb3wj")
 0:13/0 = 0
 0:13/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:13/0/physics_layer_0/angular_velocity = 0.0
+0:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, -2)
 1:13/0 = 0
 1:13/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:13/0/physics_layer_0/angular_velocity = 0.0
+1:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:13/0 = 0
 2:13/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:13/0/physics_layer_0/angular_velocity = 0.0
+2:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2, -8, 8)
 9:13/0 = 0
 9:13/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:13/0/physics_layer_0/angular_velocity = 0.0
@@ -653,8 +656,8 @@ bus = &"game_music"
 [node name="Tester Springs" type="Node" parent="."]
 
 [node name="spring" parent="Tester Springs" instance=ExtResource("12_263pu")]
-position = Vector2(-1898, -183)
-rotation = 0.785398
+position = Vector2(-1895, -168)
+rotation = 1.5708
 scale = Vector2(1, 1)
 
 [node name="spring2" parent="Tester Springs" instance=ExtResource("12_263pu")]
@@ -667,4 +670,24 @@ position = Vector2(-2277, -121)
 position = Vector2(-2013, -171)
 
 [node name="spring5" parent="Tester Springs" instance=ExtResource("12_263pu")]
-position = Vector2(-2013, -275)
+position = Vector2(-2013, -327)
+
+[node name="spring6" parent="Tester Springs" instance=ExtResource("12_263pu")]
+position = Vector2(-2013, -459)
+rotation = 0.785398
+
+[node name="spring7" parent="Tester Springs" instance=ExtResource("12_263pu")]
+position = Vector2(-1590, -175)
+rotation = 0.785398
+
+[node name="spring8" parent="Tester Springs" instance=ExtResource("12_263pu")]
+position = Vector2(-1481, -251)
+rotation = -0.785398
+
+[node name="spring9" parent="Tester Springs" instance=ExtResource("12_263pu")]
+position = Vector2(-1590, -342)
+rotation = 0.785398
+
+[node name="spring10" parent="Tester Springs" instance=ExtResource("12_263pu")]
+position = Vector2(-1483, -416)
+rotation = -0.785398
