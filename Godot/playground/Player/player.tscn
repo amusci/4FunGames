@@ -1,30 +1,9 @@
-[gd_scene load_steps=36 format=3 uid="uid://d0r7vt626s7mw"]
+[gd_scene load_steps=30 format=3 uid="uid://d0r7vt626s7mw"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_7aps8"]
 [ext_resource type="Texture2D" uid="uid://dcb1sxwejbcrk" path="res://art/homegrown/bunny-Sheet-Sheet.png" id="2_dajsq"]
-[ext_resource type="Texture2D" uid="uid://6wo00edc83b2" path="res://art/homegrown/bunny climb ladder-Sheet.png" id="2_jdyuh"]
 [ext_resource type="Texture2D" uid="uid://dmj3mwyjsoivc" path="res://art/homegrown/NEW_BUNNY_RUN-Sheet.png" id="3_2n45j"]
 [ext_resource type="Texture2D" uid="uid://cpdejmeg6exee" path="res://art/homegrown/bunny jump-Sheet.png" id="3_rv8x0"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_27gba"]
-atlas = ExtResource("2_jdyuh")
-region = Rect2(0, 8, 16, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1kqey"]
-atlas = ExtResource("2_jdyuh")
-region = Rect2(16, 8, 16, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dhxgq"]
-atlas = ExtResource("2_jdyuh")
-region = Rect2(32, 8, 16, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h2xqe"]
-atlas = ExtResource("2_jdyuh")
-region = Rect2(48, 8, 16, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_njsdj"]
-atlas = ExtResource("2_jdyuh")
-region = Rect2(64, 8, 16, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kjjf6"]
 atlas = ExtResource("2_dajsq")
@@ -122,26 +101,6 @@ region = Rect2(112, 0, 16, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_27gba")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1kqey")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dhxgq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h2xqe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_njsdj")
-}],
-"loop": true,
-"name": &"player_climb",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_kjjf6")
 }, {
 "duration": 1.0,
@@ -232,6 +191,7 @@ size = Vector2(13.75, 11.7187)
 collision_layer = 20
 collision_mask = 13
 script = ExtResource("1_7aps8")
+wall_jump_pushoff = 240.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(0.995504, 0.977616)
