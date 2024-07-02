@@ -353,38 +353,6 @@ layer_1/name = "water"
 layer_1/z_index = -1
 layer_1/tile_data = PackedInt32Array()
 
-<<<<<<< Updated upstream
-=======
-[node name="Cannon" parent="." instance=ExtResource("8_3uqlr")]
-position = Vector2(-951, -200)
-level = "LevelTwo"
-
-[node name="Cannon2" parent="." instance=ExtResource("8_3uqlr")]
-position = Vector2(-632, -200)
-level = "LevelTwo"
-direction_of_bullet = 200
-
-[node name="Cannon3" parent="." instance=ExtResource("8_3uqlr")]
-position = Vector2(-664, -408)
-level = "LevelTwo"
-direction_of_bullet = 200
-
-[node name="Cannon4" parent="." instance=ExtResource("8_3uqlr")]
-position = Vector2(96, -296)
-scale = Vector2(1.00911, 0.986529)
-level = "LevelTwo"
-direction_of_bullet = 95
-
-[node name="coin" parent="." instance=ExtResource("8_4wr8a")]
-position = Vector2(-808, -376)
-
-[node name="coin2" parent="." instance=ExtResource("8_4wr8a")]
-position = Vector2(-416, -328)
-
-[node name="spring" parent="." instance=ExtResource("9_rrm3x")]
-position = Vector2(-568, -440)
-
->>>>>>> Stashed changes
 [node name="Label" type="Label" parent="."]
 offset_left = -312.0
 offset_top = -616.0
