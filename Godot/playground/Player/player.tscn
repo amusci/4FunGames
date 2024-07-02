@@ -1,58 +1,28 @@
 [gd_scene load_steps=30 format=3 uid="uid://d0r7vt626s7mw"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_7aps8"]
-<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://dcb1sxwejbcrk" path="res://art/homegrown/bunny-Sheet-Sheet.png" id="2_dajsq"]
-=======
-[ext_resource type="Texture2D" uid="uid://6wo00edc83b2" path="res://art/homegrown/bunny climb ladder-Sheet.png" id="2_jdyuh"]
->>>>>>> Stashed changes
 [ext_resource type="Texture2D" uid="uid://dmj3mwyjsoivc" path="res://art/homegrown/NEW_BUNNY_RUN-Sheet.png" id="3_2n45j"]
 [ext_resource type="Texture2D" uid="uid://cpdejmeg6exee" path="res://art/homegrown/bunny jump-Sheet.png" id="3_rv8x0"]
-[ext_resource type="Texture2D" uid="uid://47yqw42l1bb2" path="res://art/homegrown/new bunny-Sheet.png" id="3_u8jja"]
 
-<<<<<<< Updated upstream
 [sub_resource type="AtlasTexture" id="AtlasTexture_kjjf6"]
 atlas = ExtResource("2_dajsq")
-=======
-[sub_resource type="AtlasTexture" id="AtlasTexture_27gba"]
-atlas = ExtResource("2_jdyuh")
-region = Rect2(0, 8, 16, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1kqey"]
-atlas = ExtResource("2_jdyuh")
-region = Rect2(16, 8, 16, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dhxgq"]
-atlas = ExtResource("2_jdyuh")
-region = Rect2(32, 8, 16, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h2xqe"]
-atlas = ExtResource("2_jdyuh")
-region = Rect2(48, 8, 16, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_njsdj"]
-atlas = ExtResource("2_jdyuh")
-region = Rect2(64, 8, 16, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ogooq"]
-atlas = ExtResource("3_u8jja")
->>>>>>> Stashed changes
 region = Rect2(0, 0, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gf1xm"]
-atlas = ExtResource("3_u8jja")
+[sub_resource type="AtlasTexture" id="AtlasTexture_drqxx"]
+atlas = ExtResource("2_dajsq")
 region = Rect2(16, 0, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gu2qp"]
-atlas = ExtResource("3_u8jja")
+[sub_resource type="AtlasTexture" id="AtlasTexture_hd67v"]
+atlas = ExtResource("2_dajsq")
 region = Rect2(32, 0, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_e8fmb"]
-atlas = ExtResource("3_u8jja")
+[sub_resource type="AtlasTexture" id="AtlasTexture_dj055"]
+atlas = ExtResource("2_dajsq")
 region = Rect2(48, 0, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lsfma"]
-atlas = ExtResource("3_u8jja")
+[sub_resource type="AtlasTexture" id="AtlasTexture_522iq"]
+atlas = ExtResource("2_dajsq")
 region = Rect2(64, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k6ft6"]
@@ -131,43 +101,19 @@ region = Rect2(112, 0, 16, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-<<<<<<< Updated upstream
 "texture": SubResource("AtlasTexture_kjjf6")
-=======
-"texture": SubResource("AtlasTexture_27gba")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1kqey")
+"texture": SubResource("AtlasTexture_drqxx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dhxgq")
+"texture": SubResource("AtlasTexture_hd67v")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_h2xqe")
+"texture": SubResource("AtlasTexture_dj055")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_njsdj")
-}],
-"loop": true,
-"name": &"player_climb",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ogooq")
->>>>>>> Stashed changes
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gf1xm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gu2qp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e8fmb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lsfma")
+"texture": SubResource("AtlasTexture_522iq")
 }],
 "loop": true,
 "name": &"player_idle",
