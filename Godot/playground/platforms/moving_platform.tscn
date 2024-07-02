@@ -47,7 +47,6 @@ _data = {
 script = ExtResource("1_axw44")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(369.791, -56)
 rotation = 3.14159
 progress = 14.2253
 rotates = false
@@ -56,17 +55,16 @@ rotates = false
 remote_path = NodePath("../../AnimatableBody2D")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
-position = Vector2(369.791, -56)
 rotation = 3.14159
 collision_mask = 21
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
-position = Vector2(-11.5948, -8)
+position = Vector2(0, -8)
 scale = Vector2(2.28831, 1)
 texture = ExtResource("1_l7tww")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
-position = Vector2(-12.209, -0.499996)
+position = Vector2(0, -0.5)
 rotation = 3.14159
 shape = SubResource("RectangleShape2D_xbhyx")
 one_way_collision = true
