@@ -1,28 +1,28 @@
 [gd_scene load_steps=30 format=3 uid="uid://d0r7vt626s7mw"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_7aps8"]
-[ext_resource type="Texture2D" uid="uid://47yqw42l1bb2" path="res://art/homegrown/new bunny-Sheet.png" id="2_c0hrp"]
+[ext_resource type="Texture2D" uid="uid://dcb1sxwejbcrk" path="res://art/homegrown/bunny-Sheet-Sheet.png" id="2_dajsq"]
 [ext_resource type="Texture2D" uid="uid://dmj3mwyjsoivc" path="res://art/homegrown/NEW_BUNNY_RUN-Sheet.png" id="3_2n45j"]
 [ext_resource type="Texture2D" uid="uid://cpdejmeg6exee" path="res://art/homegrown/bunny jump-Sheet.png" id="3_rv8x0"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lh2od"]
-atlas = ExtResource("2_c0hrp")
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjjf6"]
+atlas = ExtResource("2_dajsq")
 region = Rect2(0, 0, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uf1ri"]
-atlas = ExtResource("2_c0hrp")
+[sub_resource type="AtlasTexture" id="AtlasTexture_drqxx"]
+atlas = ExtResource("2_dajsq")
 region = Rect2(16, 0, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_81q5a"]
-atlas = ExtResource("2_c0hrp")
+[sub_resource type="AtlasTexture" id="AtlasTexture_hd67v"]
+atlas = ExtResource("2_dajsq")
 region = Rect2(32, 0, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vu3co"]
-atlas = ExtResource("2_c0hrp")
+[sub_resource type="AtlasTexture" id="AtlasTexture_dj055"]
+atlas = ExtResource("2_dajsq")
 region = Rect2(48, 0, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_suuc6"]
-atlas = ExtResource("2_c0hrp")
+[sub_resource type="AtlasTexture" id="AtlasTexture_522iq"]
+atlas = ExtResource("2_dajsq")
 region = Rect2(64, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k6ft6"]
@@ -101,19 +101,19 @@ region = Rect2(112, 0, 16, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lh2od")
+"texture": SubResource("AtlasTexture_kjjf6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uf1ri")
+"texture": SubResource("AtlasTexture_drqxx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_81q5a")
+"texture": SubResource("AtlasTexture_hd67v")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vu3co")
+"texture": SubResource("AtlasTexture_dj055")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_suuc6")
+"texture": SubResource("AtlasTexture_522iq")
 }],
 "loop": true,
 "name": &"player_idle",
@@ -191,6 +191,7 @@ size = Vector2(13.75, 11.7187)
 collision_layer = 20
 collision_mask = 13
 script = ExtResource("1_7aps8")
+wall_jump_pushoff = 240.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(0.995504, 0.977616)
