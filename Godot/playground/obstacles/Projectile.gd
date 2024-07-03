@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var SPEED = 100
 
-var dir : float
+var dir : Vector2
 var spawnPos : Vector2
 var spawnRot : float
 var zdex : int
@@ -14,7 +14,7 @@ func _ready():
 	z_index = zdex
 	
 func _physics_process(delta):
-	velocity = Vector2(0, -SPEED).rotated(dir)
+	velocity = Vector2(SPEED, 0).rotated(dir.angle())
 	#var collision = move_and_collide(velocity * delta)
 	#if collision:
 		#velocity = velocity.bounce(collision.normal)
