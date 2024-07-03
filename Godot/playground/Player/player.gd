@@ -17,7 +17,7 @@ extends CharacterBody2D
 @export var climbing_speed : float = 50
 @export var climbing_jump_x : float = 60
 @export var climbing_jump_force : float = -300
-@export var falling_speed_clamp : float = -750
+@export var falling_speed_clamp : float = 750
 
 # Variables in-house
 var gravity = 700
