@@ -46,11 +46,13 @@ func _physics_process(delta):
 	if not can_control: # If we cant control our player, return
 		return
 	# Function called once per physics frame
+	if Input.is_action_just_pressed("move_down") and is_on_floor and !climbing: # Allow dropping under one way platforms
+		position.y += 1
 	
 	player_jump(delta) # Line 33
 	player_run(delta) # Line 47
 	wall_slide(delta) # Line 106
-	player_debug(delta) # Comment out to test level easily
+	#player_debug(delta) # Comment out to test level easily
 	player_climb(delta) # Might take it out
 	print(velocity.y) # HELLOGE
 	move_and_slide() # 
