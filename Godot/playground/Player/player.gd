@@ -18,6 +18,7 @@ extends CharacterBody2D
 @export var climbing_jump_x : float = 60
 @export var climbing_jump_force : float = -300
 @export var falling_speed_clamp : float = 750
+@export var respawn_area : Vector2 = Vector2(0,0)
 
 # Variables in-house
 var gravity = 700
@@ -52,7 +53,7 @@ func _physics_process(delta):
 	player_jump(delta) # Line 33
 	player_run(delta) # Line 47
 	wall_slide(delta) # Line 106
-	#player_debug(delta) # Comment out to test level easily
+	player_debug(delta) # Comment out to test level easily
 	player_climb(delta) # Might take it out
 	print(velocity.y) # HELLOGE
 	move_and_slide() # 
@@ -173,6 +174,9 @@ func player_debug(delta):
 	elif Input.is_action_pressed("debug_fly_down"):
 		debug_flying = false
 		gravity = 400
+	elif Input.is_action_just_pressed("player_reset"):
+		reset_player()
+		
 		
 
 func handle_death() -> void:
@@ -187,7 +191,7 @@ func handle_death() -> void:
 func reset_player() -> void:
 	# Function handles player reset
 	emit_signal("increment_death") # += 1 deaths
-	global_position = Vector2(0,-110) # Set the global position to (0, 0), need to make this able to be different each level
+	global_position = respawn_area # Set where player respawns
 	visible = true
 	can_control = true
 	
