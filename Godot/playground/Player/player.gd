@@ -17,6 +17,7 @@ extends CharacterBody2D
 @export var climbing_speed : float = 50
 @export var climbing_jump_x : float = 60
 @export var climbing_jump_force : float = -300
+@export var falling_speed_clamp : float = -750
 
 # Variables in-house
 var gravity = 700
@@ -49,8 +50,9 @@ func _physics_process(delta):
 	player_jump(delta) # Line 33
 	player_run(delta) # Line 47
 	wall_slide(delta) # Line 106
-	#player_debug(delta) # Comment out to test level easily
-	player_climb(delta)
+	player_debug(delta) # Comment out to test level easily
+	player_climb(delta) # Might take it out
+	print(velocity.y) # HELLOGE
 	move_and_slide() # 
 
 func player_run(delta):
@@ -86,6 +88,7 @@ func player_jump(delta):
 		if gravity >= gravity_clamp:
 			gravity = gravity_clamp # Clamp gravity to 1300
 		velocity.y += gravity * gravity_multiplier * delta # Apply gravity
+		velocity.y = min(velocity.y, falling_speed_clamp) # Clamp falling speed
 		coyote_counter -= delta # Decrement Counter
 	
 	if is_jumping and velocity.y < .5: # If we are at the apex
