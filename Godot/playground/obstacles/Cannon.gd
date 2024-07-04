@@ -2,17 +2,18 @@ extends Node2D
 
 
 @export var level: String
-@export var rotation_of_cannon: int = 45
-@export var direction_of_bullet : int = 335
-# 0 = left
-# 45 = down left
+#@export var rotation_of_cannon: int = 45
+@export var direction_of_bullet : int = 0
+
+# 0 = right
+# 45 = down right
 # 90 = down
-# 135 = down right
+# 135 = down left
 # 180 = left
 # 225 = up left
 # 270 = up
-# 315 = top right
-# 360 = left
+# 315 = up right
+# 360 = right
 # USE THIS TO CREATE YOUR OWN ANGLES. ANY NUMBER BETWEEN 0-360 IS USABLE
 
 
