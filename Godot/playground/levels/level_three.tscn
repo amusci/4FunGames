@@ -783,7 +783,6 @@ rotation = 0.610865
 [node name="Cannon" parent="Cannons" instance=ExtResource("11_a4yp7")]
 position = Vector2(3640, -760)
 level = "LevelThree"
-rotation_of_cannon = 0
 direction_of_bullet = 270
 
 [node name="Cannon2" parent="Cannons" instance=ExtResource("11_a4yp7")]
@@ -814,31 +813,26 @@ direction_of_bullet = 90
 position = Vector2(3880, -1232)
 rotation = 1.5708
 level = "LevelThree"
-direction_of_bullet = 0
 
 [node name="Cannon7" parent="Cannons" instance=ExtResource("11_a4yp7")]
 position = Vector2(3880, -1408)
 rotation = 1.5708
 level = "LevelThree"
-direction_of_bullet = 0
 
 [node name="Cannon8" parent="Cannons" instance=ExtResource("11_a4yp7")]
 position = Vector2(3880, -1136)
 rotation = 1.5708
 level = "LevelThree"
-direction_of_bullet = 0
 
 [node name="Cannon9" parent="Cannons" instance=ExtResource("11_a4yp7")]
 position = Vector2(3880, -1504)
 rotation = 1.5708
 level = "LevelThree"
-direction_of_bullet = 0
 
 [node name="Cannon10" parent="Cannons" instance=ExtResource("11_a4yp7")]
 position = Vector2(3880, -1328)
 rotation = 1.5708
 level = "LevelThree"
-direction_of_bullet = 0
 
 [node name="Cannon11" parent="Cannons" instance=ExtResource("11_a4yp7")]
 position = Vector2(8088, -1000)
@@ -853,12 +847,10 @@ direction_of_bullet = 180
 [node name="Cannon13" parent="Cannons" instance=ExtResource("11_a4yp7")]
 position = Vector2(7288, -1128)
 level = "LevelThree"
-direction_of_bullet = 0
 
 [node name="Cannon14" parent="Cannons" instance=ExtResource("11_a4yp7")]
 position = Vector2(7288, -1192)
 level = "LevelThree"
-direction_of_bullet = 0
 
 [node name="Cannon15" parent="Cannons" instance=ExtResource("11_a4yp7")]
 position = Vector2(8088, -1256)
@@ -943,11 +935,3 @@ speed_scale = 0.5
 curve = SubResource("Curve2D_4ydh4")
 loop = false
 speed_scale = 0.5
-
-[node name="Tester Cannons" type="Node" parent="."]
-
-[node name="Cannon" parent="Tester Cannons" instance=ExtResource("11_a4yp7")]
-position = Vector2(-1032, -176)
-level = "LevelThree"
-rotation_of_cannon = 0
-direction_of_bullet = 55
