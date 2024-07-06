@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var SPEED = 100
+@export var SPEED = 50
 
 var dir : Vector2
 var spawnPos : Vector2
@@ -15,9 +15,9 @@ func _ready():
 	
 func _physics_process(delta):
 	velocity = Vector2(SPEED, 0).rotated(dir.angle())
-	#var collision = move_and_collide(velocity * delta)
-	#if collision:
-		#velocity = velocity.bounce(collision.normal)
+	var collision = move_and_collide(velocity * delta)
+	if collision:
+		queue_free()
 	move_and_slide()
 
 
