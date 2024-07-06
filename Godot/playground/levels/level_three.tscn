@@ -865,7 +865,7 @@ layer_1/tile_data = PackedInt32Array(196755, 65538, 9, 262291, 65538, 9, 327827,
 
 [node name="Player" parent="." instance=ExtResource("4_ep5fr")]
 position = Vector2(736, -16)
-respawn_area = Vector2(1744, -912)
+respawn_area = Vector2(736, -16)
 
 [node name="Coins" type="Node" parent="."]
 
