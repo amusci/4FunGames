@@ -178,7 +178,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_25p6j"]
-size = Vector2(16, 38.2336)
+size = Vector2(14.3557, 38.2336)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 20
@@ -192,7 +192,7 @@ drag_vertical_enabled = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_isias")
-animation = &"player_jump"
+animation = &"player_idle"
 autoplay = "player_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
