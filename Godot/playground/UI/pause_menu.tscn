@@ -9,7 +9,7 @@ script/source = "extends HSlider
 
 func _value_changed(new_value):
 	print(new_value)
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(\"Master\"), new_value)
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(\"Master\"), linear_to_db(new_value))
 "
 
 [node name="PauseMenu" type="Control"]
@@ -87,8 +87,7 @@ offset_left = 61.0
 offset_top = 33.0
 offset_right = 192.0
 offset_bottom = 49.0
-min_value = -15.0
-max_value = 25.0
+max_value = 10.0
 script = SubResource("GDScript_1ypkf")
 
 [node name="music_volume" type="HSlider" parent="."]
@@ -97,8 +96,7 @@ offset_left = 61.0
 offset_top = 85.0
 offset_right = 192.0
 offset_bottom = 101.0
-min_value = -15.0
-max_value = 25.0
+max_value = 10.0
 script = ExtResource("3_228jh")
 
 [node name="sfx_volume" type="HSlider" parent="."]
@@ -107,7 +105,6 @@ offset_left = 64.0
 offset_top = 132.0
 offset_right = 195.0
 offset_bottom = 148.0
-min_value = -15.0
 max_value = 10.0
 script = ExtResource("4_ajlmu")
 
