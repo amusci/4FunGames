@@ -24,7 +24,7 @@ func _on_level_3_pressed():
 	TransitionScreen.transition()
 	await get_tree().create_timer(.5).timeout
 	print("Changing scene to level 3")
-	get_tree().change_scene_to_file("res://levels/level_three.tscn")
+	get_tree().change_scene_to_file("res://levels/level_cinematics/level_three_cine.tscn")
 	deactivate() # Line 67
 
 

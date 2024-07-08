@@ -8,6 +8,7 @@ var space_hold_time = 0.0  # Timer to track spacebar hold duration
 @export var skip_time : int = 3
 
 func _ready():
+	MusicManager.stop_music() # Start with main menu music off
 	cine_player.play("opening_cine")
 	
 
