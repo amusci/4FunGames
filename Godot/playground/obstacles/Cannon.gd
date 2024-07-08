@@ -3,12 +3,14 @@ extends Node2D
 @onready var main = get_tree().get_root().get_node(level)
 @onready var projectile = load("res://obstacles/egg_projectile.tscn")
 @onready var shoot_speed = $shoot_speed
+@onready var shoot_offset = $shoot_offset
 
 
 @export var level: String
 #@export var rotation_of_cannon: int = 45
 @export var direction_of_bullet : int = 0
-@export var shot_speed : int = 0
+@export var shot_speed : float = 0
+@export var shot_offset : int = 0
 
 # 0 = right
 # 45 = down right
@@ -23,8 +25,8 @@ extends Node2D
 
 
 func _ready():
-	shoot_speed.wait_time = shot_speed
-	shoot_speed.start()
+	shoot_offset.wait_time = shot_offset
+	shoot_offset.start()
 
 func _physics_process(delta):
 	pass
@@ -46,6 +48,10 @@ func shoot():
 func _on_shoot_speed_timeout():
 	shoot() # 1 Second
 
-
 func _on_life_time_timeout():
-	queue_free()
+	queue_free() # Goodbye
+
+func _on_shoot_offset_timeout():
+	shoot_speed.wait_time = shot_speed # Grab the offset
+	shoot_speed.start() # Set the offset
+	shoot()  # Shoot once offset finished
