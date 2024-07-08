@@ -18,7 +18,7 @@ extends CharacterBody2D
 @export var climbing_jump_x : float = 60
 @export var climbing_jump_force : float = -300
 @export var falling_speed_clamp : float = 750
-@export var respawn_area : Vector2 = Vector2(0,0)
+@export var respawn_area : Vector2 = Vector2.ZERO
 
 # Variables in-house
 var gravity = 700
@@ -55,7 +55,7 @@ func _physics_process(delta):
 	wall_slide(delta) # Line 106
 	player_debug(delta) # Comment out to test level easily
 	player_climb(delta) # Might take it out
-	print(velocity.y) # HELLOGE
+	#print(velocity.y) # HELLOGE
 	move_and_slide() # 
 
 func player_run(delta):
@@ -176,8 +176,8 @@ func player_debug(delta):
 		gravity = 400
 	elif Input.is_action_just_pressed("player_reset"):
 		reset_player()
-		
-		
+	
+	
 
 func handle_death() -> void:
 	# Function handles player death
@@ -187,13 +187,14 @@ func handle_death() -> void:
 	can_control = false
 	await get_tree().create_timer(.5).timeout # Wait for timer to time out
 	reset_player()
-	
+
 func reset_player() -> void:
 	# Function handles player reset
-	emit_signal("increment_death") # += 1 deaths
-	global_position = respawn_area # Set where player respawns
+	emit_signal("increment_death")  # Increase death count
+	global_position = respawn_area  # Set the player's respawn position
 	visible = true
 	can_control = true
+ 
 	
 func increment_coin_count() -> void:
 	collected_coins += 1
@@ -211,7 +212,7 @@ func increment_coin_count() -> void:
 			real_finish_flag.set_process_input(false)
 	else:
 		print("Error: 'real_finish_flag' not found in the scene tree.")
-		
+
 
 	
 func player_animations(direction : float) -> void:
