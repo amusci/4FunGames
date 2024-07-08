@@ -76,6 +76,7 @@ offset_top = 57.2754
 offset_right = 402.0
 offset_bottom = 79.2754
 max_value = 10.0
+value = 1.0
 script = SubResource("GDScript_ixuga")
 
 [node name="music_slider" type="HSlider" parent="."]
@@ -85,6 +86,7 @@ offset_top = 127.614
 offset_right = 404.0
 offset_bottom = 147.614
 max_value = 10.0
+value = 1.0
 script = ExtResource("2_ss11d")
 
 [node name="sfx_slider" type="HSlider" parent="."]
@@ -94,6 +96,7 @@ offset_top = 212.019
 offset_right = 396.0
 offset_bottom = 230.019
 max_value = 10.0
+value = 1.0
 script = ExtResource("3_7m608")
 
 [connection signal="pressed" from="BG/back" to="." method="_on_back_pressed"]

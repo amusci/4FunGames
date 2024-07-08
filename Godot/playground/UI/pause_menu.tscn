@@ -88,6 +88,7 @@ offset_top = 33.0
 offset_right = 192.0
 offset_bottom = 49.0
 max_value = 10.0
+value = 1.0
 script = SubResource("GDScript_1ypkf")
 
 [node name="music_volume" type="HSlider" parent="."]
@@ -97,6 +98,7 @@ offset_top = 85.0
 offset_right = 192.0
 offset_bottom = 101.0
 max_value = 10.0
+value = 1.0
 script = ExtResource("3_228jh")
 
 [node name="sfx_volume" type="HSlider" parent="."]
@@ -106,6 +108,7 @@ offset_top = 132.0
 offset_right = 195.0
 offset_bottom = 148.0
 max_value = 10.0
+value = 1.0
 script = ExtResource("4_ajlmu")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
