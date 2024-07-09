@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://q6t8j6a5nb33"]
+
+[ext_resource type="Script" path="res://interactables/popup_text_sensor.gd" id="1_16dbs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_76734"]
+
+[node name="Node2D" type="Area2D"]
+collision_mask = 21
+script = ExtResource("1_16dbs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_76734")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
