@@ -1,11 +1,15 @@
-extends Area2D
+extends Node
 
 @export var desired_scene : String = "" # Allow us to change scenes in inspector
+@export var num_of_coins : int = 0
+
 
 var entered : bool = false # Set flag to false
 
-func _on_body_entered(body: Node) -> void:
-	if body.is_in_group("Player") and body.collected_coins >= 10:
+
+
+func _on_area_2d_body_entered(body)-> void:
+	if body.is_in_group("Player") and body.collected_coins >= num_of_coins:
 		print("Player can finish the level!")
 		# Implement your logic for finishing the level
 		if desired_scene != "":
@@ -17,4 +21,3 @@ func _on_body_entered(body: Node) -> void:
 			print("Error: desired_scene is not set.")
 	else:
 		print("Player needs to collect more coins to finish the level.")
-
