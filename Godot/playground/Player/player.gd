@@ -12,8 +12,8 @@ extends CharacterBody2D
 @export var gravity_jump_increment : float = 15
 @export var gravity_clamp : float = 1300
 @export var amount_of_coins_in_level : int = 10
-@export var wall_jump_pushoff : float = 240
-@export var wall_slide_gravity : float = 75
+@export var wall_jump_pushoff : float = 290
+@export var wall_slide_gravity : float = 45
 @export var climbing_speed : float = 50
 @export var climbing_jump_x : float = 60
 @export var climbing_jump_force : float = -300
@@ -32,6 +32,7 @@ var is_wall_sliding : bool = false
 var collected_coins : int = 0
 var debug_flying : bool = false
 var climbing : bool = false
+var is_wall_jumping = false
 
 # On ready variables
 @onready var sprite_2d = $AnimatedSprite2D
@@ -55,7 +56,7 @@ func _physics_process(delta):
 	wall_slide(delta) # Line 106
 	player_debug(delta) # Comment out to test level easily
 	player_climb(delta) # Might take it out
-	#print(velocity.y) # HELLOGE
+	#print(is_on_wall_only())
 	move_and_slide() # 
 
 func player_run(delta):
@@ -84,7 +85,7 @@ func player_jump(delta):
 	# This function handles player's ability to jump
 	if is_on_floor(): # If we are on the floor
 		coyote_counter = coyote_time
-		gravity = 580 # Make sure gravity starts at 980
+		gravity = 580 # Make sure gravity starts at 580
 	else: # If we are jumping/falling
 		gravity += gravity_jump_increment * delta # Increase gravity to give player weight
 		# Clamp gravity after incrementing
@@ -114,37 +115,43 @@ func player_jump(delta):
 	else: # If anything else is happening
 		is_jumping = false # Switch flag back to not jumping
 		jump_timer = 0 # Reset timer since we aren't jumping
-	if is_on_wall() and Input.is_action_pressed("move_right") and Input.is_action_just_pressed("jump"): # If holding right and tap jump
-		gravity = 350 # Set gravity to a bit lighter for better feeling walljumps
-		velocity.y = jump_force * 1.5 # Jump up
-		velocity.x = -wall_jump_pushoff # Jump towards left
-	elif is_on_wall() and Input.is_action_pressed("move_left") and Input.is_action_just_pressed("jump"):
-		gravity = 350 # Set gravity to a bit lighter for better feeling walljumps
-		velocity.y = jump_force * 1.5 # Jump up
-		velocity.x = wall_jump_pushoff # Jump towards left
 		
+	if is_wall_sliding and Input.is_action_just_pressed("jump"): # Handle wall jump
+		gravity = 350 # Set gravity to a bit lighter for better feeling walljumps
+		if facing_right:
+			print('right')
+			gravity = 350 # Set gravity to a bit lighter for better feeling walljumps
+			velocity.y = jump_force * 1.5 # Jump up
+			velocity.x = -wall_jump_pushoff # Jump towards left
+		else:
+			gravity = 350 # Set gravity to a bit lighter for better feeling walljumps
+			velocity.y = jump_force * 1.5 # Jump up
+			velocity.x = wall_jump_pushoff # Jump towards left
+
 		
 func wall_slide(delta):
 	# This will handle all player movement against the wall
-	if is_on_wall() and not is_on_floor(): # If on wall in air
-		if Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"): # If we want to hug the wall
-			is_wall_sliding = true # Slide down
-		else:
-			is_wall_sliding = false # We aren't on a wall
+	if is_on_wall_only() : # If on wall in air
+		is_wall_sliding = true
 	else:
-		is_wall_sliding = false # We aren't on a wall
-	
+		is_wall_sliding = false
+
 	if is_wall_sliding: # If we are on a wall
-		velocity.y += (wall_slide_gravity * delta) # Slide down
-		velocity.y = min(velocity.y, wall_slide_gravity) # Slide down
-		
+		if facing_right:
+			velocity.x += 2
+			velocity.y += (wall_slide_gravity * delta) # Slide down
+			velocity.y = min(velocity.y, wall_slide_gravity) # Slide down
+		else:
+			velocity.x -= 2
+			velocity.y += (wall_slide_gravity * delta) # Slide down
+			velocity.y = min(velocity.y, wall_slide_gravity) # Slide down
+	else:
+		pass
 		
 func spring(power: float, direction: float) -> void:
 	# This function handles spring.gd
 	velocity.x = velocity.x - cos(direction) * power # Get the horizontal component of force
 	velocity.y = -sin(direction) * power # Get the vertical component of force
-
-	
 	
 func player_climb(delta):
 	if climbing == true:
@@ -162,10 +169,7 @@ func player_climb(delta):
 			velocity.y = climbing_speed
 		elif Input.is_anything_pressed() == false:
 			velocity.y = 0
-	
-			
-			
-		
+
 func player_debug(delta):
 	if Input.is_action_pressed("debug_fly_up"):
 		gravity = 0
@@ -176,8 +180,6 @@ func player_debug(delta):
 		gravity = 400
 	elif Input.is_action_just_pressed("player_reset"):
 		reset_player()
-	
-	
 
 func handle_death() -> void:
 	# Function handles player death
