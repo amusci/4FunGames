@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var SPEED = 50
+@export var lifetime : int = 10
 
 
 # Setting placeholder vars
@@ -16,6 +17,9 @@ func _ready():
 	global_position = spawnPos
 	global_rotation = spawnRot
 	z_index = zdex
+	
+	$projectile_life_time.wait_time = lifetime
+	$projectile_life_time.start()
 	
 func _physics_process(delta):
 	velocity = Vector2(SPEED, 0).rotated(dir.angle()) # Get velocity of proj

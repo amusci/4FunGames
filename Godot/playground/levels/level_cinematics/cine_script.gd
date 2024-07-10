@@ -13,7 +13,7 @@ func _ready():
 	
 
 func _physics_process(delta):
-	timer_label.set_text("Press Spacebar to Skip Cinematic: " + str(round(space_hold_time)))
+	timer_label.set_text("HOLD SPACEBAR TO SKIP CINEMATIC: " + str(round(space_hold_time)))
 	if Input.is_action_pressed("jump"): # If spacebar is held
 		space_hold_time += delta # Increment Timer
 		print(space_hold_time)
