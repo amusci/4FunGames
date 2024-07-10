@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dh82nrqfj0qo7"]
+[gd_scene load_steps=33 format=3 uid="uid://dh82nrqfj0qo7"]
 
 [ext_resource type="Script" path="res://Scripts/Classes/level.gd" id="1_cxrli"]
 [ext_resource type="PackedScene" uid="uid://32f5ka1e7pt1" path="res://UI/base_ui.tscn" id="3_cyicn"]
@@ -272,37 +272,41 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
-
-[sub_resource type="Animation" id="Animation_hotkw"]
-resource_name = "movement_fade_out"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("movement:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("walljump:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1)]
 }
-
-[sub_resource type="Animation" id="Animation_n0655"]
-resource_name = "movement_fade_in"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("movement:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("egg:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("spring:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_47ybt"]
@@ -337,7 +341,55 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_38ihv"]
+[sub_resource type="Animation" id="Animation_n0655"]
+resource_name = "movement_fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("movement:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_hotkw"]
+resource_name = "movement_fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("movement:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4y3y7"]
+resource_name = "swim_fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("swim:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xtek6"]
 resource_name = "swim_fade_in"
 length = 0.5
 tracks/0/type = "value"
@@ -353,14 +405,117 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_72huh"]
+resource_name = "walljump_fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("walljump:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_myfdm"]
+resource_name = "walljump_fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("walljump:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_66uta"]
+resource_name = "egg_fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("egg:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_64ml5"]
+resource_name = "egg_fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("egg:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xqcg7"]
+resource_name = "spring_fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("spring:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ysshj"]
+resource_name = "spring_fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("spring:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uqiva"]
 _data = {
 "RESET": SubResource("Animation_6qh7o"),
 "coin_fade_in": SubResource("Animation_47ybt"),
 "coin_fade_out": SubResource("Animation_bo4da"),
+"egg_fade_in": SubResource("Animation_66uta"),
+"egg_fade_out": SubResource("Animation_64ml5"),
 "movement_fade_in": SubResource("Animation_n0655"),
 "movement_fade_out": SubResource("Animation_hotkw"),
-"swim_fade_in": SubResource("Animation_38ihv")
+"spring_fade_in": SubResource("Animation_xqcg7"),
+"spring_fade_out": SubResource("Animation_ysshj"),
+"swim_fade_in": SubResource("Animation_xtek6"),
+"swim_fade_out": SubResource("Animation_4y3y7"),
+"walljump_fade_in": SubResource("Animation_72huh"),
+"walljump_fade_out": SubResource("Animation_myfdm")
 }
 
 [sub_resource type="Curve2D" id="Curve2D_e273l"]
@@ -402,40 +557,34 @@ position = Vector2(2594, -1298)
 
 [node name="Labels" type="Node" parent="."]
 
-[node name="Wall Jump" type="Label" parent="Labels"]
-offset_left = 1319.0
-offset_top = -271.0
-offset_right = 1579.0
-offset_bottom = -248.0
-text = "This game allows for wall jumps"
-
-[node name="Cannons Kill" type="Label" parent="Labels"]
-offset_left = 1877.0
-offset_top = -590.0
-offset_right = 2133.0
-offset_bottom = -567.0
-text = "Careful!!! These eggs aren't yours"
-
-[node name="Label" type="Label" parent="Labels"]
-offset_left = 2277.0
-offset_top = -619.0
-offset_right = 2519.0
-offset_bottom = -596.0
-text = "Fake Ass Rabbit Got No Bounce"
-
 [node name="movement_sensor" parent="Labels" instance=ExtResource("6_wcywt")]
 scale = Vector2(17.8422, 3.88787)
 which_text = "movement"
 
 [node name="coin_sensor" parent="Labels" instance=ExtResource("6_wcywt")]
-position = Vector2(736, -151)
+position = Vector2(744, -212)
 scale = Vector2(17.8422, 10.3279)
 which_text = "coin"
 
 [node name="swim_sensor" parent="Labels" instance=ExtResource("6_wcywt")]
-position = Vector2(1095, -225)
-scale = Vector2(17.8422, 3.72787)
+position = Vector2(998, -268)
+scale = Vector2(5.18383, 7.02151)
 which_text = "swim"
+
+[node name="walljump_sensor" parent="Labels" instance=ExtResource("6_wcywt")]
+position = Vector2(1404, -249)
+scale = Vector2(9.7128, 5.60454)
+which_text = "walljump"
+
+[node name="egg_sensor" parent="Labels" instance=ExtResource("6_wcywt")]
+position = Vector2(1789, -521)
+scale = Vector2(9.7128, 5.60454)
+which_text = "egg"
+
+[node name="spring_sensor" parent="Labels" instance=ExtResource("6_wcywt")]
+position = Vector2(2391, -520)
+scale = Vector2(9.7128, 5.60454)
+which_text = "spring"
 
 [node name="movement" type="RichTextLabel" parent="Labels"]
 visible = false
@@ -457,12 +606,41 @@ scale = Vector2(9.17216, 3.82025)
 text = "coin"
 
 [node name="swim" type="RichTextLabel" parent="Labels"]
+visible = false
 offset_left = 997.0
 offset_top = -343.0
 offset_right = 1041.0
 offset_bottom = -318.0
 scale = Vector2(9.17216, 3.82025)
 text = "swim"
+
+[node name="walljump" type="RichTextLabel" parent="Labels"]
+visible = false
+offset_left = 1341.0
+offset_top = -341.0
+offset_right = 1362.0
+offset_bottom = -309.0
+scale = Vector2(9.17216, 3.82025)
+text = "wj"
+
+[node name="egg" type="RichTextLabel" parent="Labels"]
+visible = false
+offset_left = 1777.0
+offset_top = -636.0
+offset_right = 1812.0
+offset_bottom = -604.0
+scale = Vector2(9.17216, 3.82025)
+text = "egg"
+
+[node name="spring" type="RichTextLabel" parent="Labels"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = 2215.0
+offset_top = -666.0
+offset_right = 2250.0
+offset_bottom = -634.0
+scale = Vector2(9.17216, 3.82025)
+text = "spr"
 
 [node name="text_animations" type="AnimationPlayer" parent="Labels"]
 libraries = {
@@ -547,3 +725,4 @@ scale = Vector2(1, 5)
 
 [node name="finish_flag" parent="." instance=ExtResource("13_yyqud")]
 position = Vector2(2291, -1387)
+num_of_coins = 6
