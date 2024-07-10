@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://b0y4242ymfyga"]
+[gd_scene load_steps=35 format=3 uid="uid://b0y4242ymfyga"]
 
 [ext_resource type="Script" path="res://Scripts/Classes/level.gd" id="1_hn0y1"]
 [ext_resource type="Texture2D" uid="uid://cu13jcadubf7b" path="res://art/pixel_platformer/Tilemap/josie tileset.png" id="1_uodef"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c5hx85aq44avc" path="res://art/homegrown/John Practice Tile Set v1.png" id="4_okgtm"]
 [ext_resource type="Texture2D" uid="uid://b0jbk333bxyvx" path="res://art/homegrown/updated tileset.png" id="4_rb3wj"]
 [ext_resource type="PackedScene" uid="uid://8hqvucgxe26w" path="res://interactables/coin.tscn" id="6_scqn2"]
+[ext_resource type="PackedScene" uid="uid://ditnjmcw3lsm0" path="res://interactables/checkpoint.tscn" id="8_3p6po"]
 [ext_resource type="PackedScene" uid="uid://32f5ka1e7pt1" path="res://UI/base_ui.tscn" id="8_ewvwr"]
 [ext_resource type="PackedScene" uid="uid://mqq41jm7voip" path="res://interactables/finish_level_flag.tscn" id="9_jo25n"]
 [ext_resource type="PackedScene" uid="uid://1f407wa2mcti" path="res://UI/pause_menu.tscn" id="9_tio1d"]
@@ -872,31 +873,73 @@ respawn_area = Vector2(3544, -812)
 position = Vector2(552, -664)
 
 [node name="coin2" parent="Coins" instance=ExtResource("6_scqn2")]
-position = Vector2(2392, -712)
+position = Vector2(2392, -704)
 
 [node name="coin3" parent="Coins" instance=ExtResource("6_scqn2")]
-position = Vector2(3576, -1112)
+position = Vector2(3576, -1104)
 
 [node name="coin4" parent="Coins" instance=ExtResource("6_scqn2")]
-position = Vector2(4152, -888)
+position = Vector2(4152, -880)
 
 [node name="coin5" parent="Coins" instance=ExtResource("6_scqn2")]
-position = Vector2(4152, -1336)
+position = Vector2(4152, -1328)
 
 [node name="coin6" parent="Coins" instance=ExtResource("6_scqn2")]
-position = Vector2(5272, -24)
+position = Vector2(5272, -16)
 
 [node name="coin7" parent="Coins" instance=ExtResource("6_scqn2")]
-position = Vector2(6328, -56)
+position = Vector2(6328, -48)
 
 [node name="coin8" parent="Coins" instance=ExtResource("6_scqn2")]
-position = Vector2(7688, -1160)
+position = Vector2(7688, -1168)
 
 [node name="coin9" parent="Coins" instance=ExtResource("6_scqn2")]
-position = Vector2(9656, -2024)
+position = Vector2(9656, -2016)
 
 [node name="coin10" parent="Coins" instance=ExtResource("6_scqn2")]
-position = Vector2(10800, -2248)
+position = Vector2(10800, -2240)
+
+[node name="Checkpoints" type="Node" parent="."]
+
+[node name="checkpoint" parent="Checkpoints" instance=ExtResource("8_3p6po")]
+position = Vector2(664, -602)
+scale = Vector2(1, 2.5)
+
+[node name="checkpoint2" parent="Checkpoints" instance=ExtResource("8_3p6po")]
+position = Vector2(2392, -698)
+scale = Vector2(1, 2.5)
+
+[node name="checkpoint3" parent="Checkpoints" instance=ExtResource("8_3p6po")]
+position = Vector2(3576, -1098)
+scale = Vector2(1, 2.5)
+
+[node name="checkpoint4" parent="Checkpoints" instance=ExtResource("8_3p6po")]
+position = Vector2(4152, -874)
+scale = Vector2(1, 2.5)
+
+[node name="checkpoint5" parent="Checkpoints" instance=ExtResource("8_3p6po")]
+position = Vector2(4152, -1322)
+scale = Vector2(1, 2.5)
+
+[node name="checkpoint6" parent="Checkpoints" instance=ExtResource("8_3p6po")]
+position = Vector2(5272, -10)
+scale = Vector2(1, 2.5)
+
+[node name="checkpoint7" parent="Checkpoints" instance=ExtResource("8_3p6po")]
+position = Vector2(6328, -42)
+scale = Vector2(1, 2.5)
+
+[node name="checkpoint8" parent="Checkpoints" instance=ExtResource("8_3p6po")]
+position = Vector2(7224, -986)
+scale = Vector2(1, 2.5)
+
+[node name="checkpoint9" parent="Checkpoints" instance=ExtResource("8_3p6po")]
+position = Vector2(9656, -2010)
+scale = Vector2(1, 2.5)
+
+[node name="checkpoint10" parent="Checkpoints" instance=ExtResource("8_3p6po")]
+position = Vector2(10296, -2090)
+scale = Vector2(1, 2.5)
 
 [node name="Moving Platforms" type="Node" parent="."]
 
