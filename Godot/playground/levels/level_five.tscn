@@ -1,3 +1,27 @@
-[gd_scene format=3 uid="uid://b3tdsn3xcwus5"]
+[gd_scene load_steps=6 format=3 uid="uid://b3tdsn3xcwus5"]
+
+[ext_resource type="Script" path="res://Scripts/Classes/level.gd" id="1_vmml6"]
+[ext_resource type="PackedScene" uid="uid://32f5ka1e7pt1" path="res://UI/base_ui.tscn" id="2_tnjr7"]
+[ext_resource type="PackedScene" uid="uid://1f407wa2mcti" path="res://UI/pause_menu.tscn" id="3_6un68"]
+[ext_resource type="AudioStream" uid="uid://c1dbt84xo4yl3" path="res://music/level1.mp3" id="4_ve8lq"]
+[ext_resource type="PackedScene" uid="uid://d0r7vt626s7mw" path="res://Player/player.tscn" id="5_f2dmi"]
 
 [node name="LevelFive" type="Node2D"]
+script = ExtResource("1_vmml6")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="base_ui" parent="UI" instance=ExtResource("2_tnjr7")]
+
+[node name="PauseMenu" parent="UI" instance=ExtResource("3_6un68")]
+
+[node name="level_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ve8lq")
+volume_db = -29.017
+autoplay = true
+max_distance = 1e+07
+panning_strength = 0.0
+bus = &"game_music"
+
+[node name="Player" parent="." instance=ExtResource("5_f2dmi")]
+position = Vector2(389, -71)
