@@ -192,6 +192,8 @@ func handle_death() -> void:
 
 func reset_player() -> void:
 	# Function handles player reset
+	velocity.x = 0
+	velocity.y = 0
 	emit_signal("increment_death")  # Increase death count
 	global_position = respawn_area  # Set the player's respawn position
 	visible = true
