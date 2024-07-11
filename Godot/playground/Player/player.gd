@@ -206,7 +206,7 @@ func increment_coin_count() -> void:
 	print("Collected coins: ", collected_coins)
 
 	# Adjust the path to find the real_finish_flag node correctly
-	var real_finish_flag = get_tree().get_root().find_child("real_finish_flag", true, false)
+	var real_finish_flag = get_tree().get_root().find_child("finish_flag", true, false)
 	if real_finish_flag:
 		if collected_coins >= amount_of_coins_in_level:
 			# Enable interaction with the real_finish_flag
