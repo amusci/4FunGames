@@ -25,6 +25,7 @@ func _physics_process(delta):
 	velocity = Vector2(SPEED, 0).rotated(dir.angle()) # Get velocity of proj
 	var collision = move_and_collide(velocity * delta) # Allow collisions
 	if collision: # If collisions occur
+		print('collision')
 		queue_free() # Remove proj
 	move_and_slide() # Move and slide 8)
 
@@ -35,7 +36,8 @@ func _on_area_2d_body_entered(body):
 		print('HIT!')
 		queue_free()
 		body.handle_death()
-
+	else:
+		queue_free()
 
 
 func _on_projectile_life_time_timeout():
