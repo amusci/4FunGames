@@ -65,7 +65,6 @@ func _on_shoot_offset_timeout():
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_stxcd"]
-size = Vector2(16, 16)
 
 [node name="Cannon" type="Node2D"]
 script = SubResource("GDScript_tpt0a")
