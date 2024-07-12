@@ -55,8 +55,19 @@ func check_time(level_timer) -> String:
 func _on_player_reached_flag():
 	level_complete = true
 	var medal = check_time(level_timer)
-	if get_name() == "LevelFive":
+	if get_name() == "LevelOne":
+		MedalManager.level_one_medal = medal
+	elif get_name() == "LevelTwo":
+		MedalManager.level_two_medal = medal
+	elif get_name() == "LevelThree":
+		MedalManager.level_three_medal = medal
+	elif get_name() == "LevelFour":
+		MedalManager.level_four_medal = medal
+	elif get_name() == "LevelFive":
 		MedalManager.level_five_medal = medal
+	elif get_name() == "LevelSix":
+		MedalManager.level_six_medal = medal
+	
 	
 	
 	
