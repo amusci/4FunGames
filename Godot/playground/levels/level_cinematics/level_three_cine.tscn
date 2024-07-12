@@ -898,7 +898,7 @@ tracks/0/path = NodePath("cinematic_camera:zoom")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 19, 20, 22, 24, 25, 26, 27.7, 28, 30),
+"times": PackedFloat32Array(0, 2.8, 4.4, 6.2, 8, 10, 11.7, 14, 16, 18, 19, 20, 22, 24, 25, 26, 27.7, 28, 30),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0.5, 0.5), Vector2(0.5, 0.5), Vector2(0.5, 0.5), Vector2(0.5, 0.5), Vector2(0.5, 0.5), Vector2(0.5, 0.5), Vector2(0.5, 0.5), Vector2(0.5, 0.5), Vector2(0.5, 0.5), Vector2(0.5, 0.5), Vector2(0.5, 0.5), Vector2(0.5, 0.5), Vector2(0.5, 0.5), Vector2(0.5, 0.5), Vector2(0.5, 0.5), Vector2(0.5, 0.5), Vector2(0.5, 0.5), Vector2(0.5, 0.5), Vector2(0.9, 0.9)]
@@ -910,7 +910,7 @@ tracks/1/path = NodePath("cinematic_camera:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 19, 20, 22, 24, 25, 26, 27.7, 28, 30),
+"times": PackedFloat32Array(0, 2.8, 4.4, 6.2, 8, 10, 11.7, 14, 16, 18, 19, 20, 22, 24, 25, 26, 27.7, 28, 30),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(12196, -2182), Vector2(9176, -2182), Vector2(9176, -1504), Vector2(7696, -1504), Vector2(7696, -904), Vector2(6696, -792), Vector2(6696, -176), Vector2(5272, -176), Vector2(5272, -1568), Vector2(4288, -1344), Vector2(4288, -912), Vector2(3640, -912), Vector2(2536, -744), Vector2(1376, -744), Vector2(776, -520), Vector2(1360, -304), Vector2(768, -12), Vector2(768, -12), Vector2(768, -12)]
