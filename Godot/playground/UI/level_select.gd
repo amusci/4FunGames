@@ -1,5 +1,20 @@
 extends Control
 
+
+func _ready():
+	if MedalManager.level_five_medal:
+		if MedalManager.level_five_medal == "bronze":
+			var LevelFiveBronze = get_tree().get_root().find_child("LevelFiveBronze", true, false)
+			LevelFiveBronze.visible = true
+		elif MedalManager.level_five_medal == "silver":
+			var LevelFiveSilver = get_tree().get_root().find_child("LevelFiveSilver", true, false)
+			LevelFiveSilver.visible = true
+		elif MedalManager.level_five_medal == "gold":
+			var LevelFiveGold = get_tree().get_root().find_child("LevelFiveGold", true, false)
+			LevelFiveGold.visible = true
+			
+			
+
 func _on_level_1_pressed():
 	# Function loads the first level
 	TransitionScreen.transition()

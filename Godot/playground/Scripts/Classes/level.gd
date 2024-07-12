@@ -2,7 +2,6 @@ class_name Level
 
 extends Node
 
-@export var bronze : float = 0.0
 @export var silver : float = 0.0
 @export var gold : float = 0.0
 
@@ -13,6 +12,9 @@ var paused : bool = true
 var music_position = 0
 var level_timer : float = 0.0
 var level_complete : bool = false
+
+signal medal_awarded
+
 
 func _ready() -> void:
 	var level = get_tree().get_root().find_child("finish_flag", true, false)
@@ -42,18 +44,21 @@ func pause_menu():
 		
 	paused = !paused # BOOLEAN BOOLEAN BOOLEAN BOOLEAN BOOLEAN BOOLEAN BOOLEAN BOOLEAN BOOLEAN BOOLEAN 
 
-func check_time(level_timer):
+func check_time(level_timer) -> String:
 	if level_timer < gold:
-		print('gold')
+		return "gold"
 	elif level_timer < silver:
-		print('silver')
+		return "silver"
 	else:
-		print('bronze lol')
+		return "bronze"
 		
 func _on_player_reached_flag():
-	print('HELLO!!!!')
 	level_complete = true
-	check_time(level_timer)
+	var medal = check_time(level_timer)
+	if get_name() == "LevelFive":
+		MedalManager.level_five_medal = medal
+	
+	
 	
 		
 	
