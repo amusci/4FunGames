@@ -15,13 +15,15 @@ var level_timer : float = 0.0
 var level_complete : bool = false
 
 func _ready() -> void:
+	var level = get_tree().get_root().find_child("finish_flag", true, false)
+	level.connect("player_reached_flag", _on_player_reached_flag)
 	MusicManager.stop_music() # Start with main menu music off
 	pausemenu.hide() # Pause menu hidden
 	
 func _physics_process(delta):
 	if not level_complete and paused:
 		level_timer += delta
-		print(level_timer)
+		#print(level_timer)
 	
 func _process(delta):
 	if Input.is_action_just_pressed("pause"): # If we press Esc
@@ -41,12 +43,17 @@ func pause_menu():
 	paused = !paused # BOOLEAN BOOLEAN BOOLEAN BOOLEAN BOOLEAN BOOLEAN BOOLEAN BOOLEAN BOOLEAN BOOLEAN 
 
 func check_time(level_timer):
-	
 	if level_timer < gold:
 		print('gold')
-	elif gold < level_timer < silver:
+	elif level_timer < silver:
 		print('silver')
 	else:
 		print('bronze lol')
+		
+func _on_player_reached_flag():
+	print('HELLO!!!!')
+	level_complete = true
+	check_time(level_timer)
+	
 		
 	
