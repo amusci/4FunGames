@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c6k4lhs18tjf8"]
+[gd_scene load_steps=27 format=3 uid="uid://c6k4lhs18tjf8"]
 
 [ext_resource type="Texture2D" uid="uid://cav545fpvo0f3" path="res://art/homegrown/New Art Style/main tileset-Sheet.png" id="1_clxba"]
 [ext_resource type="Script" path="res://Scripts/Classes/level.gd" id="1_m8b78"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b52uktxagmux7" path="res://art/homegrown/black background.png" id="4_pijux"]
 [ext_resource type="PackedScene" uid="uid://8hqvucgxe26w" path="res://interactables/coin.tscn" id="5_fcgxg"]
 [ext_resource type="PackedScene" uid="uid://dgnbxk4sqeciq" path="res://platforms/moving_platform.tscn" id="6_dybkq"]
+[ext_resource type="PackedScene" uid="uid://by0flxkafsuuf" path="res://obstacles/kill_zone.tscn" id="6_q1jmh"]
 [ext_resource type="PackedScene" uid="uid://sip0sxjyf5p3" path="res://interactables/spring.tscn" id="7_ufyex"]
 [ext_resource type="PackedScene" uid="uid://32f5ka1e7pt1" path="res://UI/base_ui.tscn" id="8_bhry4"]
 [ext_resource type="PackedScene" uid="uid://1f407wa2mcti" path="res://UI/pause_menu.tscn" id="9_6cdkc"]
@@ -225,6 +226,9 @@ physics_layer_0/collision_mask = 7
 sources/0 = SubResource("TileSetAtlasSource_qrh2e")
 sources/4 = SubResource("TileSetAtlasSource_v2sq6")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ps6y5"]
+size = Vector2(13776, 7)
+
 [sub_resource type="Curve2D" id="Curve2D_vnthf"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 1720, -320, 0, 0, 0, 0, 1720, -384)
@@ -288,6 +292,15 @@ layer_0/tile_data = PackedInt32Array(65533, 589824, 5, 2, 589824, 5, 65534, 5898
 [node name="Player" parent="." instance=ExtResource("3_a7iap")]
 position = Vector2(176, -32)
 respawn_area = Vector2(0, -12)
+
+[node name="Kill Zones" type="Node" parent="."]
+
+[node name="KillZone" parent="Kill Zones" instance=ExtResource("6_q1jmh")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zones/KillZone"]
+position = Vector2(6120, 4.5)
+shape = SubResource("RectangleShape2D_ps6y5")
+debug_color = Color(1, 0, 0, 0.196078)
 
 [node name="Coins" type="Node" parent="."]
 
@@ -502,7 +515,9 @@ direction_of_bullet = 180
 shot_speed = 2.0
 egg_lifetime = 3
 
-[node name="finish_flag" parent="." instance=ExtResource("11_g0vtm")]
+[node name="Finish Flag" type="Node" parent="."]
+
+[node name="finish_flag" parent="Finish Flag" instance=ExtResource("11_g0vtm")]
 position = Vector2(12952, -2912)
 
 [node name="UI" type="CanvasLayer" parent="."]
