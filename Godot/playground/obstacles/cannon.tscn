@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://3x22w68bgrw0"]
 
-[ext_resource type="Texture2D" uid="uid://b0vm6my6vtu2j" path="res://art/homegrown/Cannon Temp.png" id="2_xcxxl"]
+[ext_resource type="Texture2D" uid="uid://jox2gkmautm6" path="res://art/homegrown/new cannon.png" id="1_vywdv"]
 
 [sub_resource type="GDScript" id="GDScript_tpt0a"]
 script/source = "extends Node2D
@@ -71,7 +71,7 @@ size = Vector2(16, 16)
 script = SubResource("GDScript_tpt0a")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_xcxxl")
+texture = ExtResource("1_vywdv")
 
 [node name="shoot_speed" type="Timer" parent="."]
 process_callback = 0
