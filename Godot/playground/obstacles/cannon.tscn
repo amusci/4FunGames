@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://3x22w68bgrw0"]
+[gd_scene load_steps=5 format=3 uid="uid://3x22w68bgrw0"]
 
 [ext_resource type="Texture2D" uid="uid://jox2gkmautm6" path="res://art/homegrown/new cannon.png" id="1_vywdv"]
+[ext_resource type="AudioStream" uid="uid://dvw2jgq138ku6" path="res://music/SFX/esm_8bit_explosion_medium_bomb_boom_blast_cannon_retro_old_school_classic_cartoon.mp3" id="2_uj80a"]
 
 [sub_resource type="GDScript" id="GDScript_tpt0a"]
 script/source = "extends Node2D
@@ -9,6 +10,8 @@ script/source = "extends Node2D
 @onready var projectile = load(\"res://obstacles/egg_projectile.tscn\")
 @onready var shoot_speed = $shoot_speed
 @onready var shoot_offset = $shoot_offset
+
+@onready var explosion = $explosion
 
 
 @export var level: String
@@ -51,6 +54,8 @@ func shoot():
 	proj.spawnRot = rotation # Set rotation of projectile
 	#proj.zdex = z_index - 1 # Might do something for this idk
 	main.add_child.call_deferred(proj) # Spawn in the projectile
+	
+	explosion.play()
 
 func _on_shoot_speed_timeout():
 	shoot() # 1 Second
@@ -89,6 +94,12 @@ collision_mask = 21
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_stxcd")
+
+[node name="explosion" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_uj80a")
+volume_db = -20.0
+pitch_scale = 2.0
+attenuation = 11.3137
 
 [connection signal="timeout" from="shoot_speed" to="." method="_on_shoot_speed_timeout"]
 [connection signal="timeout" from="shoot_offset" to="." method="_on_shoot_offset_timeout"]

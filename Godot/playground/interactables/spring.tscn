@@ -48,5 +48,6 @@ autoplay = "idle"
 
 [node name="bounce" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_x8gui")
+volume_db = -20.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
