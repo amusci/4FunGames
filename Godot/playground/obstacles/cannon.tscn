@@ -55,7 +55,7 @@ func shoot():
 	#proj.zdex = z_index - 1 # Might do something for this idk
 	main.add_child.call_deferred(proj) # Spawn in the projectile
 	
-	explosion.play()
+	explosion.play() # Play explosion SFX
 
 func _on_shoot_speed_timeout():
 	shoot() # 1 Second

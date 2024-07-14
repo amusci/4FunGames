@@ -11,6 +11,7 @@ func _on_body_entered(body: PhysicsBody2D):
 		body.spring(spring_power, direction) # Apply spring
 		
 		$AnimatedSprite2D.play("boing") # Play the animation
+		
 		bounce.play() # Play bounce SFX
 	else:
 		$AnimatedSprite2D.play("idle")
