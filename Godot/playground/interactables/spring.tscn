@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://sip0sxjyf5p3"]
+[gd_scene load_steps=7 format=3 uid="uid://sip0sxjyf5p3"]
 
 [ext_resource type="Texture2D" uid="uid://bu7udfkqmfwxu" path="res://art/pixel_platformer/Tiles/tile_0107.png" id="1_mjieo"]
 [ext_resource type="Script" path="res://interactables/spring.gd" id="1_vyur5"]
 [ext_resource type="Texture2D" uid="uid://pwvvksdxsphk" path="res://art/pixel_platformer/Tiles/tile_0108.png" id="2_snpvs"]
+[ext_resource type="AudioStream" uid="uid://d33qee21ekbj8" path="res://music/SFX/zapsplat_cartoon_jump_jaw_harp_edited_004_17210.mp3" id="4_x8gui"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wiuai"]
 size = Vector2(20, 11)
@@ -44,5 +45,8 @@ shape = SubResource("RectangleShape2D_wiuai")
 sprite_frames = SubResource("SpriteFrames_aq5gv")
 animation = &"idle"
 autoplay = "idle"
+
+[node name="bounce" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_x8gui")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

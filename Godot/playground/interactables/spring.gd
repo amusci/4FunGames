@@ -2,6 +2,8 @@ extends Area2D
 
 @export var spring_power : int = 800
 
+@onready var bounce = $bounce
+
 func _on_body_entered(body: PhysicsBody2D):
 	if body is Player:
 		print('Player entered spring')
@@ -9,5 +11,6 @@ func _on_body_entered(body: PhysicsBody2D):
 		body.spring(spring_power, direction) # Apply spring
 		
 		$AnimatedSprite2D.play("boing") # Play the animation
+		bounce.play() # Play bounce SFX
 	else:
 		$AnimatedSprite2D.play("idle")
