@@ -47,13 +47,14 @@ func pause_menu():
 func check_time(level_timer) -> String:
 	if level_timer < gold:
 		return "gold"
-	elif level_timer < silver:
+	elif gold < level_timer and level_timer < silver:
 		return "silver"
 	else:
 		return "bronze"
 		
 func _on_player_reached_flag():
 	level_complete = true
+	print("level finished in ", level_timer)
 	var medal = check_time(level_timer)
 	if get_name() == "LevelOne":
 		MedalManager.level_one_medal = medal
