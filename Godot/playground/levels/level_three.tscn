@@ -893,6 +893,8 @@ point_count = 5
 
 [node name="LevelThree" type="Node2D"]
 script = ExtResource("1_hn0y1")
+silver = 200.0
+gold = 160.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -1346,6 +1348,9 @@ egg_lifetime = 7
 
 [node name="finish_flag" parent="Finish Flag" instance=ExtResource("9_jo25n")]
 position = Vector2(12216, -2192)
+desired_scene = "res://UI/level_select.tscn"
+which_level = "LevelThree"
+num_of_coins = 10
 
 [node name="UI" type="CanvasLayer" parent="."]
 
