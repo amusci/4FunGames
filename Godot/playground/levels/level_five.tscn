@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b3tdsn3xcwus5"]
+[gd_scene load_steps=24 format=3 uid="uid://b3tdsn3xcwus5"]
 
 [ext_resource type="Script" path="res://Scripts/Classes/level.gd" id="1_vmml6"]
 [ext_resource type="Texture2D" uid="uid://bk3u1ga75vekq" path="res://art/homegrown/Volcano Background.png" id="2_scfyo"]
@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://dsjv67b7f6udy" path="res://art/homegrown/New Art Style/fixed main tileset.png" id="7_kwri5"]
 [ext_resource type="Texture2D" uid="uid://oy0jscaafmp6" path="res://art/homegrown/New Art Style/water tester-Sheet.png" id="8_m2p7o"]
 [ext_resource type="PackedScene" uid="uid://3x22w68bgrw0" path="res://obstacles/cannon.tscn" id="9_j7q0f"]
+[ext_resource type="PackedScene" uid="uid://dgnbxk4sqeciq" path="res://platforms/moving_platform.tscn" id="10_2s2md"]
+[ext_resource type="PackedScene" uid="uid://8hqvucgxe26w" path="res://interactables/coin.tscn" id="11_0tofu"]
+[ext_resource type="PackedScene" uid="uid://dm0o2ww67bvay" path="res://platforms/player_activated_moving_platform.tscn" id="12_r5f6y"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_egy2u"]
 animations = [{
@@ -338,14 +341,63 @@ physics_layer_0/collision_mask = 7
 sources/0 = SubResource("TileSetAtlasSource_eerxh")
 sources/1 = SubResource("TileSetAtlasSource_lxofv")
 
+[sub_resource type="Curve2D" id="Curve2D_fntl1"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 88, -88)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_ignyd"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 41, -28, 0, 0, 0, 0, -90, 75)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_qyxjk"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 127, 94)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_in8aq"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -219)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_oyhi2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 2, -106, 0, 0, 0, 0, 45, -151, 0, 0, 0, 0, 84, -106, 0, 0, 0, 0, 84, 3, 0, 0, 0, 0, 0, 2)
+}
+point_count = 6
+
+[sub_resource type="Curve2D" id="Curve2D_cjkbw"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 8, -7, 0, 0, 0, 0, 40, 38, 0, 0, 0, 0, 39, 138, 0, 0, 0, 0, -29, 138, 0, 0, 0, 0, -28, 36, 0, 0, 0, 0, 8, -7)
+}
+point_count = 6
+
+[sub_resource type="Curve2D" id="Curve2D_g6l3s"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 507, 0)
+}
+point_count = 2
+
 [node name="LevelFive" type="Node2D"]
 script = ExtResource("1_vmml6")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+visible = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(500, 300)
 motion_scale = Vector2(0, 0)
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(-144, -100)
+sprite_frames = SubResource("SpriteFrames_egy2u")
+autoplay = "default"
+frame_progress = 0.116397
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -365,20 +417,13 @@ bus = &"game_music"
 
 [node name="Player" parent="." instance=ExtResource("5_f2dmi")]
 z_index = 2
-position = Vector2(-59, -19)
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Player"]
-position = Vector2(0.999908, 8)
-scale = Vector2(0.7105, 0.665833)
-sprite_frames = SubResource("SpriteFrames_egy2u")
-autoplay = "default"
-frame_progress = 0.116397
+position = Vector2(-48, -21)
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = 2
 tile_set = SubResource("TileSet_ao3xc")
 format = 2
-layer_0/tile_data = PackedInt32Array(-65516, 0, 7, 20, 65536, 5, -65514, 131072, 7, 22, 65536, 5, -196583, 0, 7, -65511, 0, 8, -196581, 131072, 7, -65509, 131072, 8, 65529, 65536, 5, 65530, 65536, 5, 65531, 65536, 5, 65532, 65536, 5, 65533, 65536, 5, 65534, 65536, 5, 65535, 65536, 5, 0, 65536, 5, 1, 65536, 5, 2, 65536, 5, 3, 65536, 5, 4, 65536, 5, 5, 65536, 5, 6, 65536, 5, 7, 65536, 5, 8, 65536, 5, 9, 65536, 5, 10, 65536, 5, 11, 1, 0, 12, 65537, 0, 13, 131073, 0, 14, 65536, 5, 15, 65536, 5, 16, 1, 0, 17, 65537, 0, 18, 131073, 0, 19, 65536, 5, -196588, 0, 5, -131052, 0, 6, -196587, 65536, 5, 21, 65536, 5, -196586, 131072, 5, -131050, 131072, 6, 23, 65536, 5, 24, 65536, 5, -327655, 0, 5, -262119, 0, 6, 25, 65536, 5, -327654, 65536, 5, 26, 65536, 5, -327653, 131072, 5, -262117, 131072, 6, 27, 65536, 5, 28, 65536, 5)
+layer_0/tile_data = PackedInt32Array(-65516, 0, 7, 20, 65536, 5, -65514, 131072, 7, 22, 65536, 5, -196583, 0, 7, -65511, 0, 8, -196581, 131072, 7, -65509, 131072, 8, 65529, 0, 5, 65530, 65536, 5, 65531, 65536, 5, 65532, 65536, 5, 65533, 65536, 5, 65534, 65536, 5, 65535, 65536, 5, 0, 65536, 5, 1, 65536, 5, 2, 65536, 5, 3, 65536, 5, 4, 65536, 5, 5, 65536, 5, 6, 65536, 5, 7, 65536, 5, 8, 65536, 5, 9, 65536, 5, 10, 65536, 5, 11, 1, 0, 12, 65537, 0, 13, 131073, 0, 14, 65536, 5, 15, 65536, 5, 16, 1, 0, 17, 65537, 0, 18, 131073, 0, 19, 65536, 5, -196588, 0, 5, -131052, 0, 6, -196587, 65536, 5, 21, 65536, 5, -196586, 131072, 5, -131050, 131072, 6, 23, 65536, 5, 24, 65536, 5, -327655, 0, 5, -262119, 0, 6, 25, 65536, 5, -327654, 65536, 5, 26, 65536, 5, -327653, 131072, 5, -262117, 131072, 6, 27, 65536, 5, 28, 65536, 5, 131065, 0, 6, 196601, 0, 6, 262137, 0, 6, 393209, 0, 7, 458745, 0, 7, 327673, 0, 7, 524281, 0, 8, 589817, 0, 8, 655353, 0, 8, 720889, 0, 9, 786425, 0, 9, 29, 65536, 5, 30, 65536, 5, 31, 65536, 5, 32, 65536, 5, 33, 65536, 5, 34, 65536, 5, 35, 65536, 5, 36, 65536, 5, 37, 65536, 5, 38, 65536, 5, 39, 65536, 5, 40, 65536, 5, 41, 65536, 5, -1179550, 655360, 3, -1179549, 720896, 3, -1179543, 655360, 3, -1179542, 720896, 3, -1179548, 786432, 3, -1179541, 786432, 3, -524203, 1, 0, -524202, 65537, 0, -524201, 131073, 0, -524200, 1, 0, -524199, 65537, 0, -524198, 131073, 0, -524197, 1, 0, -524196, 65537, 0, -524195, 131073, 0, -524194, 1, 0, -524193, 65537, 0, -524192, 131073, 0, -524191, 1, 0, -524190, 65537, 0, -524189, 131073, 0, -524188, 1, 0, -524187, 65537, 0, -524186, 131073, 0, -524185, 1, 0, -524184, 65537, 0, -524183, 131073, 0, -524182, 1, 0, -524181, 65537, 0, -524180, 131073, 0, -524179, 1, 0, -524178, 65537, 0, -524177, 131073, 0, -524176, 1, 0, -524175, 65537, 0, -524174, 131073, 0, -524173, 1, 0, -524172, 65537, 0, -524171, 131073, 0, -524170, 1, 0, -524169, 65537, 0, -524168, 131073, 0, -524167, 1, 0, -524166, 65537, 0, -524165, 131073, 0, -524164, 1, 0, -524163, 65537, 0, -524162, 131073, 0, -524225, 0, 5, -458689, 0, 6, -393153, 0, 6, -327617, 0, 6, -262081, 0, 7, -196545, 0, 7, -131009, 0, 7, -65473, 0, 8, 63, 0, 8, 65599, 0, 8, 131135, 0, 9, 196671, 0, 9, -524204, 131072, 5, -458668, 131072, 6, -393132, 131072, 6, -327596, 131072, 6, -262060, 131072, 7, -196524, 131072, 7, -130988, 131072, 7, -65452, 131072, 8, 84, 131072, 8, 65620, 131072, 8, 131156, 131072, 9, 196692, 131072, 9, 262207, 0, 9, -524224, 65536, 5, -524223, 65536, 5, -524222, 65536, 5, -524221, 65536, 5, -524220, 65536, 5, -524219, 65536, 5, -524218, 65536, 5, -524217, 65536, 5, -524216, 65536, 5, -524215, 65536, 5, -524214, 65536, 5, -524213, 65536, 5, -524212, 65536, 5, -524211, 65536, 5, -524210, 65536, 5, -524209, 65536, 5, -524208, 65536, 5, -524207, 65536, 5, -524206, 65536, 5, -524205, 65536, 5, 262228, 131072, 9, -524161, 1, 0, -524160, 65537, 0, -524159, 131073, 0, -524158, 1, 0, -524157, 65537, 0, -524156, 131073, 0, -524155, 1, 0, -524154, 65537, 0, -524153, 131073, 0, -524152, 1, 0, -524151, 65537, 0, -524150, 131073, 0, -524149, 1, 0, -524148, 65537, 0, -524147, 131073, 0, -524146, 1, 0, -524145, 65537, 0, -524144, 131073, 0, -524143, 1, 0, -524142, 65537, 0, -524141, 131073, 0, -524140, 1, 0, -524139, 65537, 0, -524138, 131073, 0, -524137, 1, 0, -524136, 65537, 0, -524135, 131073, 0, -524134, 1, 0, -524133, 65537, 0, -524132, 131073, 0)
 
 [node name="Cannons" type="Node" parent="."]
 
@@ -389,6 +434,45 @@ direction_of_bullet = 45
 
 [node name="Moving Plats" type="Node" parent="."]
 
+[node name="left_to_right_platform" parent="Moving Plats" instance=ExtResource("10_2s2md")]
+position = Vector2(493, -80)
+curve = SubResource("Curve2D_fntl1")
+loop = false
+speed = 1.0
+
+[node name="left_to_right_platform2" parent="Moving Plats" instance=ExtResource("10_2s2md")]
+position = Vector2(720, -242)
+curve = SubResource("Curve2D_ignyd")
+loop = false
+speed = 1.0
+
+[node name="left_to_right_platform3" parent="Moving Plats" instance=ExtResource("10_2s2md")]
+position = Vector2(814, -270)
+curve = SubResource("Curve2D_qyxjk")
+loop = false
+speed = 1.0
+
+[node name="left_to_right_platform4" parent="Moving Plats" instance=ExtResource("10_2s2md")]
+position = Vector2(789, -166)
+curve = SubResource("Curve2D_in8aq")
+loop = false
+speed = 1.0
+
+[node name="left_to_right_platform5" parent="Moving Plats" instance=ExtResource("10_2s2md")]
+position = Vector2(1426, -143)
+curve = SubResource("Curve2D_oyhi2")
+
+[node name="left_to_right_platform6" parent="Moving Plats" instance=ExtResource("10_2s2md")]
+position = Vector2(1808, -286)
+curve = SubResource("Curve2D_cjkbw")
+
 [node name="Springs" type="Node" parent="."]
 
 [node name="Node4" type="Node" parent="."]
+
+[node name="coin" parent="." instance=ExtResource("11_0tofu")]
+position = Vector2(789, -476)
+
+[node name="playe_ left_to_right_platform" parent="." instance=ExtResource("12_r5f6y")]
+position = Vector2(1894, -146)
+curve = SubResource("Curve2D_g6l3s")
