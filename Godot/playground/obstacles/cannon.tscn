@@ -69,7 +69,7 @@ func _on_shoot_offset_timeout():
 	shoot()  # Shoot once offset finished
 "
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_stxcd"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ic5ve"]
 size = Vector2(16, 16)
 
 [node name="Cannon" type="Node2D"]
@@ -87,19 +87,16 @@ autostart = true
 process_callback = 0
 one_shot = true
 
-[node name="Area2D" type="Area2D" parent="."]
-disable_mode = 2
-collision_layer = 21
-collision_mask = 21
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_stxcd")
-
 [node name="explosion" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_uj80a")
 volume_db = -20.0
 pitch_scale = 2.0
 attenuation = 11.3137
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_ic5ve")
 
 [connection signal="timeout" from="shoot_speed" to="." method="_on_shoot_speed_timeout"]
 [connection signal="timeout" from="shoot_offset" to="." method="_on_shoot_offset_timeout"]
