@@ -21,6 +21,7 @@ LevelManager="*res://Scripts/Managers/LevelManager.gd"
 TransitionScreen="*res://Scripts/Animations/transition_screen.tscn"
 MusicManager="*res://music/music_manager.tscn"
 SFXManager="*res://music/sfx_manager.tscn"
+MedalManager="*res://Scripts/Managers/MedalManager.gd"
 
 [display]
 

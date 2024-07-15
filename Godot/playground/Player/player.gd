@@ -38,6 +38,8 @@ var is_wall_jumping = false
 @onready var sprite_2d = $AnimatedSprite2D
 @onready var animation_player = $AnimationPlayer
 
+@onready var splash = $splash
+
 
 # Signals
 
@@ -189,6 +191,8 @@ func handle_death() -> void:
 	can_control = false
 	await get_tree().create_timer(.5).timeout # Wait for timer to time out
 	reset_player()
+	
+	splash.play() # Play splash SFX
 
 func reset_player() -> void:
 	# Function handles player reset

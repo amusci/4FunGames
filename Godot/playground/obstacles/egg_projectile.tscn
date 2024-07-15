@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cdgup20pgw0ws"]
 
 [ext_resource type="Script" path="res://obstacles/Projectile.gd" id="1_5m225"]
-[ext_resource type="Texture2D" uid="uid://b3tg8f4sv1g5j" path="res://art/homegrown/Egg Temp.png" id="2_swp7s"]
+[ext_resource type="Texture2D" uid="uid://bqlmopd1hjgig" path="res://art/homegrown/new egg.png" id="2_8repv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nturf"]
 radius = 1.0
@@ -15,7 +15,7 @@ script = ExtResource("1_5m225")
 
 [node name="Egg" type="Sprite2D" parent="."]
 z_index = -1
-texture = ExtResource("2_swp7s")
+texture = ExtResource("2_8repv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
