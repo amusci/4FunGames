@@ -1204,11 +1204,6 @@ point_count = 8
 [node name="LevelTwo" type="Node2D"]
 script = ExtResource("1_2apky")
 
-[node name="Player" parent="." instance=ExtResource("4_01xfs")]
-position = Vector2(256, -904)
-collision_mask = 15
-respawn_area = Vector2(-1656, -144)
-
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(1.00045, 1)
 tile_set = SubResource("TileSet_lk42s")
@@ -1219,14 +1214,98 @@ layer_1/name = "water"
 layer_1/z_index = -1
 layer_1/tile_data = PackedInt32Array()
 
-[node name="Label" type="Label" parent="."]
-offset_left = -816.0
-offset_top = -1736.0
-offset_right = -776.0
-offset_bottom = -1713.0
-text = "Key"
+[node name="Player" parent="." instance=ExtResource("4_01xfs")]
+position = Vector2(256, -904)
+collision_mask = 15
+respawn_area = Vector2(-1656, -144)
 
-[node name="Cannons" type="Node2D" parent="."]
+[node name="Coins" type="Node" parent="."]
+
+[node name="coin" parent="Coins" instance=ExtResource("8_4wr8a")]
+position = Vector2(-1280, -1528)
+
+[node name="coin2" parent="Coins" instance=ExtResource("8_4wr8a")]
+position = Vector2(-12, -448)
+
+[node name="coin4" parent="Coins" instance=ExtResource("8_4wr8a")]
+position = Vector2(-608, -328)
+
+[node name="coin3" parent="Coins" instance=ExtResource("8_4wr8a")]
+position = Vector2(-152, -1168)
+
+[node name="coin5" parent="Coins" instance=ExtResource("8_4wr8a")]
+position = Vector2(1224, -1744)
+
+[node name="coin8" parent="Coins" instance=ExtResource("8_4wr8a")]
+position = Vector2(385, -1792)
+
+[node name="coin6" parent="Coins" instance=ExtResource("8_4wr8a")]
+position = Vector2(1504, -1392)
+
+[node name="coin7" parent="Coins" instance=ExtResource("8_4wr8a")]
+position = Vector2(1984, -1280)
+
+[node name="coin9" parent="Coins" instance=ExtResource("8_4wr8a")]
+position = Vector2(3136, -1441)
+
+[node name="Moving Platforms" type="Node" parent="."]
+
+[node name="left_to_right_platform" parent="Moving Platforms" instance=ExtResource("10_qliuf")]
+position = Vector2(208, -880)
+curve = SubResource("Curve2D_hpv1f")
+loop = false
+speed = 1.0
+speed_scale = 0.5
+
+[node name="left_to_right_platform2" parent="Moving Platforms" instance=ExtResource("10_qliuf")]
+position = Vector2(112, -1088)
+curve = SubResource("Curve2D_xx6i4")
+loop = false
+speed = 1.0
+speed_scale = 0.5
+
+[node name="left_to_right_platform3" parent="Moving Platforms" instance=ExtResource("10_qliuf")]
+position = Vector2(320, -1632)
+curve = SubResource("Curve2D_y2m22")
+loop = false
+
+[node name="left_to_right_platform4" parent="Moving Platforms" instance=ExtResource("10_qliuf")]
+position = Vector2(448, -1632)
+curve = SubResource("Curve2D_pcqxw")
+loop = false
+speed = 1.0
+
+[node name="left_to_right_platform5" parent="Moving Platforms" instance=ExtResource("10_qliuf")]
+position = Vector2(576, -1728)
+curve = SubResource("Curve2D_j48f7")
+speed = 1.0
+
+[node name="Springs" type="Node" parent="."]
+
+[node name="spring" parent="Springs" instance=ExtResource("9_rrm3x")]
+position = Vector2(-1032, -1592)
+
+[node name="spring4" parent="Springs" instance=ExtResource("9_rrm3x")]
+position = Vector2(-8, -648)
+
+[node name="spring3" parent="Springs" instance=ExtResource("9_rrm3x")]
+position = Vector2(-96, -473)
+
+[node name="spring5" parent="Springs" instance=ExtResource("9_rrm3x")]
+position = Vector2(1848, -1344)
+rotation = -1.57079
+spring_power = 900
+
+[node name="spring6" parent="Springs" instance=ExtResource("9_rrm3x")]
+position = Vector2(1672, -1232)
+rotation = 1.5708
+spring_power = 900
+
+[node name="spring8" parent="Springs" instance=ExtResource("9_rrm3x")]
+position = Vector2(2112, -1225)
+spring_power = 900
+
+[node name="Cannons" type="Node" parent="."]
 
 [node name="Cannon" parent="Cannons" instance=ExtResource("8_3uqlr")]
 position = Vector2(-1416, -1352)
@@ -1315,98 +1394,19 @@ position = Vector2(-136, -264)
 scale = Vector2(1.00911, 0.986529)
 level = "LevelTwo"
 
-[node name="Spring" type="Node2D" parent="."]
-
-[node name="spring" parent="Spring" instance=ExtResource("9_rrm3x")]
-position = Vector2(-1032, -1592)
-
-[node name="spring4" parent="Spring" instance=ExtResource("9_rrm3x")]
-position = Vector2(-8, -648)
-
-[node name="spring3" parent="Spring" instance=ExtResource("9_rrm3x")]
-position = Vector2(-96, -473)
-
-[node name="spring5" parent="Spring" instance=ExtResource("9_rrm3x")]
-position = Vector2(1848, -1344)
-rotation = -1.57079
-spring_power = 900
-
-[node name="spring6" parent="Spring" instance=ExtResource("9_rrm3x")]
-position = Vector2(1672, -1232)
-rotation = 1.5708
-spring_power = 900
-
-[node name="spring8" parent="Spring" instance=ExtResource("9_rrm3x")]
-position = Vector2(2112, -1225)
-spring_power = 900
-
-[node name="Coin" type="Node2D" parent="."]
-
-[node name="coin" parent="Coin" instance=ExtResource("8_4wr8a")]
-position = Vector2(-1280, -1528)
-
-[node name="coin2" parent="Coin" instance=ExtResource("8_4wr8a")]
-position = Vector2(-12, -448)
-
-[node name="coin4" parent="Coin" instance=ExtResource("8_4wr8a")]
-position = Vector2(-608, -328)
-
-[node name="coin3" parent="Coin" instance=ExtResource("8_4wr8a")]
-position = Vector2(-152, -1168)
-
-[node name="coin5" parent="Coin" instance=ExtResource("8_4wr8a")]
-position = Vector2(1224, -1744)
-
-[node name="coin8" parent="Coin" instance=ExtResource("8_4wr8a")]
-position = Vector2(385, -1792)
-
-[node name="coin6" parent="Coin" instance=ExtResource("8_4wr8a")]
-position = Vector2(1504, -1392)
-
-[node name="coin7" parent="Coin" instance=ExtResource("8_4wr8a")]
-position = Vector2(1984, -1280)
-
-[node name="coin9" parent="Coin" instance=ExtResource("8_4wr8a")]
-position = Vector2(3136, -1441)
-
-[node name="Platform" type="Node" parent="."]
-
-[node name="left_to_right_platform" parent="Platform" instance=ExtResource("10_qliuf")]
-position = Vector2(208, -880)
-curve = SubResource("Curve2D_hpv1f")
-loop = false
-speed = 1.0
-speed_scale = 0.5
-
-[node name="left_to_right_platform2" parent="Platform" instance=ExtResource("10_qliuf")]
-position = Vector2(112, -1088)
-curve = SubResource("Curve2D_xx6i4")
-loop = false
-speed = 1.0
-speed_scale = 0.5
-
-[node name="left_to_right_platform3" parent="Platform" instance=ExtResource("10_qliuf")]
-position = Vector2(320, -1632)
-curve = SubResource("Curve2D_y2m22")
-loop = false
-
-[node name="left_to_right_platform4" parent="Platform" instance=ExtResource("10_qliuf")]
-position = Vector2(448, -1632)
-curve = SubResource("Curve2D_pcqxw")
-loop = false
-speed = 1.0
-
-[node name="left_to_right_platform5" parent="Platform" instance=ExtResource("10_qliuf")]
-position = Vector2(576, -1728)
-curve = SubResource("Curve2D_j48f7")
-speed = 1.0
-
 [node name="Finish Flag" type="Node" parent="."]
 
 [node name="finish_flag" parent="Finish Flag" instance=ExtResource("11_28axj")]
 desired_scene = "res://UI/level_select.tscn"
 which_level = "LevelTwo"
 num_of_coins = 10
+
+[node name="Label" type="Label" parent="."]
+offset_left = -816.0
+offset_top = -1736.0
+offset_right = -776.0
+offset_bottom = -1713.0
+text = "Key"
 
 [node name="UI" type="CanvasLayer" parent="."]
 
