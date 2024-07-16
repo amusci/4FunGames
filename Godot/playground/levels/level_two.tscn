@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://coihcx7a6btha"]
+[gd_scene load_steps=19 format=3 uid="uid://coihcx7a6btha"]
 
 [ext_resource type="Script" path="res://Scripts/Classes/level.gd" id="1_2apky"]
 [ext_resource type="PackedScene" uid="uid://32f5ka1e7pt1" path="res://UI/base_ui.tscn" id="1_yf48o"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://8hqvucgxe26w" path="res://interactables/coin.tscn" id="8_4wr8a"]
 [ext_resource type="PackedScene" uid="uid://sip0sxjyf5p3" path="res://interactables/spring.tscn" id="9_rrm3x"]
 [ext_resource type="PackedScene" uid="uid://dgnbxk4sqeciq" path="res://platforms/moving_platform.tscn" id="10_qliuf"]
+[ext_resource type="PackedScene" uid="uid://mqq41jm7voip" path="res://interactables/finish_level_flag.tscn" id="11_28axj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfjlc"]
 texture = ExtResource("6_8ys0x")
@@ -411,8 +412,9 @@ panning_strength = 0.0
 bus = &"game_music"
 
 [node name="Player" parent="." instance=ExtResource("4_01xfs")]
-position = Vector2(-64, -224)
-respawn_area = Vector2(1576, -1088)
+position = Vector2(-16, -184)
+collision_mask = 15
+respawn_area = Vector2(-1656, -144)
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(1.00045, 1)
@@ -610,3 +612,8 @@ speed = 1.0
 position = Vector2(576, -1728)
 curve = SubResource("Curve2D_j48f7")
 speed = 1.0
+
+[node name="finish_flag" parent="." instance=ExtResource("11_28axj")]
+desired_scene = "res://UI/level_select.tscn"
+which_level = "LevelTwo"
+num_of_coins = 10

@@ -94,6 +94,7 @@ pitch_scale = 2.0
 attenuation = 11.3137
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_ic5ve")
