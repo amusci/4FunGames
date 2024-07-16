@@ -455,6 +455,7 @@ bus = &"game_music"
 [node name="Player" parent="." instance=ExtResource("5_f2dmi")]
 z_index = 2
 position = Vector2(208, -88)
+collision_mask = 15
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = 2

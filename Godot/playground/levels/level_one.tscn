@@ -1684,6 +1684,7 @@ layer_0/tile_data = PackedInt32Array(65533, 65539, 6, 65534, 65539, 6, 65535, 65
 
 [node name="Player" parent="." instance=ExtResource("10_babun")]
 position = Vector2(-704, -12)
+collision_mask = 15
 respawn_area = Vector2(-704, -12)
 
 [node name="Coin" type="Node" parent="."]

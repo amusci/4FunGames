@@ -1100,6 +1100,7 @@ centered = false
 
 [node name="Player" parent="." instance=ExtResource("3_a7iap")]
 position = Vector2(0, -16)
+collision_mask = 15
 respawn_area = Vector2(0, -12)
 
 [node name="Kill Zones" type="Node" parent="."]

@@ -999,6 +999,7 @@ script = ExtResource("1_iub31")
 
 [node name="Player" parent="." instance=ExtResource("10_kfnf1")]
 position = Vector2(2808, -184)
+collision_mask = 15
 respawn_area = Vector2(1568, -384)
 
 [node name="UI" type="CanvasLayer" parent="."]
