@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://b3tdsn3xcwus5"]
+[gd_scene load_steps=31 format=3 uid="uid://b3tdsn3xcwus5"]
 
 [ext_resource type="Script" path="res://Scripts/Classes/level.gd" id="1_vmml6"]
 [ext_resource type="Texture2D" uid="uid://bk3u1ga75vekq" path="res://art/homegrown/Volcano Background.png" id="2_scfyo"]
@@ -12,7 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://dgnbxk4sqeciq" path="res://platforms/moving_platform.tscn" id="10_2s2md"]
 [ext_resource type="PackedScene" uid="uid://8hqvucgxe26w" path="res://interactables/coin.tscn" id="11_0tofu"]
 [ext_resource type="PackedScene" uid="uid://mqq41jm7voip" path="res://interactables/finish_level_flag.tscn" id="13_v7dcd"]
-[ext_resource type="PackedScene" uid="uid://dnvtl1q1qm16f" path="res://platforms/big_player_activated_moving_platform.tscn" id="14_ldonp"]
+[ext_resource type="PackedScene" path="res://platforms/big_player_activated_moving_platform.tscn" id="14_ldonp"]
+[ext_resource type="PackedScene" uid="uid://ditnjmcw3lsm0" path="res://interactables/checkpoint.tscn" id="14_lifns"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_egy2u"]
 animations = [{
@@ -679,3 +680,37 @@ position = Vector2(7088, -1056)
 
 [node name="finish_flag" parent="." instance=ExtResource("13_v7dcd")]
 position = Vector2(7400, -1184)
+
+[node name="Node" type="Node" parent="."]
+
+[node name="checkpoint" parent="." instance=ExtResource("14_lifns")]
+position = Vector2(1216, -136)
+scale = Vector2(1, 5)
+
+[node name="checkpoint2" parent="." instance=ExtResource("14_lifns")]
+position = Vector2(1704, -304)
+scale = Vector2(1, 5)
+
+[node name="checkpoint3" parent="." instance=ExtResource("14_lifns")]
+position = Vector2(2904, -408)
+scale = Vector2(1, 5)
+
+[node name="checkpoint4" parent="." instance=ExtResource("14_lifns")]
+position = Vector2(3592, -440)
+scale = Vector2(1, 5)
+
+[node name="checkpoint5" parent="." instance=ExtResource("14_lifns")]
+position = Vector2(4072, -760)
+scale = Vector2(1, 5)
+
+[node name="checkpoint6" parent="." instance=ExtResource("14_lifns")]
+position = Vector2(4792, -760)
+scale = Vector2(1, 5)
+
+[node name="checkpoint7" parent="." instance=ExtResource("14_lifns")]
+position = Vector2(6280, -1000)
+scale = Vector2(1, 5)
+
+[node name="checkpoint8" parent="." instance=ExtResource("14_lifns")]
+position = Vector2(6920, -1160)
+scale = Vector2(1, 5)
