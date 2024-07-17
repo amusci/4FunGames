@@ -1422,7 +1422,6 @@ libraries = {
 }
 
 [node name="UI" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="base_ui" parent="UI" instance=ExtResource("3_cyicn")]
 
