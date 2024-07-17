@@ -1,0 +1,93 @@
+[gd_scene load_steps=8 format=3 uid="uid://dnvtl1q1qm16f"]
+
+[ext_resource type="Script" path="res://platforms/player_activated_moving_platform.gd" id="1_r5xp6"]
+[ext_resource type="Texture2D" uid="uid://cy4njne70hbbo" path="res://art/pixel_platformer/Tiles/tile_0110.png" id="2_xo3ca"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uxoal"]
+size = Vector2(64, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbhyx"]
+size = Vector2(64, 3)
+
+[sub_resource type="Animation" id="Animation_o3qxx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ge4sm"]
+resource_name = "move_left_to_right"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-1.56, -1.56),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lvv2q"]
+_data = {
+"RESET": SubResource("Animation_o3qxx"),
+"move_left_to_right": SubResource("Animation_ge4sm")
+}
+
+[node name="left_to_right_platform" type="Path2D"]
+script = ExtResource("1_r5xp6")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+rotation = 3.14159
+progress = 14.2253
+rotates = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
+remote_path = NodePath("../../AnimatableBody2D")
+
+[node name="Area2D" type="Area2D" parent="PathFollow2D"]
+position = Vector2(-7.60554e-06, 3)
+rotation = -3.14159
+collision_mask = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Area2D"]
+position = Vector2(0, 3)
+scale = Vector2(1, 2.04)
+shape = SubResource("RectangleShape2D_uxoal")
+debug_color = Color(0.950941, 0.0757734, 0.521909, 0.42)
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+rotation = 3.14159
+collision_mask = 21
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+position = Vector2(2.02815e-05, -8)
+scale = Vector2(4.45452, 0.999995)
+texture = ExtResource("2_xo3ca")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(0, 7.27596e-12)
+rotation = 3.14159
+shape = SubResource("RectangleShape2D_xbhyx")
+one_way_collision = true
+one_way_collision_margin = 36.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+callback_mode_process = 0
+libraries = {
+"": SubResource("AnimationLibrary_lvv2q")
+}
+
+[connection signal="body_entered" from="PathFollow2D/Area2D" to="." method="_on_area_2d_body_entered"]
