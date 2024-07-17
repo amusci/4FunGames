@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dh82nrqfj0qo7"]
+[gd_scene load_steps=42 format=3 uid="uid://dh82nrqfj0qo7"]
 
 [ext_resource type="Script" path="res://Scripts/Classes/level.gd" id="1_cxrli"]
 [ext_resource type="PackedScene" uid="uid://32f5ka1e7pt1" path="res://UI/base_ui.tscn" id="3_cyicn"]
@@ -830,6 +830,15 @@ sources/6 = SubResource("TileSetAtlasSource_raids")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bgbpd"]
 size = Vector2(4832, 7)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejs7l"]
+size = Vector2(416, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dawbn"]
+size = Vector2(192, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wg53d"]
+size = Vector2(464, 7)
+
 [sub_resource type="Curve2D" id="Curve2D_e273l"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, -102)
@@ -1199,6 +1208,28 @@ respawn_area = Vector2(-680, -12)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zones/KillZone"]
 position = Vector2(1104, 4.5)
 shape = SubResource("RectangleShape2D_bgbpd")
+debug_color = Color(1, 0, 0, 0.196078)
+
+[node name="KillZone2" parent="Kill Zones" instance=ExtResource("20_08qfp")]
+position = Vector2(-17.2324, -32.1345)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zones/KillZone2"]
+position = Vector2(1265.23, -155.366)
+shape = SubResource("RectangleShape2D_ejs7l")
+debug_color = Color(1, 0, 0, 0.196078)
+
+[node name="KillZone3" parent="Kill Zones" instance=ExtResource("20_08qfp")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zones/KillZone3"]
+position = Vector2(1856, -187.5)
+shape = SubResource("RectangleShape2D_dawbn")
+debug_color = Color(1, 0, 0, 0.196078)
+
+[node name="KillZone4" parent="Kill Zones" instance=ExtResource("20_08qfp")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zones/KillZone4"]
+position = Vector2(2632, -1211.5)
+shape = SubResource("RectangleShape2D_wg53d")
 debug_color = Color(1, 0, 0, 0.196078)
 
 [node name="Coins" type="Node" parent="."]
