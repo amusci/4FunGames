@@ -1141,9 +1141,9 @@ texture = ExtResource("2_u72k0")
 centered = false
 
 [node name="Player" parent="." instance=ExtResource("3_a7iap")]
-position = Vector2(-120, -72)
+position = Vector2(-72, -12)
 collision_mask = 15
-respawn_area = Vector2(0, -12)
+respawn_area = Vector2(-72, -12)
 
 [node name="Kill Zones" type="Node" parent="."]
 
