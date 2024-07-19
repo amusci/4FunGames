@@ -870,6 +870,8 @@ position = Vector2(-1616, -128)
 collision_mask = 15
 respawn_area = Vector2(-744, -1472)
 
+[node name="Kill Zones" type="Node" parent="."]
+
 [node name="Coins" type="Node" parent="."]
 
 [node name="coin" parent="Coins" instance=ExtResource("8_4wr8a")]
@@ -898,6 +900,8 @@ position = Vector2(1984, -1280)
 
 [node name="coin9" parent="Coins" instance=ExtResource("8_4wr8a")]
 position = Vector2(3136, -1441)
+
+[node name="Checkpoints" type="Node" parent="."]
 
 [node name="Moving Platforms" type="Node" parent="."]
 

@@ -996,6 +996,8 @@ position = Vector2(-32, -92)
 collision_mask = 15
 respawn_area = Vector2(1568, -384)
 
+[node name="Kill Zones" type="Node" parent="."]
+
 [node name="Coins" type="Node" parent="."]
 
 [node name="coin" parent="Coins" instance=ExtResource("8_pqxir")]
