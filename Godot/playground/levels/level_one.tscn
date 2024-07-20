@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://q6t8j6a5nb33" path="res://interactables/popup_text_sensor.tscn" id="6_wcywt"]
 [ext_resource type="Texture2D" uid="uid://dd8ncphs4qfis" path="res://art/homegrown/New Art Style/water-Sheet.png" id="7_2vgyq"]
 [ext_resource type="PackedScene" uid="uid://8hqvucgxe26w" path="res://interactables/coin.tscn" id="8_c43l3"]
-[ext_resource type="FontFile" uid="uid://bx3q63i7edxpg" path="res://art/Fonts/PixelOperator8.ttf" id="8_gyg1b"]
 [ext_resource type="PackedScene" uid="uid://3x22w68bgrw0" path="res://obstacles/cannon.tscn" id="9_qogh5"]
 [ext_resource type="PackedScene" uid="uid://d0r7vt626s7mw" path="res://Player/player.tscn" id="10_babun"]
 [ext_resource type="PackedScene" uid="uid://sip0sxjyf5p3" path="res://interactables/spring.tscn" id="10_idh53"]
@@ -15,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dgnbxk4sqeciq" path="res://platforms/moving_platform.tscn" id="11_mi3ni"]
 [ext_resource type="PackedScene" uid="uid://ditnjmcw3lsm0" path="res://interactables/checkpoint.tscn" id="12_lhhb8"]
 [ext_resource type="PackedScene" uid="uid://mqq41jm7voip" path="res://interactables/finish_level_flag.tscn" id="13_yyqud"]
+[ext_resource type="FontFile" uid="uid://4yofhms5yodf" path="res://art/Fonts/PixelOperator-Bold.ttf" id="14_y0cdl"]
 [ext_resource type="Texture2D" uid="uid://b52uktxagmux7" path="res://art/homegrown/black background.png" id="15_jouqw"]
 [ext_resource type="PackedScene" uid="uid://by0flxkafsuuf" path="res://obstacles/kill_zone.tscn" id="20_08qfp"]
 
@@ -1380,12 +1380,12 @@ scale = Vector2(9.7128, 14.6445)
 which_text = "spring"
 
 [node name="movement" type="RichTextLabel" parent="Labels"]
-visible = false
 offset_left = -544.0
 offset_top = -120.0
 offset_right = -176.0
 offset_bottom = -25.0
-theme_override_fonts/normal_font = ExtResource("8_gyg1b")
+theme_override_fonts/normal_font = ExtResource("14_y0cdl")
+theme_override_font_sizes/normal_font_size = 16
 text = "A and D to move just try it and you'll find your groove 
 
 
@@ -1393,64 +1393,64 @@ text = "A and D to move just try it and you'll find your groove
 scroll_active = false
 
 [node name="jump" type="RichTextLabel" parent="Labels"]
-visible = false
 offset_left = 16.0
 offset_top = -128.0
 offset_right = 323.0
 offset_bottom = -57.0
-theme_override_fonts/normal_font = ExtResource("8_gyg1b")
+theme_override_fonts/normal_font = ExtResource("14_y0cdl")
+theme_override_font_sizes/normal_font_size = 16
 text = "Space to jump when you see a hump
 "
 scroll_active = false
 
 [node name="coin" type="RichTextLabel" parent="Labels"]
-visible = false
 modulate = Color(1, 1, 1, 0)
 offset_left = 512.0
 offset_top = -264.0
 offset_right = 928.0
 offset_bottom = -224.0
-theme_override_fonts/normal_font = ExtResource("8_gyg1b")
+theme_override_fonts/normal_font = ExtResource("14_y0cdl")
+theme_override_font_sizes/normal_font_size = 16
 text = "Devour the carrot, no need to share it"
 scroll_active = false
 
 [node name="swim" type="RichTextLabel" parent="Labels"]
-visible = false
 offset_left = 997.0
 offset_top = -343.0
 offset_right = 1368.0
 offset_bottom = -288.0
-theme_override_fonts/normal_font = ExtResource("8_gyg1b")
+theme_override_fonts/normal_font = ExtResource("14_y0cdl")
+theme_override_font_sizes/normal_font_size = 16
 text = "Jump over the water, it'll take you farther"
 scroll_active = false
 
 [node name="walljump" type="RichTextLabel" parent="Labels"]
-visible = false
 offset_left = 1520.0
 offset_top = -376.0
 offset_right = 1827.0
 offset_bottom = -323.0
-theme_override_fonts/normal_font = ExtResource("8_gyg1b")
+theme_override_fonts/normal_font = ExtResource("14_y0cdl")
+theme_override_font_sizes/normal_font_size = 16
 text = "Hop, skip, jump up the wall, take care not to fall"
 scroll_active = false
 
 [node name="egg" type="RichTextLabel" parent="Labels"]
-visible = false
 offset_left = 1920.0
 offset_top = -624.0
 offset_right = 2391.0
 offset_bottom = -580.0
-theme_override_fonts/normal_font = ExtResource("8_gyg1b")
+theme_override_fonts/normal_font = ExtResource("14_y0cdl")
+theme_override_font_sizes/normal_font_size = 16
 text = "ughhh chicken eggs, cmon lil rabbit use those legs"
 
 [node name="spring" type="RichTextLabel" parent="Labels"]
-visible = false
 modulate = Color(1, 1, 1, 0)
 offset_left = 2408.0
 offset_top = -664.0
 offset_right = 2648.0
 offset_bottom = -592.0
-theme_override_fonts/normal_font = ExtResource("8_gyg1b")
+theme_override_fonts/normal_font = ExtResource("14_y0cdl")
+theme_override_font_sizes/normal_font_size = 16
 text = "Take the springs!! now you can get over things!!"
 
 [node name="text_animations" type="AnimationPlayer" parent="Labels"]
