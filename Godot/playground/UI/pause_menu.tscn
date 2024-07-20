@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://1f407wa2mcti"]
+[gd_scene load_steps=6 format=3 uid="uid://1f407wa2mcti"]
 
 [ext_resource type="Script" path="res://UI/pause_menu.gd" id="1_hnche"]
+[ext_resource type="FontFile" uid="uid://4yofhms5yodf" path="res://art/Fonts/PixelOperator-Bold.ttf" id="2_i2tw3"]
 [ext_resource type="Script" path="res://UI/game_music_volume.gd" id="3_228jh"]
 [ext_resource type="Script" path="res://UI/sfx_volume.gd" id="4_ajlmu"]
 
@@ -37,14 +38,20 @@ size_flags_vertical = 4
 
 [node name="Resume" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_i2tw3")
+theme_override_font_sizes/font_size = 16
 text = "Resume"
 
 [node name="LevelSelect" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_i2tw3")
+theme_override_font_sizes/font_size = 16
 text = "Level Select"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_i2tw3")
+theme_override_font_sizes/font_size = 16
 text = "Quit"
 
 [node name="Panel" type="Panel" parent="."]
@@ -61,7 +68,11 @@ offset_left = 10.54
 offset_right = 144.54
 offset_bottom = 23.0
 scale = Vector2(0.2, 0.2)
+theme_override_fonts/font = ExtResource("2_i2tw3")
+theme_override_font_sizes/font_size = 16
 text = "MASTER VOLUME"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="music_volume_label" type="Label" parent="Panel"]
 layout_mode = 0
@@ -70,7 +81,11 @@ offset_top = 10.06
 offset_right = 144.54
 offset_bottom = 33.06
 scale = Vector2(0.2, 0.2)
+theme_override_fonts/font = ExtResource("2_i2tw3")
+theme_override_font_sizes/font_size = 16
 text = "MUSIC VOLUME"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="sfx_volume_label" type="Label" parent="Panel"]
 layout_mode = 0
@@ -79,7 +94,11 @@ offset_top = 21.9841
 offset_right = 114.342
 offset_bottom = 44.9841
 scale = Vector2(0.2, 0.2)
+theme_override_fonts/font = ExtResource("2_i2tw3")
+theme_override_font_sizes/font_size = 16
 text = "SFX VOLUME"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="master_slider" type="HSlider" parent="."]
 layout_mode = 0

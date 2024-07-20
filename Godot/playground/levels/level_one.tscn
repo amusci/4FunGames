@@ -841,7 +841,7 @@ size = Vector2(464, 7)
 
 [sub_resource type="Curve2D" id="Curve2D_e273l"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, -102)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, -96)
 }
 point_count = 2
 
@@ -1197,7 +1197,7 @@ scale = Vector2(0.728, 0.416)
 texture = ExtResource("15_jouqw")
 
 [node name="Player" parent="." instance=ExtResource("10_babun")]
-position = Vector2(800, -184)
+position = Vector2(2824, -672)
 collision_mask = 15
 respawn_area = Vector2(-680, -12)
 
