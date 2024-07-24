@@ -1,6 +1,7 @@
-[gd_scene load_steps=26 format=3 uid="uid://8xg15hsfnxkv"]
+[gd_scene load_steps=29 format=3 uid="uid://8xg15hsfnxkv"]
 
 [ext_resource type="Script" path="res://Scripts/Classes/level.gd" id="1_iub31"]
+[ext_resource type="Texture2D" uid="uid://dd8ncphs4qfis" path="res://art/homegrown/New Art Style/water-Sheet.png" id="2_80gv0"]
 [ext_resource type="PackedScene" uid="uid://32f5ka1e7pt1" path="res://UI/base_ui.tscn" id="2_yxeyp"]
 [ext_resource type="PackedScene" uid="uid://1f407wa2mcti" path="res://UI/pause_menu.tscn" id="3_akkk5"]
 [ext_resource type="PackedScene" uid="uid://by0flxkafsuuf" path="res://obstacles/kill_zone.tscn" id="6_72cis"]
@@ -15,6 +16,22 @@
 [ext_resource type="PackedScene" uid="uid://ditnjmcw3lsm0" path="res://interactables/checkpoint.tscn" id="12_28abb"]
 [ext_resource type="PackedScene" uid="uid://3x22w68bgrw0" path="res://obstacles/cannon.tscn" id="12_voofn"]
 [ext_resource type="PackedScene" uid="uid://dgnbxk4sqeciq" path="res://platforms/moving_platform.tscn" id="13_uipbb"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l5qyc"]
+texture = ExtResource("2_80gv0")
+0:0/animation_columns = 8
+0:0/animation_speed = 10.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/animation_frame_6/duration = 1.0
+0:0/animation_frame_7/duration = 1.0
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5763n"]
 texture = ExtResource("8_miaqe")
@@ -935,9 +952,13 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 7
 sources/1 = SubResource("TileSetAtlasSource_5763n")
 sources/2 = SubResource("TileSetAtlasSource_n4dkt")
+sources/0 = SubResource("TileSetAtlasSource_l5qyc")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ix81p"]
-size = Vector2(9896.69, 8.88259)
+size = Vector2(6019.81, 1.95547)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pfwse"]
+size = Vector2(960, 7)
 
 [sub_resource type="Curve2D" id="Curve2D_xkhdi"]
 _data = {
@@ -1005,19 +1026,18 @@ respawn_area = Vector2(1568, -384)
 [node name="KillZone" parent="Kill Zones" instance=ExtResource("6_72cis")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zones/KillZone"]
-position = Vector2(3243.67, -19.8985)
+position = Vector2(2592, -27.5)
 scale = Vector2(0.988735, 3.57971)
 shape = SubResource("RectangleShape2D_ix81p")
-debug_color = Color(0.968627, 0, 0, 0.419608)
+debug_color = Color(1, 0, 0, 0.196078)
 
 [node name="KillZone2" parent="Kill Zones" instance=ExtResource("6_72cis")]
 scale = Vector2(0.1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zones/KillZone2"]
-position = Vector2(37625.2, -206)
-scale = Vector2(0.1, 0.362)
-shape = SubResource("RectangleShape2D_ix81p")
-debug_color = Color(0.968627, 0, 0, 0.419608)
+position = Vector2(37600, -203.5)
+shape = SubResource("RectangleShape2D_pfwse")
+debug_color = Color(1, 0, 0, 0.196078)
 
 [node name="Coins" type="Node" parent="."]
 
