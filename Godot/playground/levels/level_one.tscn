@@ -1338,11 +1338,12 @@ num_of_coins = 6
 [node name="Labels" type="Node" parent="."]
 
 [node name="movement_sensor" parent="Labels" instance=ExtResource("6_wcywt")]
-position = Vector2(-448, -32)
+position = Vector2(-559, -32)
 scale = Vector2(16, 4)
 which_text = "movement"
 
 [node name="movement" type="RichTextLabel" parent="Labels"]
+visible = false
 offset_left = -544.0
 offset_top = -104.0
 offset_right = -344.0
@@ -1359,6 +1360,7 @@ scale = Vector2(16, 4)
 which_text = "jump"
 
 [node name="jump" type="RichTextLabel" parent="Labels"]
+visible = false
 offset_left = 40.0
 offset_top = -88.0
 offset_right = 280.0
@@ -1369,7 +1371,7 @@ text = "Space to jump when you see a hump"
 scroll_active = false
 
 [node name="coin_sensor" parent="Labels" instance=ExtResource("6_wcywt")]
-position = Vector2(736, -176)
+position = Vector2(722, -176)
 scale = Vector2(16, 8)
 which_text = "coin"
 
@@ -1385,14 +1387,15 @@ text = "Devour the carrot, no need to share it"
 scroll_active = false
 
 [node name="swim_sensor" parent="Labels" instance=ExtResource("6_wcywt")]
-position = Vector2(1184, -272)
+position = Vector2(1239, -272)
 scale = Vector2(24, 8)
 which_text = "swim"
 
 [node name="swim" type="RichTextLabel" parent="Labels"]
-offset_left = 944.0
+visible = false
+offset_left = 1085.0
 offset_top = -352.0
-offset_right = 1251.0
+offset_right = 1392.0
 offset_bottom = -337.0
 theme_override_fonts/normal_font = ExtResource("14_y0cdl")
 theme_override_font_sizes/normal_font_size = 16
@@ -1400,45 +1403,46 @@ text = "Jump over the water, it'll take you farther"
 scroll_active = false
 
 [node name="walljump_sensor" parent="Labels" instance=ExtResource("6_wcywt")]
-position = Vector2(1656, -280)
-scale = Vector2(18.7928, 8.68454)
+position = Vector2(1802, -303)
+scale = Vector2(15, 15)
 which_text = "walljump"
 
 [node name="walljump" type="RichTextLabel" parent="Labels"]
-offset_left = 1520.0
-offset_top = -376.0
-offset_right = 1827.0
-offset_bottom = -323.0
+visible = false
+offset_left = 1635.0
+offset_top = -382.0
+offset_right = 1942.0
+offset_bottom = -329.0
 theme_override_fonts/normal_font = ExtResource("14_y0cdl")
 theme_override_font_sizes/normal_font_size = 16
 text = "Hop, skip, jump up the wall, take care not to fall"
 scroll_active = false
 
 [node name="egg_sensor" parent="Labels" instance=ExtResource("6_wcywt")]
-position = Vector2(2048, -520)
-scale = Vector2(9.7128, 5.60454)
+position = Vector2(2194, -563)
+scale = Vector2(20, 10)
 which_text = "egg"
 
 [node name="egg" type="RichTextLabel" parent="Labels"]
-offset_left = 1920.0
-offset_top = -624.0
-offset_right = 2280.0
-offset_bottom = -580.0
+offset_left = 2016.0
+offset_top = -636.0
+offset_right = 2376.0
+offset_bottom = -592.0
 theme_override_fonts/normal_font = ExtResource("14_y0cdl")
 theme_override_font_sizes/normal_font_size = 16
 text = "ughhh chicken eggs, cmon lil rabbit use those legs"
 scroll_active = false
 
 [node name="spring_sensor" parent="Labels" instance=ExtResource("6_wcywt")]
-position = Vector2(2592, -520)
+position = Vector2(2641, -603)
 scale = Vector2(9.7128, 14.6445)
 which_text = "spring"
 
 [node name="spring" type="RichTextLabel" parent="Labels"]
 modulate = Color(1, 1, 1, 0)
-offset_left = 2408.0
+offset_left = 2541.0
 offset_top = -664.0
-offset_right = 2648.0
+offset_right = 2781.0
 offset_bottom = -592.0
 theme_override_fonts/normal_font = ExtResource("14_y0cdl")
 theme_override_font_sizes/normal_font_size = 16
