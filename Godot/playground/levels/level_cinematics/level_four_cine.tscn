@@ -1401,18 +1401,14 @@ movie_quit_on_finish = true
 
 [node name="cinematic_camera" type="Camera2D" parent="."]
 position = Vector2(2520, -1432)
-scale = Vector2(-30.1911, -582.778)
 zoom = Vector2(0.75, 0.75)
 
 [node name="timer_label" type="Label" parent="cinematic_camera"]
-offset_left = -76.0
-offset_top = -109.0
-offset_right = 86.0
-offset_bottom = -73.0
-size_flags_horizontal = 8
-size_flags_vertical = 1
-text = "HOLD SPACE TO SKIP"
-metadata/_edit_use_anchors_ = true
+offset_left = -64.0
+offset_top = -112.0
+offset_right = 129.0
+offset_bottom = -89.0
+text = "HOLD SPACEBAR TO SKIP"
 
 [node name="cine_player" parent="." instance=ExtResource("12_x3bko")]
 position = Vector2(20, -97)
