@@ -2,16 +2,12 @@
 
 [ext_resource type="Script" path="res://UI/main_menu.gd" id="1_d2onx"]
 [ext_resource type="Texture2D" uid="uid://une7gipolxos" path="res://art/pixel_platformer/Tilemap/tilemap-backgrounds_packed.png" id="1_tnhbf"]
-
-[sub_resource type="SystemFont" id="SystemFont_rag50"]
-font_names = PackedStringArray("")
-subpixel_positioning = 0
-oversampling = 4.5
+[ext_resource type="FontFile" uid="uid://4yofhms5yodf" path="res://art/Fonts/PixelOperator-Bold.ttf" id="3_nsdcg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_u5o68"]
-font = SubResource("SystemFont_rag50")
-font_size = 50
-outline_size = 6
+font = ExtResource("3_nsdcg")
+font_size = 64
+outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 
 [node name="MainMenu" type="Control"]
@@ -58,28 +54,32 @@ theme_override_constants/separation = 32
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 24
+theme_override_fonts/font = ExtResource("3_nsdcg")
+theme_override_font_sizes/font_size = 32
 text = "PLAY GAME"
 
 [node name="Instructions" type="Button" parent="BG/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 24
+theme_override_fonts/font = ExtResource("3_nsdcg")
+theme_override_font_sizes/font_size = 32
 text = "INSTRUCTIONS"
 
 [node name="Settings" type="Button" parent="BG/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 24
+theme_override_fonts/font = ExtResource("3_nsdcg")
+theme_override_font_sizes/font_size = 32
 text = "SETTINGS"
 
 [node name="Quit Button" type="Button" parent="BG/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 24
+theme_override_fonts/font = ExtResource("3_nsdcg")
+theme_override_font_sizes/font_size = 32
 text = "QUIT GAME"
 
 [node name="Squiggy" type="Label" parent="BG"]
@@ -90,6 +90,8 @@ offset_right = 495.0
 offset_bottom = 73.45
 text = "SQUIGGY RUN"
 label_settings = SubResource("LabelSettings_u5o68")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="BG/MarginContainer/VBoxContainer/Play Button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="BG/MarginContainer/VBoxContainer/Instructions" to="." method="_on_instructions_pressed"]

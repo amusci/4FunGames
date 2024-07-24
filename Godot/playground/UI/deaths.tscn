@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b2mddi750n2fb"]
 
 [ext_resource type="Script" path="res://UI/death_counter.gd" id="1_j8eo2"]
-[ext_resource type="FontFile" uid="uid://edakqgrlvuy2" path="res://art/Fonts/PixelOperator8-Bold.ttf" id="2_jhpxh"]
+[ext_resource type="FontFile" uid="uid://4yofhms5yodf" path="res://art/Fonts/PixelOperator-Bold.ttf" id="2_pceif"]
 
 [node name="Deaths" type="CanvasLayer"]
 
@@ -12,6 +12,8 @@ script = ExtResource("1_j8eo2")
 
 [node name="deaths" type="Label" parent="Panel"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_jhpxh")
-theme_override_font_sizes/font_size = 8
+theme_override_fonts/font = ExtResource("2_pceif")
+theme_override_font_sizes/font_size = 16
 text = "Deaths: 0"
+horizontal_alignment = 1
+vertical_alignment = 1

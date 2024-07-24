@@ -70,7 +70,7 @@ func _on_level_1_pressed():
 	TransitionScreen.transition()
 	await get_tree().create_timer(.5).timeout
 	print("Changing scene to level 1")
-	get_tree().change_scene_to_file("res://levels/level_one.tscn")
+	get_tree().change_scene_to_file("res://levels/level_cinematics/level_one_cine.tscn")
 	deactivate() # Line 67
 
 
@@ -98,7 +98,7 @@ func _on_level_4_pressed():
 	TransitionScreen.transition()
 	await get_tree().create_timer(.5).timeout
 	print("Changing scene to level 4")
-	get_tree().change_scene_to_file("res://levels/level_four.tscn")
+	get_tree().change_scene_to_file("res://levels/level_cinematics/level_four_cine.tscn")
 	deactivate() # Line 67
 
 
@@ -116,7 +116,7 @@ func _on_level_6_pressed():
 	TransitionScreen.transition()
 	await get_tree().create_timer(.5).timeout
 	print("Changing scene to level 6")
-	get_tree().change_scene_to_file("res://levels/level_six.tscn")
+	get_tree().change_scene_to_file("res://levels/level_cinematics/level_six_cine.tscn")
 	deactivate() # Line 67
 
 

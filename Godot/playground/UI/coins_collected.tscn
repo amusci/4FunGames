@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c2g5hav50kcu1"]
 
 [ext_resource type="Script" path="res://UI/coins_counted.gd" id="1_j5ys4"]
-[ext_resource type="FontFile" uid="uid://edakqgrlvuy2" path="res://art/Fonts/PixelOperator8-Bold.ttf" id="2_s8hsf"]
+[ext_resource type="FontFile" uid="uid://4yofhms5yodf" path="res://art/Fonts/PixelOperator-Bold.ttf" id="2_jfm1y"]
 
 [node name="coins_collected" type="CanvasLayer"]
 
@@ -12,6 +12,8 @@ script = ExtResource("1_j5ys4")
 
 [node name="coins_collected" type="Label" parent="Panel"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_s8hsf")
-theme_override_font_sizes/font_size = 8
+theme_override_fonts/font = ExtResource("2_jfm1y")
+theme_override_font_sizes/font_size = 16
 text = "Coins Collected: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
