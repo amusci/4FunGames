@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://wdeydc5iy3g3"]
+[gd_scene load_steps=29 format=3 uid="uid://ncfgqo6bov1v"]
 
 [ext_resource type="Script" path="res://levels/level_cinematics/cine_script.gd" id="1_cu6cf"]
 [ext_resource type="Texture2D" uid="uid://beljvyvyixjqt" path="res://art/homegrown/New Art Style/6 biomes tileset.png" id="2_hxp6j"]
@@ -908,22 +908,6 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="Animation" id="Animation_ndnhk"]
-resource_name = "opening_cine"
-length = 30.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("cinematic_camera:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(12914, -2944), Vector2(11729, -2556)]
-}
-
 [sub_resource type="Animation" id="Animation_xsbmu"]
 length = 0.001
 tracks/0/type = "value"
@@ -936,7 +920,47 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(12914, -2944)]
+"values": [Vector2(12920, -2904)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("cinematic_camera:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.5)]
+}
+
+[sub_resource type="Animation" id="Animation_ndnhk"]
+resource_name = "opening_cine"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cinematic_camera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 7.3, 12, 19, 22.5, 26, 27.7, 28, 30),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(12920, -2904), Vector2(11520, -2472), Vector2(9576, -2472), Vector2(7888, -1192), Vector2(4264, -1192), Vector2(3024, -480), Vector2(1032, -296), Vector2(-72, -12), Vector2(-72, -12), Vector2(-72, -12)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("cinematic_camera:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3, 7.3, 12, 19, 22.5, 26, 27.7, 28, 30),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(0.5, 0.5), Vector2(0.5, 0.5), Vector2(0.5, 0.5), Vector2(0.5, 0.5), Vector2(0.5, 0.5), Vector2(0.5, 0.5), Vector2(0.5, 0.5), Vector2(0.5, 0.5), Vector2(0.9, 0.9)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pgg3p"]
@@ -947,7 +971,8 @@ _data = {
 
 [node name="LevelSix" type="Node2D"]
 script = ExtResource("1_cu6cf")
-cine_finish_time = 30
+scene_to_send = "res://levels/level_six.tscn"
+cine_finish_time = 60
 
 [node name="Tile Map" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_2jyal")
@@ -1196,11 +1221,12 @@ bus = &"game_music"
 libraries = {
 "": SubResource("AnimationLibrary_pgg3p")
 }
+speed_scale = 0.5
 movie_quit_on_finish = true
 
 [node name="cinematic_camera" type="Camera2D" parent="."]
-position = Vector2(12914, -2944)
-zoom = Vector2(0.75, 0.75)
+position = Vector2(12920, -2904)
+zoom = Vector2(0.5, 0.5)
 
 [node name="timer_label" type="Label" parent="cinematic_camera"]
 offset_left = -48.0005
@@ -1212,7 +1238,7 @@ size_flags_vertical = 1
 text = "HOLD SPACE TO SKIP"
 
 [node name="cine_player" parent="." instance=ExtResource("13_tkagm")]
-position = Vector2(20, -97)
+position = Vector2(-72, -12)
 
 [node name="cine_timer" type="Timer" parent="."]
 
