@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://7umq654fmh0o"]
+[gd_scene load_steps=3 format=3 uid="uid://7umq654fmh0o"]
 
 [ext_resource type="Script" path="res://UI/instructions.gd" id="1_ktta6"]
+[ext_resource type="FontFile" uid="uid://4yofhms5yodf" path="res://art/Fonts/PixelOperator-Bold.ttf" id="2_5f8e7"]
 
 [node name="instructions" type="Control"]
 layout_mode = 3
@@ -26,6 +27,8 @@ offset_left = 20.0
 offset_top = 303.459
 offset_right = 70.0
 offset_bottom = 334.459
+theme_override_fonts/font = ExtResource("2_5f8e7")
+theme_override_font_sizes/font_size = 16
 text = "BACK"
 
 [connection signal="pressed" from="BG/back" to="." method="_on_back_pressed"]

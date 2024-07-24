@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cps5osjg0bvur"]
+[gd_scene load_steps=6 format=3 uid="uid://cps5osjg0bvur"]
 
 [ext_resource type="Script" path="res://UI/instructions.gd" id="1_ng6wq"]
+[ext_resource type="FontFile" uid="uid://4yofhms5yodf" path="res://art/Fonts/PixelOperator-Bold.ttf" id="2_afefe"]
 [ext_resource type="Script" path="res://UI/game_music_volume.gd" id="2_ss11d"]
 [ext_resource type="Script" path="res://UI/sfx_volume.gd" id="3_7m608"]
 
@@ -35,6 +36,8 @@ offset_left = 20.0
 offset_top = 303.459
 offset_right = 70.0
 offset_bottom = 334.459
+theme_override_fonts/font = ExtResource("2_afefe")
+theme_override_font_sizes/font_size = 16
 text = "BACK"
 
 [node name="SFX_test" type="Button" parent="BG"]
@@ -43,6 +46,8 @@ offset_left = 203.0
 offset_top = 241.0
 offset_right = 351.0
 offset_bottom = 272.0
+theme_override_fonts/font = ExtResource("2_afefe")
+theme_override_font_sizes/font_size = 16
 text = "SFX_TEST"
 
 [node name="master_volume" type="Label" parent="BG"]
@@ -51,7 +56,11 @@ offset_left = 238.0
 offset_top = 22.1063
 offset_right = 360.0
 offset_bottom = 45.1063
+theme_override_fonts/font = ExtResource("2_afefe")
+theme_override_font_sizes/font_size = 32
 text = "MASTER VOLUME"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="music_volume" type="Label" parent="BG"]
 layout_mode = 0
@@ -59,7 +68,11 @@ offset_left = 238.0
 offset_top = 90.646
 offset_right = 372.0
 offset_bottom = 113.646
+theme_override_fonts/font = ExtResource("2_afefe")
+theme_override_font_sizes/font_size = 32
 text = "MUSIC VOLUME"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="sfx_volume" type="Label" parent="BG"]
 layout_mode = 0
@@ -67,7 +80,11 @@ offset_left = 249.0
 offset_top = 169.72
 offset_right = 348.0
 offset_bottom = 192.72
+theme_override_fonts/font = ExtResource("2_afefe")
+theme_override_font_sizes/font_size = 32
 text = "SFX VOLUME"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="master_slider" type="HSlider" parent="."]
 layout_mode = 0
