@@ -1338,8 +1338,8 @@ num_of_coins = 6
 [node name="Labels" type="Node" parent="."]
 
 [node name="movement_sensor" parent="Labels" instance=ExtResource("6_wcywt")]
-position = Vector2(-559, -32)
-scale = Vector2(16, 4)
+position = Vector2(-559, -160)
+scale = Vector2(16, 16)
 which_text = "movement"
 
 [node name="movement" type="RichTextLabel" parent="Labels"]
@@ -1355,8 +1355,8 @@ and you'll find your groove"
 scroll_active = false
 
 [node name="jump_sensor" parent="Labels" instance=ExtResource("6_wcywt")]
-position = Vector2(160, -32)
-scale = Vector2(16, 4)
+position = Vector2(160, -160)
+scale = Vector2(16, 16)
 which_text = "jump"
 
 [node name="jump" type="RichTextLabel" parent="Labels"]
@@ -1371,8 +1371,8 @@ text = "Space to jump when you see a hump"
 scroll_active = false
 
 [node name="coin_sensor" parent="Labels" instance=ExtResource("6_wcywt")]
-position = Vector2(722, -176)
-scale = Vector2(16, 8)
+position = Vector2(722, -256)
+scale = Vector2(16, 16)
 which_text = "coin"
 
 [node name="coin" type="RichTextLabel" parent="Labels"]
@@ -1387,8 +1387,8 @@ text = "Devour the carrot, no need to share it"
 scroll_active = false
 
 [node name="swim_sensor" parent="Labels" instance=ExtResource("6_wcywt")]
-position = Vector2(1239, -272)
-scale = Vector2(24, 8)
+position = Vector2(1239, -426)
+scale = Vector2(24, 24)
 which_text = "swim"
 
 [node name="swim" type="RichTextLabel" parent="Labels"]
@@ -1403,7 +1403,7 @@ text = "Jump over the water, it'll take you farther"
 scroll_active = false
 
 [node name="walljump_sensor" parent="Labels" instance=ExtResource("6_wcywt")]
-position = Vector2(1802, -303)
+position = Vector2(1802, -337)
 scale = Vector2(15, 15)
 which_text = "walljump"
 
@@ -1419,8 +1419,8 @@ text = "Hop, skip, jump up the wall, take care not to fall"
 scroll_active = false
 
 [node name="egg_sensor" parent="Labels" instance=ExtResource("6_wcywt")]
-position = Vector2(2194, -563)
-scale = Vector2(20, 10)
+position = Vector2(2215, -664)
+scale = Vector2(20, 20)
 which_text = "egg"
 
 [node name="egg" type="RichTextLabel" parent="Labels"]
