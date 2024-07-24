@@ -953,9 +953,6 @@ spring_power = 900
 position = Vector2(2112, -1225)
 spring_power = 900
 
-[node name="spring2" parent="Springs" instance=ExtResource("9_rrm3x")]
-position = Vector2(0, -825)
-
 [node name="Cannons" type="Node" parent="."]
 
 [node name="Cannon" parent="Cannons" instance=ExtResource("8_3uqlr")]
