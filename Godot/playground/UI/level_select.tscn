@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cibhiffatxe8h"]
+[gd_scene load_steps=3 format=3 uid="uid://cibhiffatxe8h"]
 
 [ext_resource type="Script" path="res://UI/level_select.gd" id="1_aslab"]
+[ext_resource type="FontFile" uid="uid://4yofhms5yodf" path="res://art/Fonts/PixelOperator-Bold.ttf" id="2_gjh51"]
 
 [node name="level_select" type="Control"]
 layout_mode = 3
@@ -26,10 +27,13 @@ offset_top = 16.0
 offset_right = 192.0
 offset_bottom = 144.0
 scale = Vector2(0.997725, 1)
+theme_override_fonts/font = ExtResource("2_gjh51")
+theme_override_font_sizes/font_size = 16
 text = "LEVEL ONE"
 
 [node name="LevelOneBronze" type="Label" parent="LevelOne"]
 visible = false
+layout_mode = 0
 offset_left = 39.0
 offset_top = 79.0
 offset_right = 93.0
@@ -38,6 +42,7 @@ text = "bronze"
 
 [node name="LevelOneSilver" type="Label" parent="LevelOne"]
 visible = false
+layout_mode = 0
 offset_left = 39.0
 offset_top = 79.0
 offset_right = 93.0
@@ -46,6 +51,7 @@ text = "silver"
 
 [node name="LevelOneGold" type="Label" parent="LevelOne"]
 visible = false
+layout_mode = 0
 offset_left = 39.0
 offset_top = 79.0
 offset_right = 93.0
@@ -63,11 +69,14 @@ offset_top = 24.0
 offset_right = 376.0
 offset_bottom = 144.0
 scale = Vector2(1, 0.992558)
+theme_override_fonts/font = ExtResource("2_gjh51")
+theme_override_font_sizes/font_size = 16
 text = "LEVEL TWO"
 metadata/_edit_use_anchors_ = true
 
 [node name="LevelTwoBronze" type="Label" parent="LevelTwo"]
 visible = false
+layout_mode = 0
 offset_left = 39.0
 offset_top = 79.0
 offset_right = 93.0
@@ -76,6 +85,7 @@ text = "bronze"
 
 [node name="LevelTwoSilver" type="Label" parent="LevelTwo"]
 visible = false
+layout_mode = 0
 offset_left = 39.0
 offset_top = 79.0
 offset_right = 93.0
@@ -84,6 +94,7 @@ text = "silver"
 
 [node name="LevelTwoGold" type="Label" parent="LevelTwo"]
 visible = false
+layout_mode = 0
 offset_left = 39.0
 offset_top = 79.0
 offset_right = 93.0
@@ -96,10 +107,13 @@ offset_left = 448.0
 offset_top = 16.0
 offset_right = 576.0
 offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("2_gjh51")
+theme_override_font_sizes/font_size = 16
 text = "LEVEL THREE"
 
 [node name="LevelThreeBronze" type="Label" parent="LevelThree"]
 visible = false
+layout_mode = 0
 offset_left = 39.0
 offset_top = 79.0
 offset_right = 93.0
@@ -108,6 +122,7 @@ text = "bronze"
 
 [node name="LevelThreeSilver" type="Label" parent="LevelThree"]
 visible = false
+layout_mode = 0
 offset_left = 39.0
 offset_top = 79.0
 offset_right = 93.0
@@ -116,6 +131,7 @@ text = "silver"
 
 [node name="LevelThreeGold" type="Label" parent="LevelThree"]
 visible = false
+layout_mode = 0
 offset_left = 39.0
 offset_top = 79.0
 offset_right = 93.0
@@ -129,10 +145,13 @@ offset_top = 192.0
 offset_right = 193.0
 offset_bottom = 312.0
 scale = Vector2(0.995563, 1)
+theme_override_fonts/font = ExtResource("2_gjh51")
+theme_override_font_sizes/font_size = 16
 text = "LEVEL FOUR"
 
 [node name="LevelFourBronze" type="Label" parent="LevelFour"]
 visible = false
+layout_mode = 0
 offset_left = 39.0
 offset_top = 79.0
 offset_right = 93.0
@@ -141,6 +160,7 @@ text = "bronze"
 
 [node name="LevelFourSilver" type="Label" parent="LevelFour"]
 visible = false
+layout_mode = 0
 offset_left = 39.0
 offset_top = 79.0
 offset_right = 93.0
@@ -149,6 +169,7 @@ text = "silver"
 
 [node name="LevelFourGold" type="Label" parent="LevelFour"]
 visible = false
+layout_mode = 0
 offset_left = 39.0
 offset_top = 79.0
 offset_right = 93.0
@@ -161,6 +182,8 @@ offset_left = 256.0
 offset_top = 192.0
 offset_right = 384.0
 offset_bottom = 312.0
+theme_override_fonts/font = ExtResource("2_gjh51")
+theme_override_font_sizes/font_size = 16
 text = "LEVEL FIVE"
 
 [node name="LevelFiveBronze" type="Label" parent="LevelFive"]
@@ -196,10 +219,13 @@ offset_left = 448.0
 offset_top = 192.0
 offset_right = 576.0
 offset_bottom = 312.0
+theme_override_fonts/font = ExtResource("2_gjh51")
+theme_override_font_sizes/font_size = 16
 text = "LEVEL SIX"
 
 [node name="LevelSixBronze" type="Label" parent="LevelSix"]
 visible = false
+layout_mode = 0
 offset_left = 39.0
 offset_top = 79.0
 offset_right = 93.0
@@ -208,6 +234,7 @@ text = "bronze"
 
 [node name="LevelSixSilver" type="Label" parent="LevelSix"]
 visible = false
+layout_mode = 0
 offset_left = 39.0
 offset_top = 79.0
 offset_right = 93.0
@@ -216,6 +243,7 @@ text = "silver"
 
 [node name="LevelSixGold" type="Label" parent="LevelSix"]
 visible = false
+layout_mode = 0
 offset_left = 39.0
 offset_top = 79.0
 offset_right = 93.0
@@ -228,6 +256,8 @@ offset_left = 16.0
 offset_top = 320.0
 offset_right = 154.0
 offset_bottom = 351.0
+theme_override_fonts/font = ExtResource("2_gjh51")
+theme_override_font_sizes/font_size = 16
 text = "BACK"
 
 [connection signal="pressed" from="LevelOne" to="." method="_on_level_1_pressed"]
