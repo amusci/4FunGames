@@ -1,24 +1,31 @@
-[gd_scene load_steps=6 format=3 uid="uid://8hqvucgxe26w"]
+[gd_scene load_steps=7 format=3 uid="uid://8hqvucgxe26w"]
 
-[ext_resource type="Texture2D" uid="uid://dwcrmi21nye2d" path="res://art/pixel_platformer/Tiles/tile_0151.png" id="1_bmx2t"]
-[ext_resource type="Texture2D" uid="uid://bfl6qome4kjps" path="res://art/pixel_platformer/Tiles/tile_0152.png" id="2_fvk1y"]
+[ext_resource type="Texture2D" uid="uid://bp2lbft8288rk" path="res://art/homegrown/New Art Style/animated carrot-Sheet.png" id="2_7sder"]
 [ext_resource type="Script" path="res://interactables/coin.gd" id="3_taism"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qt4hx"]
 radius = 7.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lmbg"]
+atlas = ExtResource("2_7sder")
+region = Rect2(0, 0, 22, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5ye5"]
+atlas = ExtResource("2_7sder")
+region = Rect2(22, 0, 22, 22)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_vq3km"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_bmx2t")
+"texture": SubResource("AtlasTexture_3lmbg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_fvk1y")
+"texture": SubResource("AtlasTexture_p5ye5")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 3.0
 }]
 
 [node name="coin" type="Node2D"]
@@ -34,7 +41,7 @@ shape = SubResource("CircleShape2D_qt4hx")
 scale = Vector2(0.965794, 1)
 sprite_frames = SubResource("SpriteFrames_vq3km")
 autoplay = "default"
-frame_progress = 0.874799
+frame_progress = 0.957738
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
