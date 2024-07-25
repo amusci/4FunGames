@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://dgnbxk4sqeciq"]
 
 [ext_resource type="Script" path="res://platforms/moving_platform.gd" id="1_axw44"]
-[ext_resource type="Texture2D" uid="uid://cy4njne70hbbo" path="res://art/pixel_platformer/Tiles/tile_0110.png" id="1_l7tww"]
+[ext_resource type="Texture2D" uid="uid://cj4dkxp8vpajq" path="res://art/homegrown/New Art Style/moving platform.png" id="2_w41yq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xbhyx"]
-size = Vector2(34, 3.00006)
+size = Vector2(46, 3.00006)
 
 [sub_resource type="Animation" id="Animation_o3qxx"]
 length = 0.001
@@ -59,12 +59,11 @@ rotation = 3.14159
 collision_mask = 21
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
-position = Vector2(0, -8)
-scale = Vector2(2.28831, 1)
-texture = ExtResource("1_l7tww")
+position = Vector2(-1.52111e-05, 6)
+texture = ExtResource("2_w41yq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
-position = Vector2(0, -0.5)
+position = Vector2(1.98285e-06, -0.5)
 rotation = 3.14159
 shape = SubResource("RectangleShape2D_xbhyx")
 one_way_collision = true
