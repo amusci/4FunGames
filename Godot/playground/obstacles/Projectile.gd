@@ -35,7 +35,7 @@ func _on_area_2d_body_entered(body):
 	if body is Player:
 		print('HIT!')
 		queue_free()
-		body.handle_death()
+		body.water_death()
 	else:
 		queue_free()
 

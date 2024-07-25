@@ -38,9 +38,6 @@ var is_wall_jumping = false
 @onready var sprite_2d = $AnimatedSprite2D
 @onready var animation_player = $AnimationPlayer
 
-@onready var splash = $splash
-
-
 # Signals
 
 signal increment_death
@@ -183,7 +180,7 @@ func player_debug(delta):
 	elif Input.is_action_just_pressed("player_reset"):
 		reset_player()
 
-func handle_death() -> void:
+func water_death() -> void:
 	# Function handles player death
 	# emit_signal("player_death") # Emit death
 	TransitionScreen.transition()
@@ -191,8 +188,7 @@ func handle_death() -> void:
 	can_control = false
 	await get_tree().create_timer(.5).timeout # Wait for timer to time out
 	reset_player()
-	
-	splash.play() # Play splash SFX
+	SFXManager.splashsfx.play() # Play splash SFX
 
 func reset_player() -> void:
 	# Function handles player reset

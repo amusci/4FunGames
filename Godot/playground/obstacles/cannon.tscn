@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://3x22w68bgrw0"]
+[gd_scene load_steps=4 format=3 uid="uid://3x22w68bgrw0"]
 
 [ext_resource type="Texture2D" uid="uid://jox2gkmautm6" path="res://art/homegrown/new cannon.png" id="1_vywdv"]
-[ext_resource type="AudioStream" uid="uid://dvw2jgq138ku6" path="res://music/SFX/esm_8bit_explosion_medium_bomb_boom_blast_cannon_retro_old_school_classic_cartoon.mp3" id="2_uj80a"]
 
 [sub_resource type="GDScript" id="GDScript_tpt0a"]
 script/source = "extends Node2D
@@ -55,7 +54,7 @@ func shoot():
 	#proj.zdex = z_index - 1 # Might do something for this idk
 	main.add_child.call_deferred(proj) # Spawn in the projectile
 	
-	explosion.play() # Play explosion SFX
+	SFXManager.explosionsfx.play()# Play explosion SFX
 
 func _on_shoot_speed_timeout():
 	shoot() # 1 Second
@@ -86,12 +85,6 @@ autostart = true
 [node name="shoot_offset" type="Timer" parent="."]
 process_callback = 0
 one_shot = true
-
-[node name="explosion" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_uj80a")
-volume_db = -20.0
-pitch_scale = 2.0
-attenuation = 11.3137
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 2
