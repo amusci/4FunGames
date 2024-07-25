@@ -37,6 +37,7 @@ var is_wall_jumping = false
 # On ready variables
 @onready var sprite_2d = $AnimatedSprite2D
 @onready var animation_player = $AnimationPlayer
+@onready var collision_shape = $CollisionShape2D
 
 # Signals
 
@@ -171,6 +172,7 @@ func player_climb(delta):
 
 func player_debug(delta):
 	if Input.is_action_pressed("debug_fly_up"):
+		
 		gravity = 0
 		debug_flying = true
 		velocity.y -= 1000 * delta # Adjust the upward velocity
@@ -189,6 +191,7 @@ func water_death() -> void:
 	reset_player()
 	
 func egg_death() -> void:
+	collision_shape.disabled = true
 	SFXManager.eggsfx.play() # Play egg SFX
 	TransitionScreen.transition()
 	visible = false
@@ -198,14 +201,15 @@ func egg_death() -> void:
 	
 
 func reset_player() -> void:
+	global_position = respawn_area  # Set the player's respawn position
 	# Function handles player reset
 	SFXManager.playerspawnsfx.play() # Play spawn sfx
 	velocity.x = 0
 	velocity.y = 0
 	emit_signal("increment_death")  # Increase death count
-	global_position = respawn_area  # Set the player's respawn position
 	visible = true
 	can_control = true
+	collision_shape.disabled = false
  
 	
 func increment_coin_count() -> void:
