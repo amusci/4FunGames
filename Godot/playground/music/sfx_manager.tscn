@@ -13,43 +13,45 @@ script = ExtResource("1_tp3rn")
 
 [node name="coinsfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_gn6sd")
-volume_db = -15.0
+volume_db = -20.0
 max_distance = 999999.0
 panning_strength = 0.0
 bus = &"sfx"
 
 [node name="springsfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_1er7s")
-volume_db = -15.0
+volume_db = -20.0
 max_distance = 999999.0
 panning_strength = 0.0
 bus = &"sfx"
 
 [node name="splashsfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_86pqs")
-volume_db = -5.0
-max_distance = 1e+14
+volume_db = -20.0
+max_distance = 999999.0
 panning_strength = 0.0
 bus = &"sfx"
 
 [node name="eggsfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_alwl0")
-volume_db = -10.0
+volume_db = -20.0
 pitch_scale = 1.5
-max_distance = 9.22337e+18
+max_distance = 999999.0
 panning_strength = 0.0
 bus = &"sfx"
 
 [node name="playerspawnsfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_lnbl3")
 volume_db = -20.0
-pitch_scale = 0.5
-max_distance = 9.22337e+18
+pitch_scale = 0.65
+max_distance = 999999.0
 panning_strength = 0.0
 bus = &"sfx"
 
 [node name="jumpsfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_uue6v")
-max_distance = 9.22337e+18
+volume_db = -20.0
+pitch_scale = 0.8
+max_distance = 999999.0
 panning_strength = 0.0
 bus = &"sfx"
