@@ -780,10 +780,10 @@ respawn_area = Vector2(72, -76)
 [node name="Coins" type="Node" parent="."]
 
 [node name="coin" parent="Coins" instance=ExtResource("11_0tofu")]
-position = Vector2(800, -336)
+position = Vector2(800, -320)
 
 [node name="coin2" parent="Coins" instance=ExtResource("11_0tofu")]
-position = Vector2(1648, -363)
+position = Vector2(1648, -360)
 
 [node name="coin3" parent="Coins" instance=ExtResource("11_0tofu")]
 position = Vector2(2072, -280)
@@ -792,13 +792,13 @@ position = Vector2(2072, -280)
 position = Vector2(3424, -632)
 
 [node name="coin8" parent="Coins" instance=ExtResource("11_0tofu")]
-position = Vector2(3960, -664)
+position = Vector2(3960, -656)
 
 [node name="coin5" parent="Coins" instance=ExtResource("11_0tofu")]
-position = Vector2(4472, -840)
+position = Vector2(4464, -824)
 
 [node name="coin6" parent="Coins" instance=ExtResource("11_0tofu")]
-position = Vector2(5016, -856)
+position = Vector2(5008, -856)
 
 [node name="coin7" parent="Coins" instance=ExtResource("11_0tofu")]
 position = Vector2(6096, -1008)
