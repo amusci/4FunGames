@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://clagth3tvau68"]
+[gd_scene load_steps=8 format=3 uid="uid://clagth3tvau68"]
 
 [ext_resource type="Script" path="res://music/sfx_manager.gd" id="1_tp3rn"]
 [ext_resource type="AudioStream" uid="uid://cdgghhy6akllm" path="res://music/SFX/coinsfx.wav" id="2_gn6sd"]
@@ -6,33 +6,35 @@
 [ext_resource type="AudioStream" uid="uid://ccue0px550f7d" path="res://music/SFX/water_splash_fist_punch.mp3" id="3_86pqs"]
 [ext_resource type="AudioStream" uid="uid://dlf2si5umq0o5" path="res://music/SFX/eggshell1.wav" id="6_alwl0"]
 [ext_resource type="AudioStream" uid="uid://6mywf5w4hmvx" path="res://music/SFX/playerspawn.wav" id="7_lnbl3"]
+[ext_resource type="AudioStream" uid="uid://ds43mfqymj10h" path="res://music/SFX/jump.wav" id="7_uue6v"]
 
 [node name="sfx_manager" type="Node"]
 script = ExtResource("1_tp3rn")
 
 [node name="coinsfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_gn6sd")
-volume_db = -5.0
+volume_db = -15.0
 max_distance = 999999.0
 panning_strength = 0.0
 bus = &"sfx"
 
 [node name="springsfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_1er7s")
-volume_db = -5.0
+volume_db = -15.0
 max_distance = 999999.0
 panning_strength = 0.0
 bus = &"sfx"
 
 [node name="splashsfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_86pqs")
-volume_db = 5.0
+volume_db = -5.0
 max_distance = 1e+14
 panning_strength = 0.0
 bus = &"sfx"
 
 [node name="eggsfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_alwl0")
+volume_db = -10.0
 pitch_scale = 1.5
 max_distance = 9.22337e+18
 panning_strength = 0.0
@@ -40,8 +42,14 @@ bus = &"sfx"
 
 [node name="playerspawnsfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_lnbl3")
-volume_db = -5.0
+volume_db = -20.0
 pitch_scale = 0.5
+max_distance = 9.22337e+18
+panning_strength = 0.0
+bus = &"sfx"
+
+[node name="jumpsfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_uue6v")
 max_distance = 9.22337e+18
 panning_strength = 0.0
 bus = &"sfx"
