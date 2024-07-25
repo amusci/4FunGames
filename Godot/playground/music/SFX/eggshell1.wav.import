@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://bfko6bn3oxr64"
-path="res://.godot/imported/eggshell.wav-d4703f48c1116e03e5eae2c962c9e38c.sample"
+uid="uid://dlf2si5umq0o5"
+path="res://.godot/imported/eggshell1.wav-2ab5ddfd6fe886a361bde827dbd05f99.sample"
 
 [deps]
 
-source_file="res://music/SFX/eggshell.wav"
-dest_files=["res://.godot/imported/eggshell.wav-d4703f48c1116e03e5eae2c962c9e38c.sample"]
+source_file="res://music/SFX/eggshell1.wav"
+dest_files=["res://.godot/imported/eggshell1.wav-2ab5ddfd6fe886a361bde827dbd05f99.sample"]
 
 [params]
 

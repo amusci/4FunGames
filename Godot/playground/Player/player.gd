@@ -181,8 +181,6 @@ func player_debug(delta):
 		reset_player()
 
 func water_death() -> void:
-	# Function handles player death
-	# emit_signal("player_death") # Emit death
 	SFXManager.splashsfx.play() # Play splash SFX
 	TransitionScreen.transition()
 	visible = false
@@ -191,8 +189,6 @@ func water_death() -> void:
 	reset_player()
 	
 func egg_death() -> void:
-	# Function handles player death
-	# emit_signal("player_death") # Emit death
 	SFXManager.eggsfx.play() # Play splash SFX
 	TransitionScreen.transition()
 	visible = false
