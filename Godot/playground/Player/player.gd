@@ -189,7 +189,7 @@ func water_death() -> void:
 	reset_player()
 	
 func egg_death() -> void:
-	SFXManager.eggsfx.play() # Play splash SFX
+	SFXManager.eggsfx.play() # Play egg SFX
 	TransitionScreen.transition()
 	visible = false
 	can_control = false
@@ -199,6 +199,7 @@ func egg_death() -> void:
 
 func reset_player() -> void:
 	# Function handles player reset
+	SFXManager.playerspawnsfx.play() # Play spawn sfx
 	velocity.x = 0
 	velocity.y = 0
 	emit_signal("increment_death")  # Increase death count
