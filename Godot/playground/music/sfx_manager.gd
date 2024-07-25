@@ -5,6 +5,5 @@ extends Node
 @onready var coinsfx = $coinsfx
 @onready var splashsfx = $splashsfx
 @onready var springsfx = $springsfx
-@onready var explosionsfx = $explosionsfx
 @onready var eggsfx = $eggsfx
 @onready var playerspawnsfx = $playerspawnsfx
