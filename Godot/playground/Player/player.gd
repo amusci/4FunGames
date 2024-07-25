@@ -43,6 +43,7 @@ var is_wall_jumping = false
 
 signal increment_death
 signal coin_collected
+signal add_time
 
 func _physics_process(delta):
 	if not can_control: # If we cant control our player, return
@@ -183,6 +184,7 @@ func player_debug(delta):
 		reset_player()
 
 func water_death() -> void:
+	emit_signal("add_time") # Add time
 	SFXManager.splashsfx.play() # Play splash SFX
 	TransitionScreen.transition()
 	visible = false
@@ -191,6 +193,7 @@ func water_death() -> void:
 	reset_player()
 	
 func egg_death() -> void:
+	emit_signal("add_time") # Add time
 	collision_shape.disabled = true
 	SFXManager.eggsfx.play() # Play egg SFX
 	TransitionScreen.transition()
