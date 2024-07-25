@@ -7,3 +7,4 @@ extends Node
 @onready var springsfx = $springsfx
 @onready var eggsfx = $eggsfx
 @onready var playerspawnsfx = $playerspawnsfx
+@onready var jumpsfx = $jumpsfx

@@ -108,6 +108,7 @@ func player_jump(delta):
 		jump_buffer_counter = 0 # Instantly set counter to 0
 		velocity.y = jump_force # Apply jump force
 		is_jumping = true # Switch the jump flag to true
+		SFXManager.jumpsfx.play()
 	elif Input.is_action_pressed("jump") and is_jumping: # If we are holding jump while jumping
 		velocity.y = jump_force # Maintain jump force for a higher jump
 	
