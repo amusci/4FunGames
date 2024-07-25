@@ -773,6 +773,8 @@ point_count = 2
 
 [node name="LevelFive" type="Node2D"]
 script = ExtResource("1_vmml6")
+silver = 100.0
+gold = 70.0
 
 [node name="Tile Map" type="TileMap" parent="."]
 z_index = 2
@@ -1099,6 +1101,7 @@ egg_lifetime = 3
 position = Vector2(7672, -1168)
 desired_scene = "res://UI/level_select.tscn"
 which_level = "LevelFive"
+num_of_coins = 10
 
 [node name="UI" type="CanvasLayer" parent="."]
 
