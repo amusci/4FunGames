@@ -33,9 +33,9 @@ func _physics_process(delta):
 func _on_area_2d_body_entered(body):
 	# If proj hits player, kill player and remove proj
 	if body is Player:
+		body.egg_death()
 		print('HIT!')
 		queue_free()
-		body.water_death()
 	else:
 		queue_free()
 

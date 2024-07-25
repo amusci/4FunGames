@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://clagth3tvau68"]
+[gd_scene load_steps=7 format=3 uid="uid://clagth3tvau68"]
 
 [ext_resource type="Script" path="res://music/sfx_manager.gd" id="1_tp3rn"]
 [ext_resource type="AudioStream" uid="uid://cdgghhy6akllm" path="res://music/SFX/coinsfx.wav" id="2_gn6sd"]
 [ext_resource type="AudioStream" uid="uid://d33qee21ekbj8" path="res://music/SFX/zapsplat_cartoon_jump_jaw_harp_edited_004_17210.mp3" id="3_1er7s"]
 [ext_resource type="AudioStream" uid="uid://ccue0px550f7d" path="res://music/SFX/water_splash_fist_punch.mp3" id="3_86pqs"]
 [ext_resource type="AudioStream" uid="uid://dvw2jgq138ku6" path="res://music/SFX/esm_8bit_explosion_medium_bomb_boom_blast_cannon_retro_old_school_classic_cartoon.mp3" id="5_tll8k"]
+[ext_resource type="AudioStream" uid="uid://bfko6bn3oxr64" path="res://music/SFX/eggshell.wav" id="6_63wu8"]
 
 [node name="sfx_manager" type="Node"]
 script = ExtResource("1_tp3rn")
@@ -31,4 +32,11 @@ bus = &"sfx"
 stream = ExtResource("5_tll8k")
 pitch_scale = 2.0
 max_distance = 5000.0
+bus = &"sfx"
+
+[node name="eggsfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_63wu8")
+pitch_scale = 1.5
+max_distance = 9.22337e+18
+panning_strength = 0.0
 bus = &"sfx"

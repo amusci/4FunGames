@@ -183,12 +183,23 @@ func player_debug(delta):
 func water_death() -> void:
 	# Function handles player death
 	# emit_signal("player_death") # Emit death
+	SFXManager.splashsfx.play() # Play splash SFX
 	TransitionScreen.transition()
 	visible = false
 	can_control = false
 	await get_tree().create_timer(.5).timeout # Wait for timer to time out
 	reset_player()
-	SFXManager.splashsfx.play() # Play splash SFX
+	
+func egg_death() -> void:
+	# Function handles player death
+	# emit_signal("player_death") # Emit death
+	SFXManager.eggsfx.play() # Play splash SFX
+	TransitionScreen.transition()
+	visible = false
+	can_control = false
+	await get_tree().create_timer(.5).timeout # Wait for timer to time out
+	reset_player()
+	
 
 func reset_player() -> void:
 	# Function handles player reset
