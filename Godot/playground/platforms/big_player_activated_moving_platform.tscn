@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dnvtl1q1qm16f"]
+[gd_scene load_steps=8 format=3 uid="uid://mfjoxrkbqh7y"]
 
 [ext_resource type="Script" path="res://platforms/player_activated_moving_platform.gd" id="1_r5xp6"]
 [ext_resource type="Texture2D" uid="uid://cy4njne70hbbo" path="res://art/pixel_platformer/Tiles/tile_0110.png" id="2_xo3ca"]
