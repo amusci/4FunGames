@@ -36,6 +36,7 @@ func _on_area_2d_body_entered(body):
 		body.egg_death()
 		print('HIT by egg')
 		queue_free()
+		await get_tree().create_timer(.5).timeout # Wait for timer to time out
 	else:
 		queue_free()
 
