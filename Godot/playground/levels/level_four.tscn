@@ -967,7 +967,7 @@ scale = Vector2(0.728, 0.416)
 texture = ExtResource("6_xagu4")
 
 [node name="Player" parent="." instance=ExtResource("10_kfnf1")]
-position = Vector2(-24, -92)
+position = Vector2(4068, -104)
 collision_mask = 15
 respawn_area = Vector2(-24, -92)
 
