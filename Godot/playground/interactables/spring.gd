@@ -13,5 +13,7 @@ func _on_body_entered(body: PhysicsBody2D):
 		$AnimatedSprite2D.play("boing") # Play the animation
 		
 		SFXManager.springsfx.play()# Play bounce SFX
+		await get_tree().create_timer(.5).timeout
+		$AnimatedSprite2D.play("reverse_boing")
 	else:
 		$AnimatedSprite2D.play("idle")
