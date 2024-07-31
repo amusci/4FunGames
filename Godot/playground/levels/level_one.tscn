@@ -1199,7 +1199,7 @@ texture = ExtResource("15_jouqw")
 [node name="Player" parent="." instance=ExtResource("10_babun")]
 position = Vector2(-696, -32)
 collision_mask = 15
-respawn_area = Vector2(-680, -12)
+respawn_area = Vector2(-696, -32)
 
 [node name="Kill Zones" type="Node" parent="."]
 
@@ -1286,10 +1286,10 @@ speed_scale = 0.5
 [node name="Springs" type="Node" parent="."]
 
 [node name="spring" parent="Springs" instance=ExtResource("10_idh53")]
-position = Vector2(2632, -473)
+position = Vector2(2632, -476)
 
 [node name="spring2" parent="Springs" instance=ExtResource("10_idh53")]
-position = Vector2(3192, -1017)
+position = Vector2(3192, -1020)
 
 [node name="Cannons" type="Node" parent="."]
 

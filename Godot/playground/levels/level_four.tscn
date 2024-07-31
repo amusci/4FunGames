@@ -1092,19 +1092,19 @@ loop = false
 [node name="Springs" type="Node" parent="."]
 
 [node name="spring" parent="Springs" instance=ExtResource("11_uxma6")]
-position = Vector2(1496, -121)
+position = Vector2(1496, -124)
 spring_power = 1000
 
 [node name="spring2" parent="Springs" instance=ExtResource("11_uxma6")]
-position = Vector2(2424, -88)
+position = Vector2(2424, -92)
 spring_power = 500
 
 [node name="spring3" parent="Springs" instance=ExtResource("11_uxma6")]
-position = Vector2(2600, -88)
+position = Vector2(2600, -92)
 spring_power = 500
 
 [node name="spring4" parent="Springs" instance=ExtResource("11_uxma6")]
-position = Vector2(1944, -88)
+position = Vector2(1944, -92)
 spring_power = 1000
 
 [node name="Cannons" type="Node" parent="."]

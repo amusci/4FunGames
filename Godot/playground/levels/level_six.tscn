@@ -1070,24 +1070,24 @@ speed_scale = 0.75
 [node name="Springs" type="Node" parent="."]
 
 [node name="spring" parent="Springs" instance=ExtResource("7_ufyex")]
-position = Vector2(3056, -441)
+position = Vector2(3056, -444)
 spring_power = 1100
 
 [node name="spring2" parent="Springs" instance=ExtResource("7_ufyex")]
-position = Vector2(8336, -1385)
+position = Vector2(8336, -1388)
 spring_power = 1000
 
 [node name="spring3" parent="Springs" instance=ExtResource("7_ufyex")]
-position = Vector2(8512, -1769)
+position = Vector2(8512, -1772)
 
 [node name="spring4" parent="Springs" instance=ExtResource("7_ufyex")]
-position = Vector2(8592, -1929)
+position = Vector2(8592, -1932)
 
 [node name="spring5" parent="Springs" instance=ExtResource("7_ufyex")]
-position = Vector2(8672, -2089)
+position = Vector2(8672, -2092)
 
 [node name="spring6" parent="Springs" instance=ExtResource("7_ufyex")]
-position = Vector2(12720, -2681)
+position = Vector2(12720, -2684)
 spring_power = 1000
 
 [node name="Cannons" type="Node" parent="."]
