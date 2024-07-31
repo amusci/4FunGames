@@ -899,9 +899,33 @@ _data = {
 }
 point_count = 5
 
+[sub_resource type="Curve2D" id="Curve2D_uedqn"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 3952, -1120, 0, 0, 0, 0, 3952, -1488, 0, 0, 0, 0, 4352, -1488, 0, 0, 0, 0, 4352, -1120, 0, 0, 0, 0, 3952, -1120)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_mnpp1"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 3952, -1488, 0, 0, 0, 0, 4352, -1488, 0, 0, 0, 0, 4352, -1120, 0, 0, 0, 0, 3952, -1120, 0, 0, 0, 0, 3952, -1488)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_flxir"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 4352, -1488, 0, 0, 0, 0, 4352, -1120, 0, 0, 0, 0, 3952, -1120, 0, 0, 0, 0, 3952, -1488, 0, 0, 0, 0, 4352, -1488)
+}
+point_count = 5
+
 [sub_resource type="Curve2D" id="Curve2D_cxtlg"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 4256, -1216, 0, 0, 0, 0, 4048, -1216, 0, 0, 0, 0, 4048, -1392, 0, 0, 0, 0, 4256, -1392, 0, 0, 0, 0, 4256, -1216)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_l142a"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 4048, -1216, 0, 0, 0, 0, 4048, -1392, 0, 0, 0, 0, 4256, -1392, 0, 0, 0, 0, 4256, -1216, 0, 0, 0, 0, 4048, -1216)
 }
 point_count = 5
 
@@ -911,9 +935,9 @@ _data = {
 }
 point_count = 5
 
-[sub_resource type="Curve2D" id="Curve2D_mnpp1"]
+[sub_resource type="Curve2D" id="Curve2D_xkdlq"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 3952, -1488, 0, 0, 0, 0, 4352, -1488, 0, 0, 0, 0, 4352, -1120, 0, 0, 0, 0, 3952, -1120, 0, 0, 0, 0, 3952, -1488)
+"points": PackedVector2Array(0, 0, 0, 0, 4256, -1392, 0, 0, 0, 0, 4256, -1216, 0, 0, 0, 0, 4048, -1216, 0, 0, 0, 0, 4048, -1392, 0, 0, 0, 0, 4256, -1392)
 }
 point_count = 5
 
@@ -946,30 +970,6 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 1504.33, -416.235, 0, 0, 0, 0, 1376.33, -480.235)
 }
 point_count = 2
-
-[sub_resource type="Curve2D" id="Curve2D_xkdlq"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 4256, -1392, 0, 0, 0, 0, 4256, -1216, 0, 0, 0, 0, 4048, -1216, 0, 0, 0, 0, 4048, -1392, 0, 0, 0, 0, 4256, -1392)
-}
-point_count = 5
-
-[sub_resource type="Curve2D" id="Curve2D_l142a"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 4048, -1216, 0, 0, 0, 0, 4048, -1392, 0, 0, 0, 0, 4256, -1392, 0, 0, 0, 0, 4256, -1216, 0, 0, 0, 0, 4048, -1216)
-}
-point_count = 5
-
-[sub_resource type="Curve2D" id="Curve2D_flxir"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 4352, -1488, 0, 0, 0, 0, 4352, -1120, 0, 0, 0, 0, 3952, -1120, 0, 0, 0, 0, 3952, -1488, 0, 0, 0, 0, 4352, -1488)
-}
-point_count = 5
-
-[sub_resource type="Curve2D" id="Curve2D_uedqn"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 3952, -1120, 0, 0, 0, 0, 3952, -1488, 0, 0, 0, 0, 4352, -1488, 0, 0, 0, 0, 4352, -1120, 0, 0, 0, 0, 3952, -1120)
-}
-point_count = 5
 
 [node name="LevelThree" type="Node2D"]
 script = ExtResource("1_hn0y1")
@@ -1201,117 +1201,117 @@ curve = SubResource("Curve2D_rim0n")
 speed = 1.0
 
 [node name="left_to_right_platform4" parent="Moving Platforms" instance=ExtResource("10_eqwri")]
-curve = SubResource("Curve2D_cxtlg")
-speed = 0.5
+curve = SubResource("Curve2D_uedqn")
+speed = 1.0
 
 [node name="left_to_right_platform5" parent="Moving Platforms" instance=ExtResource("10_eqwri")]
-curve = SubResource("Curve2D_ya1xf")
-speed = 0.5
-
-[node name="left_to_right_platform6" parent="Moving Platforms" instance=ExtResource("10_eqwri")]
 curve = SubResource("Curve2D_mnpp1")
 speed = 1.0
 
+[node name="left_to_right_platform6" parent="Moving Platforms" instance=ExtResource("10_eqwri")]
+curve = SubResource("Curve2D_flxir")
+speed = 1.0
+
+[node name="left_to_right_platform7" parent="Moving Platforms" instance=ExtResource("10_eqwri")]
+curve = SubResource("Curve2D_cxtlg")
+speed = 0.5
+
 [node name="left_to_right_platform8" parent="Moving Platforms" instance=ExtResource("10_eqwri")]
+curve = SubResource("Curve2D_l142a")
+speed = 0.5
+
+[node name="left_to_right_platform9" parent="Moving Platforms" instance=ExtResource("10_eqwri")]
+curve = SubResource("Curve2D_ya1xf")
+speed = 0.5
+
+[node name="left_to_right_platform10" parent="Moving Platforms" instance=ExtResource("10_eqwri")]
+curve = SubResource("Curve2D_xkdlq")
+speed = 0.5
+
+[node name="left_to_right_platform11" parent="Moving Platforms" instance=ExtResource("10_eqwri")]
 position = Vector2(9679.67, -1663.76)
 curve = SubResource("Curve2D_0cehk")
 loop = false
 speed_scale = 0.7
 
-[node name="left_to_right_platform9" parent="Moving Platforms" instance=ExtResource("10_eqwri")]
+[node name="left_to_right_platform12" parent="Moving Platforms" instance=ExtResource("10_eqwri")]
 position = Vector2(9679.67, -1663.76)
 curve = SubResource("Curve2D_u58lj")
 loop = false
 speed_scale = 0.7
 
-[node name="left_to_right_platform10" parent="Moving Platforms" instance=ExtResource("10_eqwri")]
+[node name="left_to_right_platform13" parent="Moving Platforms" instance=ExtResource("10_eqwri")]
 position = Vector2(9679.67, -1663.76)
 curve = SubResource("Curve2D_l0rbl")
 loop = false
 speed_scale = 0.7
 
-[node name="left_to_right_platform11" parent="Moving Platforms" instance=ExtResource("10_eqwri")]
+[node name="left_to_right_platform14" parent="Moving Platforms" instance=ExtResource("10_eqwri")]
 position = Vector2(9679.67, -1663.76)
 curve = SubResource("Curve2D_bf3yn")
 loop = false
 speed_scale = 0.7
 
-[node name="left_to_right_platform12" parent="Moving Platforms" instance=ExtResource("10_eqwri")]
+[node name="left_to_right_platform15" parent="Moving Platforms" instance=ExtResource("10_eqwri")]
 position = Vector2(9679.67, -1663.76)
 curve = SubResource("Curve2D_wt61n")
 loop = false
 speed_scale = 0.7
-
-[node name="left_to_right_platform13" parent="Moving Platforms" instance=ExtResource("10_eqwri")]
-curve = SubResource("Curve2D_xkdlq")
-speed = 0.5
-
-[node name="left_to_right_platform14" parent="Moving Platforms" instance=ExtResource("10_eqwri")]
-curve = SubResource("Curve2D_l142a")
-speed = 0.5
-
-[node name="left_to_right_platform15" parent="Moving Platforms" instance=ExtResource("10_eqwri")]
-curve = SubResource("Curve2D_flxir")
-speed = 1.0
-
-[node name="left_to_right_platform16" parent="Moving Platforms" instance=ExtResource("10_eqwri")]
-curve = SubResource("Curve2D_uedqn")
-speed = 1.0
 
 [node name="Springs" type="Node" parent="."]
 
 [node name="spring" parent="Springs" instance=ExtResource("12_263pu")]
 position = Vector2(4712, -876)
 
-[node name="spring3" parent="Springs" instance=ExtResource("12_263pu")]
+[node name="spring2" parent="Springs" instance=ExtResource("12_263pu")]
 position = Vector2(5856, -44)
 
-[node name="spring4" parent="Springs" instance=ExtResource("12_263pu")]
+[node name="spring3" parent="Springs" instance=ExtResource("12_263pu")]
 position = Vector2(6000, -44)
 
-[node name="spring5" parent="Springs" instance=ExtResource("12_263pu")]
+[node name="spring4" parent="Springs" instance=ExtResource("12_263pu")]
 position = Vector2(6144, -44)
 
-[node name="spring6" parent="Springs" instance=ExtResource("12_263pu")]
+[node name="spring5" parent="Springs" instance=ExtResource("12_263pu")]
 position = Vector2(6696, -44)
 spring_power = 900
 
-[node name="spring7" parent="Springs" instance=ExtResource("12_263pu")]
+[node name="spring6" parent="Springs" instance=ExtResource("12_263pu")]
 position = Vector2(6752, -192)
 rotation = -0.610865
 spring_power = 900
 
-[node name="spring8" parent="Springs" instance=ExtResource("12_263pu")]
+[node name="spring7" parent="Springs" instance=ExtResource("12_263pu")]
 position = Vector2(6640, -296)
 rotation = 0.610865
 spring_power = 900
 
-[node name="spring9" parent="Springs" instance=ExtResource("12_263pu")]
+[node name="spring8" parent="Springs" instance=ExtResource("12_263pu")]
 position = Vector2(6752, -400)
 rotation = -0.610865
 spring_power = 900
 
-[node name="spring10" parent="Springs" instance=ExtResource("12_263pu")]
+[node name="spring9" parent="Springs" instance=ExtResource("12_263pu")]
 position = Vector2(6640, -504)
 rotation = 0.610865
 spring_power = 900
 
-[node name="spring11" parent="Springs" instance=ExtResource("12_263pu")]
+[node name="spring10" parent="Springs" instance=ExtResource("12_263pu")]
 position = Vector2(6752, -608)
 rotation = -0.610865
 spring_power = 900
 
-[node name="spring12" parent="Springs" instance=ExtResource("12_263pu")]
+[node name="spring11" parent="Springs" instance=ExtResource("12_263pu")]
 position = Vector2(6640, -712)
 rotation = 0.610865
 spring_power = 900
 
-[node name="spring14" parent="Springs" instance=ExtResource("12_263pu")]
-position = Vector2(8712, -1724)
+[node name="spring12" parent="Springs" instance=ExtResource("12_263pu")]
+position = Vector2(9640, -1436)
 spring_power = 1000
 
-[node name="spring15" parent="Springs" instance=ExtResource("12_263pu")]
-position = Vector2(9640, -1436)
+[node name="spring13" parent="Springs" instance=ExtResource("12_263pu")]
+position = Vector2(8712, -1724)
 spring_power = 1000
 
 [node name="Cannons" type="Node" parent="."]
@@ -1357,21 +1357,21 @@ shot_speed = 2.5
 egg_lifetime = 3
 
 [node name="Cannon6" parent="Cannons" instance=ExtResource("11_a4yp7")]
-position = Vector2(3880, -1232)
+position = Vector2(3880, -1136)
 rotation = 1.5708
 level = "LevelThree"
 shot_speed = 3.0
 egg_lifetime = 5
 
 [node name="Cannon7" parent="Cannons" instance=ExtResource("11_a4yp7")]
-position = Vector2(3880, -1408)
+position = Vector2(3880, -1232)
 rotation = 1.5708
 level = "LevelThree"
 shot_speed = 3.0
 egg_lifetime = 5
 
 [node name="Cannon8" parent="Cannons" instance=ExtResource("11_a4yp7")]
-position = Vector2(3880, -1136)
+position = Vector2(3880, -1408)
 rotation = 1.5708
 level = "LevelThree"
 shot_speed = 3.0
@@ -1384,40 +1384,40 @@ level = "LevelThree"
 shot_speed = 3.0
 egg_lifetime = 5
 
-[node name="Cannon11" parent="Cannons" instance=ExtResource("11_a4yp7")]
+[node name="Cannon10" parent="Cannons" instance=ExtResource("11_a4yp7")]
 position = Vector2(8088, -1000)
 level = "LevelThree"
 direction_of_bullet = 180
 shot_speed = 2.5
 egg_lifetime = 7
 
-[node name="Cannon12" parent="Cannons" instance=ExtResource("11_a4yp7")]
+[node name="Cannon11" parent="Cannons" instance=ExtResource("11_a4yp7")]
 position = Vector2(8088, -1064)
 level = "LevelThree"
 direction_of_bullet = 180
 shot_speed = 2.5
 egg_lifetime = 7
 
-[node name="Cannon13" parent="Cannons" instance=ExtResource("11_a4yp7")]
+[node name="Cannon12" parent="Cannons" instance=ExtResource("11_a4yp7")]
 position = Vector2(7288, -1128)
 level = "LevelThree"
 shot_speed = 2.5
 egg_lifetime = 7
 
-[node name="Cannon14" parent="Cannons" instance=ExtResource("11_a4yp7")]
+[node name="Cannon13" parent="Cannons" instance=ExtResource("11_a4yp7")]
 position = Vector2(7288, -1192)
 level = "LevelThree"
 shot_speed = 2.5
 egg_lifetime = 7
 
-[node name="Cannon15" parent="Cannons" instance=ExtResource("11_a4yp7")]
+[node name="Cannon14" parent="Cannons" instance=ExtResource("11_a4yp7")]
 position = Vector2(8088, -1256)
 level = "LevelThree"
 direction_of_bullet = 180
 shot_speed = 2.5
 egg_lifetime = 7
 
-[node name="Cannon16" parent="Cannons" instance=ExtResource("11_a4yp7")]
+[node name="Cannon15" parent="Cannons" instance=ExtResource("11_a4yp7")]
 position = Vector2(8088, -1320)
 level = "LevelThree"
 direction_of_bullet = 180
