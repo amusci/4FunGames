@@ -1197,9 +1197,9 @@ scale = Vector2(0.728, 0.416)
 texture = ExtResource("15_jouqw")
 
 [node name="Player" parent="." instance=ExtResource("10_babun")]
-position = Vector2(-696, -32)
+position = Vector2(-680, -12)
 collision_mask = 15
-respawn_area = Vector2(-696, -32)
+respawn_area = Vector2(-680, -12)
 
 [node name="Kill Zones" type="Node" parent="."]
 
