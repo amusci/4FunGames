@@ -967,7 +967,7 @@ scale = Vector2(0.728, 0.416)
 texture = ExtResource("6_xagu4")
 
 [node name="Player" parent="." instance=ExtResource("10_kfnf1")]
-position = Vector2(4068, -104)
+position = Vector2(-24, -92)
 collision_mask = 15
 respawn_area = Vector2(-24, -92)
 
@@ -1129,14 +1129,14 @@ level = "LevelFour"
 direction_of_bullet = 270
 shot_speed = 2.0
 shot_offset = 2
-egg_lifetime = 3
+egg_lifetime = 5
 
 [node name="Cannon20" parent="Cannons" instance=ExtResource("12_voofn")]
 position = Vector2(1816, -72)
 level = "LevelFour"
 direction_of_bullet = 270
 shot_speed = 4.0
-egg_lifetime = 3
+egg_lifetime = 5
 
 [node name="Cannon21" parent="Cannons" instance=ExtResource("12_voofn")]
 position = Vector2(1848, -72)
@@ -1151,7 +1151,7 @@ level = "LevelFour"
 direction_of_bullet = 270
 shot_speed = 2.0
 shot_offset = 2
-egg_lifetime = 3
+egg_lifetime = 5
 
 [node name="Cannon8" parent="Cannons" instance=ExtResource("12_voofn")]
 position = Vector2(2712, -72)
@@ -1228,7 +1228,7 @@ egg_lifetime = 5
 position = Vector2(4856, -264)
 level = "LevelFour"
 shot_speed = 2.0
-egg_lifetime = 5
+egg_lifetime = 3
 
 [node name="Cannon18" parent="Cannons" instance=ExtResource("12_voofn")]
 position = Vector2(5000, -392)
@@ -1242,14 +1242,14 @@ level = "LevelFour"
 direction_of_bullet = 180
 shot_speed = 2.0
 shot_offset = 2
-egg_lifetime = 5
+egg_lifetime = 3
 
 [node name="Cannon13" parent="Cannons" instance=ExtResource("12_voofn")]
 position = Vector2(4200, -24)
 level = "LevelFour"
 direction_of_bullet = 270
 shot_speed = 2.0
-egg_lifetime = 2
+egg_lifetime = 3
 
 [node name="Cannon14" parent="Cannons" instance=ExtResource("12_voofn")]
 position = Vector2(4392, -168)
@@ -1257,21 +1257,21 @@ level = "LevelFour"
 direction_of_bullet = 90
 shot_speed = 2.0
 shot_offset = 2
-egg_lifetime = 2
+egg_lifetime = 3
 
 [node name="Cannon15" parent="Cannons" instance=ExtResource("12_voofn")]
 position = Vector2(4584, -24)
 level = "LevelFour"
 direction_of_bullet = 270
 shot_speed = 2.0
-egg_lifetime = 2
+egg_lifetime = 3
 
 [node name="Cannon23" parent="Cannons" instance=ExtResource("12_voofn")]
 position = Vector2(5592, -696)
 level = "LevelFour"
 direction_of_bullet = 270
 shot_speed = 2.0
-egg_lifetime = 2
+egg_lifetime = 3
 
 [node name="Cannon24" parent="Cannons" instance=ExtResource("12_voofn")]
 position = Vector2(5528, -712)
@@ -1279,14 +1279,14 @@ level = "LevelFour"
 direction_of_bullet = 270
 shot_speed = 2.0
 shot_offset = 2
-egg_lifetime = 2
+egg_lifetime = 3
 
 [node name="Cannon25" parent="Cannons" instance=ExtResource("12_voofn")]
 position = Vector2(5464, -728)
 level = "LevelFour"
 direction_of_bullet = 270
 shot_speed = 2.0
-egg_lifetime = 2
+egg_lifetime = 3
 
 [node name="Cannon26" parent="Cannons" instance=ExtResource("12_voofn")]
 position = Vector2(5400, -744)
@@ -1294,14 +1294,14 @@ level = "LevelFour"
 direction_of_bullet = 270
 shot_speed = 2.0
 shot_offset = 2
-egg_lifetime = 2
+egg_lifetime = 3
 
 [node name="Cannon27" parent="Cannons" instance=ExtResource("12_voofn")]
 position = Vector2(5336, -760)
 level = "LevelFour"
 direction_of_bullet = 270
 shot_speed = 2.0
-egg_lifetime = 2
+egg_lifetime = 3
 
 [node name="Cannon28" parent="Cannons" instance=ExtResource("12_voofn")]
 position = Vector2(5272, -776)
@@ -1309,14 +1309,14 @@ level = "LevelFour"
 direction_of_bullet = 270
 shot_speed = 2.0
 shot_offset = 2
-egg_lifetime = 2
+egg_lifetime = 3
 
 [node name="Cannon29" parent="Cannons" instance=ExtResource("12_voofn")]
 position = Vector2(5176, -864)
 level = "LevelFour"
 direction_of_bullet = 90
 shot_speed = 2.0
-egg_lifetime = 2
+egg_lifetime = 3
 
 [node name="Finish Flag" type="Node" parent="."]
 
