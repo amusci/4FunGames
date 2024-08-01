@@ -9,7 +9,6 @@ signal player_reached_flag
 
 var entered : bool = false # Set flag to false
 
-
 func _on_area_2d_body_entered(body)-> void:
 	if body.is_in_group("Player") and body.collected_coins >= num_of_coins:
 		print("Player can finish the level!")

@@ -45,6 +45,10 @@ signal increment_death
 signal coin_collected
 signal add_time
 
+func _ready():
+	var flag = get_tree().get_root().find_child("finish_flag", true, false)
+	flag.connect("player_reached_flag", _on_player_reached_flag)
+
 func _physics_process(delta):
 	if not can_control: # If we cant control our player, return
 		return
@@ -233,6 +237,10 @@ func increment_coin_count() -> void:
 	else:
 		print("Error: 'real_finish_flag' not found in the scene tree.")
 
+
+func _on_player_reached_flag() -> void:
+	print("flag reached in player.gd")
+	can_control = false
 
 	
 func player_animations(direction : float) -> void:
