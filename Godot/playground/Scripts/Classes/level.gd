@@ -29,7 +29,7 @@ func _ready() -> void:
 func _physics_process(delta):
 	if not level_complete and paused:
 		level_timer += delta
-		print(level_timer)
+		#print(level_timer)
 	
 func _process(delta):
 	if Input.is_action_just_pressed("pause"): # If we press Esc
@@ -62,20 +62,34 @@ func check_time(level_timer) -> String:
 		
 func _on_player_reached_flag():
 	level_complete = true
-	print("level finished in ", level_timer)
+	print("Level finished in ", level_timer)
+	
 	var medal = check_time(level_timer)
-	if get_name() == "LevelOne":
-		MedalManager.level_one_medal = medal
-	elif get_name() == "LevelTwo":
-		MedalManager.level_two_medal = medal
-	elif get_name() == "LevelThree":
-		MedalManager.level_three_medal = medal
-	elif get_name() == "LevelFour":
-		MedalManager.level_four_medal = medal
-	elif get_name() == "LevelFive":
-		MedalManager.level_five_medal = medal
-	elif get_name() == "LevelSix":
-		MedalManager.level_six_medal = medal
+	var level_name = get_name()
+	print("Current level: ", level_name)
+	print("Awarded medal: ", medal)
+	
+	match level_name:
+		"LevelOne":
+			MedalManager.level_one_medal = medal
+			print("Level 1 medal updated to ", MedalManager.level_one_medal)
+		"LevelTwo":
+			MedalManager.level_two_medal = medal
+			print("Level 2 medal updated to ", MedalManager.level_two_medal)
+		"LevelThree":
+			MedalManager.level_three_medal = medal
+			print("Level 3 medal updated to ", MedalManager.level_three_medal)
+		"LevelFour":
+			MedalManager.level_four_medal = medal
+			print("Level 4 medal updated to ", MedalManager.level_four_medal)
+		"LevelFive":
+			MedalManager.level_five_medal = medal
+			print("Level 5 medal updated to ", MedalManager.level_five_medal)
+		"LevelSix":
+			MedalManager.level_six_medal = medal
+			print("Level 6 medal updated to ", MedalManager.level_six_medal)
+		_:
+			print("Unknown level: ", level_name)
 	
 	
 	
