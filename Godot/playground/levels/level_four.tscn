@@ -912,13 +912,13 @@ size = Vector2(960, 7)
 
 [sub_resource type="Curve2D" id="Curve2D_xkhdi"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 176, 0, 0, 0, 0, 0, 176, 64, 0, 0, 0, 0, 0, 64, 0, 0, 0, 0, 0, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 176, 0, 0, 0, 0, 0, 176, 104, 0, 0, 0, 0, 0, 104, 0, 0, 0, 0, 0, 0)
 }
 point_count = 5
 
 [sub_resource type="Curve2D" id="Curve2D_cnwvm"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 112, 0, 0, 0, 0, 0, 112, 80, 0, 0, 0, 0, 0, 80, 0, 0, 0, 0, 0, 0)
+"points": PackedVector2Array(0, 0, 0, 0, -16, -22.95, 0, 0, 0, 0, 88, -22.95, 0, 0, 0, 0, 88, 81.05, 0, 0, 0, 0, -16, 81.05, 0, 0, 0, 0, -16, -22.95)
 }
 point_count = 5
 
@@ -1033,7 +1033,7 @@ scale = Vector2(1, 5)
 
 [node name="checkpoint3" parent="Checkpoints" instance=ExtResource("12_28abb")]
 position = Vector2(1568, -360)
-scale = Vector2(1, 8)
+scale = Vector2(1, 12)
 
 [node name="checkpoint4" parent="Checkpoints" instance=ExtResource("12_28abb")]
 position = Vector2(2152, -120)
@@ -1059,11 +1059,16 @@ scale = Vector2(1, 10)
 position = Vector2(5336, -392)
 scale = Vector2(1, 10)
 
+[node name="checkpoint10" parent="Checkpoints" instance=ExtResource("12_28abb")]
+position = Vector2(5672, -708)
+scale = Vector2(1, 10)
+
 [node name="Moving Platforms" type="Node" parent="."]
 
 [node name="platform1" parent="Moving Platforms" instance=ExtResource("13_uipbb")]
 position = Vector2(1744, -352)
 curve = SubResource("Curve2D_xkhdi")
+speed = 1.5
 
 [node name="platform 5" parent="Moving Platforms" instance=ExtResource("13_uipbb")]
 position = Vector2(2000, -177.05)
@@ -1073,21 +1078,25 @@ curve = SubResource("Curve2D_cnwvm")
 position = Vector2(1280, -256)
 curve = SubResource("Curve2D_3c5gr")
 loop = false
+speed = 1.0
 
 [node name="left_to_right_platform2" parent="Moving Platforms" instance=ExtResource("13_uipbb")]
 position = Vector2(1344, -384)
 curve = SubResource("Curve2D_ri0fk")
 loop = false
+speed = 1.0
 
 [node name="left_to_right_platform3" parent="Moving Platforms" instance=ExtResource("13_uipbb")]
 position = Vector2(1408, -256)
 curve = SubResource("Curve2D_dirgh")
 loop = false
+speed = 1.0
 
 [node name="left_to_right_platform4" parent="Moving Platforms" instance=ExtResource("13_uipbb")]
 position = Vector2(1472, -384)
 curve = SubResource("Curve2D_q0c8i")
 loop = false
+speed = 1.0
 
 [node name="Springs" type="Node" parent="."]
 
@@ -1135,14 +1144,14 @@ egg_lifetime = 5
 position = Vector2(1816, -72)
 level = "LevelFour"
 direction_of_bullet = 270
-shot_speed = 4.0
+shot_speed = 6.0
 egg_lifetime = 5
 
 [node name="Cannon21" parent="Cannons" instance=ExtResource("12_voofn")]
 position = Vector2(1848, -72)
 level = "LevelFour"
 direction_of_bullet = 270
-shot_speed = 4.0
+shot_speed = 6.0
 egg_lifetime = 3
 
 [node name="Cannon22" parent="Cannons" instance=ExtResource("12_voofn")]
