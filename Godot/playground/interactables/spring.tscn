@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://sip0sxjyf5p3"]
+[gd_scene load_steps=21 format=3 uid="uid://sip0sxjyf5p3"]
 
 [ext_resource type="Script" path="res://interactables/spring.gd" id="1_vyur5"]
 [ext_resource type="Texture2D" uid="uid://c1sce5rays0r3" path="res://art/homegrown/New Art Style/spring bouncing.png" id="2_k5qo7"]
@@ -60,6 +60,10 @@ region = Rect2(32, 0, 16, 16)
 atlas = ExtResource("2_k5qo7")
 region = Rect2(16, 0, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_sx2r0"]
+atlas = ExtResource("2_k5qo7")
+region = Rect2(0, 0, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_aq5gv"]
 animations = [{
 "frames": [{
@@ -111,6 +115,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wgban")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sx2r0")
 }],
 "loop": false,
 "name": &"reverse_boing",
@@ -128,8 +135,10 @@ shape = SubResource("RectangleShape2D_wiuai")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_aq5gv")
-animation = &"idle"
+animation = &"reverse_boing"
 autoplay = "idle"
+frame = 5
+frame_progress = 1.0
 
 [node name="bounce" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_x8gui")
