@@ -1175,7 +1175,7 @@ egg_lifetime = 3
 [node name="Finish Flag" type="Node" parent="."]
 
 [node name="finish_flag" parent="Finish Flag" instance=ExtResource("11_g0vtm")]
-position = Vector2(12952, -2905)
+position = Vector2(12953, -2904)
 desired_scene = "res://UI/level_select.tscn"
 which_level = "LevelSix"
 num_of_coins = 10
