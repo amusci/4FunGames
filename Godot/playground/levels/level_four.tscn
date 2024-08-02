@@ -967,7 +967,7 @@ scale = Vector2(0.728, 0.416)
 texture = ExtResource("6_xagu4")
 
 [node name="Player" parent="." instance=ExtResource("10_kfnf1")]
-position = Vector2(464, -360)
+position = Vector2(-24, -92)
 collision_mask = 15
 respawn_area = Vector2(-24, -92)
 
@@ -994,7 +994,7 @@ scale = Vector2(0.1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zones/KillZone3"]
 position = Vector2(11040, -280)
-scale = Vector2(1.5, 1)
+scale = Vector2(1.5, 0.988457)
 shape = SubResource("RectangleShape2D_pfwse")
 debug_color = Color(1, 0, 0, 0.196078)
 
