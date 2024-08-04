@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://c6k4lhs18tjf8"]
+[gd_scene load_steps=30 format=3 uid="uid://c6k4lhs18tjf8"]
 
 [ext_resource type="Script" path="res://Scripts/Classes/level.gd" id="1_m8b78"]
 [ext_resource type="Texture2D" uid="uid://bjy8lvym2y0ug" path="res://art/homegrown/city level background v1.png" id="2_u72k0"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://mqq41jm7voip" path="res://interactables/finish_level_flag.tscn" id="11_g0vtm"]
 [ext_resource type="PackedScene" uid="uid://ditnjmcw3lsm0" path="res://interactables/checkpoint.tscn" id="12_0715p"]
 [ext_resource type="PackedScene" uid="uid://3x22w68bgrw0" path="res://obstacles/cannon.tscn" id="13_hga1x"]
+[ext_resource type="PackedScene" uid="uid://bcepqvp6a4vcm" path="res://interactables/checkpoint icon.tscn" id="17_c87pg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pw4gg"]
 texture = ExtResource("3_n21x2")
@@ -1064,6 +1065,20 @@ scale = Vector2(1, 2.5)
 [node name="checkpoint18" parent="Checkpoints" instance=ExtResource("12_0715p")]
 position = Vector2(11696, -2586)
 scale = Vector2(1, 2.5)
+
+[node name="Checkpoint Icons" type="Node" parent="."]
+
+[node name="Checkpoint Icon" parent="Checkpoint Icons" instance=ExtResource("17_c87pg")]
+position = Vector2(1032, -280)
+
+[node name="Checkpoint Icon2" parent="Checkpoint Icons" instance=ExtResource("17_c87pg")]
+position = Vector2(1864, -376)
+
+[node name="Checkpoint Icon3" parent="Checkpoint Icons" instance=ExtResource("17_c87pg")]
+position = Vector2(2184, -104)
+
+[node name="Checkpoint Icon4" parent="Checkpoint Icons" instance=ExtResource("17_c87pg")]
+position = Vector2(2840, -488)
 
 [node name="Moving Platforms" type="Node" parent="."]
 

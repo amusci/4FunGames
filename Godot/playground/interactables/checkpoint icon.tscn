@@ -50,6 +50,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+[node name="Checkpoint Icon" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_pwe8n")
 autoplay = "empty"
