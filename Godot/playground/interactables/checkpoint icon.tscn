@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://bcepqvp6a4vcm"]
+
+[ext_resource type="Texture2D" uid="uid://ccxtxaisqh211" path="res://art/homegrown/test checkpoint icon sheet.png" id="1_hy2e0"]
+[ext_resource type="Texture2D" uid="uid://blqoxpm52o43l" path="res://art/homegrown/test checkpoint icon empty.png" id="2_8lqob"]
+[ext_resource type="Texture2D" uid="uid://yffjc1hfsg66" path="res://art/homegrown/test checkpoint icon filled.png" id="3_k3d22"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bmdry"]
+atlas = ExtResource("1_hy2e0")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xjk8"]
+atlas = ExtResource("1_hy2e0")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ht6c0"]
+atlas = ExtResource("2_8lqob")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_358qo"]
+atlas = ExtResource("3_k3d22")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pwe8n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bmdry")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4xjk8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ht6c0")
+}],
+"loop": true,
+"name": &"empty",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_358qo")
+}],
+"loop": true,
+"name": &"filled",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_pwe8n")
+autoplay = "empty"
