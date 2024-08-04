@@ -1089,7 +1089,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 3, 6, 8, 11, 14, 17, 23),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(2520, -1432), Vector2(3088, -1192), Vector2(3088, -757.865), Vector2(2800, -552), Vector2(2121.14, -552), Vector2(1688, -264), Vector2(928, -208), Vector2(-133.037, -12.043)]
+"values": [Vector2(2520, -1432), Vector2(3088, -1192), Vector2(3088, -757.865), Vector2(2800, -552), Vector2(2121.14, -552), Vector2(1688, -264), Vector2(928, -208), Vector2(-680, -12)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1122,15 +1122,15 @@ layer_0/tile_data = PackedInt32Array(65533, 65539, 6, 65534, 65539, 6, 65535, 65
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -1
-offset_left = -684.149
-offset_top = -1763.66
-offset_right = -627.149
-offset_bottom = -1470.66
+offset_left = -1168.0
+offset_top = -1764.0
+offset_right = -1105.0
+offset_bottom = -1471.0
 scale = Vector2(81.2, 7.32)
 color = Color(0, 0, 0, 1)
 
 [node name="cine_player" parent="." instance=ExtResource("4_68m8u")]
-position = Vector2(-133.037, -12.043)
+position = Vector2(-680, -12)
 
 [node name="Coins" type="Node" parent="."]
 
