@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dgnbxk4sqeciq" path="res://platforms/moving_platform.tscn" id="10_2s2md"]
 [ext_resource type="PackedScene" uid="uid://8hqvucgxe26w" path="res://interactables/coin.tscn" id="11_0tofu"]
 [ext_resource type="PackedScene" uid="uid://mqq41jm7voip" path="res://interactables/finish_level_flag.tscn" id="13_v7dcd"]
-[ext_resource type="PackedScene" path="res://platforms/big_player_activated_moving_platform.tscn" id="14_ldonp"]
+[ext_resource type="PackedScene" uid="uid://mfjoxrkbqh7y" path="res://platforms/big_player_activated_moving_platform.tscn" id="14_ldonp"]
 [ext_resource type="PackedScene" uid="uid://ditnjmcw3lsm0" path="res://interactables/checkpoint.tscn" id="14_lifns"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dptf7"]
@@ -701,9 +701,9 @@ size = Vector2(1872, 7)
 
 [sub_resource type="Curve2D" id="Curve2D_l5re3"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, -16, 0, 0, 0, 0, 48, -32, 0, 0, 0, 0, 80, -48, 0, 0, 0, 0, 112, -64, 0, 0, 0, 0, 144, -80, 0, 0, 0, 0, 176, -88, 0, 0, 0, 0, 208, -88, 0, 0, 0, 0, 240, -80, 0, 0, 0, 0, 272, -64, 0, 0, 0, 0, 304, -48, 0, 0, 0, 0, 336, -48, 0, 0, 0, 0, 368, -48, 0, 0, 0, 0, 400, -48, 0, 0, 0, 0, 432, -48, 0, 0, 0, 0, 464, -48, 0, 0, 0, 0, 496, -48, 0, 0, 0, 0, 528, -72, 0, 0, 0, 0, 496, -104, 0, 0, 0, 0, 528, -136, 0, 0, 0, 0, 496, -168, 0, 0, 0, 0, 528, -184, 0, 0, 0, 0, 560, -184, 0, 0, 0, 0, 592, -184, 0, 0, 0, 0, 624, -208, 0, 0, 0, 0, 656, -224, 0, 0, 0, 0, 688, -232, 0, 0, 0, 0, 720, -240, 0, 0, 0, 0, 752, -240, 0, 0, 0, 0, 784, -240, 0, 0, 0, 0, 816, -248, 0, 0, 0, 0, 848, -248, 0, 0, 0, 0, 880, -248, 0, 0, 0, 0, 912, -256)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, -16, 0, 0, 0, 0, 48, -32, 0, 0, 0, 0, 80, -48, 0, 0, 0, 0, 112, -64, 0, 0, 0, 0, 144, -80, 0, 0, 0, 0, 176, -88, 0, 0, 0, 0, 208, -88, 0, 0, 0, 0, 240, -80, 0, 0, 0, 0, 272, -64, 0, 0, 0, 0, 304, -48, 0, 0, 0, 0, 336, -48, 0, 0, 0, 0, 368, -48, 0, 0, 0, 0, 400, -48, 0, 0, 0, 0, 432, -48, 0, 0, 0, 0, 464, -48, 0, 0, 0, 0, 496, -48, 0, 0, 0, 0, 528, -72, 0, 0, 0, 0, 496, -104, 0, 0, 0, 0, 528, -136, 0, 0, 0, 0, 496, -168, 0, 0, 0, 0, 528, -184, 0, 0, 0, 0, 560, -184, 0, 0, 0, 0, 592, -184, 0, 0, 0, 0, 624, -208, 0, 0, 0, 0, 656, -224, 0, 0, 0, 0, 688, -232, 0, 0, 0, 0, 720, -240, 0, 0, 0, 0, 752, -240, 0, 0, 0, 0, 784, -240, 0, 0, 0, 0, 816, -248, 0, 0, 0, 0, 848, -248, 0, 0, 0, 0, 880, -248, 0, 0, 0, 0, 912, -256, 0, 0, 0, 0, 912, 0, 0, 0, 0, 0, 0, 0)
 }
-point_count = 34
+point_count = 36
 
 [sub_resource type="Curve2D" id="Curve2D_oyhi2"]
 _data = {
@@ -795,7 +795,7 @@ centered = false
 
 [node name="Player" parent="." instance=ExtResource("5_f2dmi")]
 z_index = 2
-position = Vector2(4792, -776)
+position = Vector2(1856, -288)
 collision_mask = 15
 respawn_area = Vector2(72, -76)
 
