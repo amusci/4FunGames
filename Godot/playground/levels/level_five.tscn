@@ -705,6 +705,18 @@ _data = {
 }
 point_count = 36
 
+[sub_resource type="Curve2D" id="Curve2D_n8ckk"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -128, 96, 0, 0, 0, 0, 0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_3vhyx"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 96)
+}
+point_count = 2
+
 [sub_resource type="Curve2D" id="Curve2D_oyhi2"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -104, 0, 0, 0, 0, 48, -104, 0, 0, 0, 0, 88, -104, 0, 0, 0, 0, 88, 0, 0, 0, 0, 0, 0, 0)
@@ -735,29 +747,17 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_4qs2s"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 88, 0, 0, 0, 0, -64, 88, 0, 0, 0, 0, -64, 0, 0, 0, 0, 0, 0, 0)
-}
-point_count = 5
-
 [sub_resource type="Curve2D" id="Curve2D_c88j2"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, -32, 0, 0, 0, 0, 0, -120, 0, 0, 0, 0, 64, -120, 0, 0, 0, 0, 64, -32, 0, 0, 0, 0, 0, -32)
 }
 point_count = 5
 
-[sub_resource type="Curve2D" id="Curve2D_n8ckk"]
+[sub_resource type="Curve2D" id="Curve2D_4qs2s"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -128, 96, 0, 0, 0, 0, 0, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 88, 0, 0, 0, 0, -64, 88, 0, 0, 0, 0, -64, 0, 0, 0, 0, 0, 0, 0)
 }
-point_count = 2
-
-[sub_resource type="Curve2D" id="Curve2D_3vhyx"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 96)
-}
-point_count = 2
+point_count = 5
 
 [sub_resource type="Curve2D" id="Curve2D_ruscu"]
 _data = {
@@ -795,7 +795,7 @@ centered = false
 
 [node name="Player" parent="." instance=ExtResource("5_f2dmi")]
 z_index = 2
-position = Vector2(1856, -288)
+position = Vector2(72, -76)
 collision_mask = 15
 respawn_area = Vector2(72, -76)
 
@@ -865,16 +865,16 @@ position = Vector2(2072, -280)
 [node name="coin4" parent="Coins" instance=ExtResource("11_0tofu")]
 position = Vector2(3424, -632)
 
-[node name="coin8" parent="Coins" instance=ExtResource("11_0tofu")]
+[node name="coin5" parent="Coins" instance=ExtResource("11_0tofu")]
 position = Vector2(3960, -656)
 
-[node name="coin5" parent="Coins" instance=ExtResource("11_0tofu")]
+[node name="coin6" parent="Coins" instance=ExtResource("11_0tofu")]
 position = Vector2(4464, -824)
 
-[node name="coin6" parent="Coins" instance=ExtResource("11_0tofu")]
+[node name="coin7" parent="Coins" instance=ExtResource("11_0tofu")]
 position = Vector2(5008, -856)
 
-[node name="coin7" parent="Coins" instance=ExtResource("11_0tofu")]
+[node name="coin8" parent="Coins" instance=ExtResource("11_0tofu")]
 position = Vector2(6096, -1008)
 
 [node name="coin9" parent="Coins" instance=ExtResource("11_0tofu")]
@@ -927,19 +927,31 @@ curve = SubResource("Curve2D_l5re3")
 
 [node name="Regular" type="Node" parent="Moving Platforms"]
 
+[node name="left_to_right_platform" parent="Moving Platforms/Regular" instance=ExtResource("10_2s2md")]
+position = Vector2(768, -256)
+curve = SubResource("Curve2D_n8ckk")
+loop = false
+speed = 1.0
+
+[node name="left_to_right_platform2" parent="Moving Platforms/Regular" instance=ExtResource("10_2s2md")]
+position = Vector2(832, -256)
+curve = SubResource("Curve2D_3vhyx")
+loop = false
+speed = 1.0
+
+[node name="left_to_right_platform3" parent="Moving Platforms/Regular" instance=ExtResource("10_2s2md")]
+position = Vector2(1448, -160)
+curve = SubResource("Curve2D_oyhi2")
+
+[node name="left_to_right_platform4" parent="Moving Platforms/Regular" instance=ExtResource("10_2s2md")]
+position = Vector2(1480, -296)
+curve = SubResource("Curve2D_cjkbw")
+
 [node name="left_to_right_platform5" parent="Moving Platforms/Regular" instance=ExtResource("10_2s2md")]
 position = Vector2(1768, -160)
 curve = SubResource("Curve2D_oyhi2")
 
-[node name="left_to_right_platform14" parent="Moving Platforms/Regular" instance=ExtResource("10_2s2md")]
-position = Vector2(1448, -160)
-curve = SubResource("Curve2D_oyhi2")
-
 [node name="left_to_right_platform6" parent="Moving Platforms/Regular" instance=ExtResource("10_2s2md")]
-position = Vector2(1480, -296)
-curve = SubResource("Curve2D_cjkbw")
-
-[node name="left_to_right_platform15" parent="Moving Platforms/Regular" instance=ExtResource("10_2s2md")]
 position = Vector2(1800, -296)
 curve = SubResource("Curve2D_cjkbw")
 
@@ -961,30 +973,23 @@ loop = false
 speed = 1.0
 
 [node name="left_to_right_platform10" parent="Moving Platforms/Regular" instance=ExtResource("10_2s2md")]
+position = Vector2(4896, -672)
+curve = SubResource("Curve2D_c88j2")
+speed = 1.0
+
+[node name="left_to_right_platform11" parent="Moving Platforms/Regular" instance=ExtResource("10_2s2md")]
 position = Vector2(4960, -792)
 curve = SubResource("Curve2D_4qs2s")
 speed = 1.0
 
-[node name="left_to_right_platform11" parent="Moving Platforms/Regular" instance=ExtResource("10_2s2md")]
-position = Vector2(4896, -672)
-curve = SubResource("Curve2D_c88j2")
-speed = 1.0
-
 [node name="left_to_right_platform12" parent="Moving Platforms/Regular" instance=ExtResource("10_2s2md")]
-position = Vector2(4896, -672)
-curve = SubResource("Curve2D_c88j2")
+position = Vector2(5056, -792)
+curve = SubResource("Curve2D_ruscu")
 speed = 1.0
 
-[node name="left_to_right_platform" parent="Moving Platforms/Regular" instance=ExtResource("10_2s2md")]
-position = Vector2(768, -256)
-curve = SubResource("Curve2D_n8ckk")
-loop = false
-speed = 1.0
-
-[node name="left_to_right_platform16" parent="Moving Platforms/Regular" instance=ExtResource("10_2s2md")]
-position = Vector2(832, -256)
-curve = SubResource("Curve2D_3vhyx")
-loop = false
+[node name="left_to_right_platform13" parent="Moving Platforms/Regular" instance=ExtResource("10_2s2md")]
+position = Vector2(5120, -704)
+curve = SubResource("Curve2D_bwnss")
 speed = 1.0
 
 [node name="Springs" type="Node" parent="."]
@@ -1113,13 +1118,3 @@ autoplay = true
 max_distance = 1e+07
 panning_strength = 0.0
 bus = &"game_music"
-
-[node name="left_to_right_platform" parent="." instance=ExtResource("10_2s2md")]
-position = Vector2(5056, -792)
-curve = SubResource("Curve2D_ruscu")
-speed = 1.0
-
-[node name="left_to_right_platform2" parent="." instance=ExtResource("10_2s2md")]
-position = Vector2(5120, -704)
-curve = SubResource("Curve2D_bwnss")
-speed = 1.0
